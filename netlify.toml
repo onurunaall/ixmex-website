@@ -8,6 +8,14 @@
   status = 301
   force  = true
 
+[build.processing.js]
+  bundle  = false
+  minify  = false
+
+[build.processing.css]
+  bundle  = false
+  minify  = false
+
 [[redirects]]
   from = "/api*"
   to = "/swiper-api"
