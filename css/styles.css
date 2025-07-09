@@ -11004,3 +11004,53 @@ header.masthead h1, header.masthead .h1 {
 #portfolio .container-fluid .portfolio-box:hover .portfolio-box-caption, #portfolio .container-sm .portfolio-box:hover .portfolio-box-caption, #portfolio .container-md .portfolio-box:hover .portfolio-box-caption, #portfolio .container-lg .portfolio-box:hover .portfolio-box-caption, #portfolio .container-xl .portfolio-box:hover .portfolio-box-caption, #portfolio .container-xxl .portfolio-box:hover .portfolio-box-caption {
   opacity: 1;
 }
+
+#heroCarousel {
+  position: relative;
+  z-index: 1;
+}
+
+#heroCarousel .carousel-item {
+  height: 100vh;
+  background-color: #ececec;
+  background-size: cover;
+  background-position: center;
+}
+
+.carousel-fade .carousel-item {
+  transition: opacity .8s ease;
+}
+
+#heroCarousel .carousel-caption {
+  top: 50%;
+  transform: translateY(-50%);
+  bottom: auto;
+}
+
+/* ─── Enhanced Carousel Controls ───────────────────────────────── */
+
+/* Push the prev/next buttons in from the very edge */
+.carousel-control-prev { left: 1rem; }
+.carousel-control-next { right: 1rem; }
+
+/* Style the icon spans as circles with semi-opaque background */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  background-color: rgba(0, 0, 0, 0.5); /* dark circle */
+  border-radius: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 1.5rem;
+}
+
+/* Fade transition remains */
+.carousel-fade .carousel-item {
+  transition: opacity .8s ease;
+}
+
+/* ─────────────────────────────────────────────────────────────── */
+
+
