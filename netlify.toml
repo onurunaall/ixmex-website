@@ -7,10 +7,11 @@
   to     = "https://:splat"
   status = 301
   force  = true
-  
-[build.processing.js]
-  bundle = false
-  minify = false
+
+[[redirects]]
+  from = "/api*"
+  to = "/swiper-api"
+  status = 301
 
 [[headers]]
   for = "/*"
