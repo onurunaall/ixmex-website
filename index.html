@@ -38,6 +38,11 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css"
       rel="stylesheet"
     />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
     <!-- Core theme CSS (includes Bootstrap) -->
     <link href="css/styles.css" rel="stylesheet" />
 
@@ -80,6 +85,11 @@
       #contact {
         padding-top: 2rem;
         padding-bottom: 2rem;
+      }
+      /* Swiper arrow color */
+      .swiper-button-prev,
+      .swiper-button-next {
+        color: var(--accent);
       }
     </style>
   </head>
@@ -129,55 +139,74 @@
     </nav>
 
     <!-- Masthead-->
-    <header id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-inner">
-
-            <!-- Slide 1 -->
-            <div class="carousel-item active" style="background: url('assets/img/portfolio/project1.jpg') center/cover no-repeat;">
-            <div class="carousel-caption text-center">
-                <h1 class="text-white fw-bold">Hand-Crafted Granite Elegance</h1>
-                <p class="text-white mb-4" style="line-height:1.6;">
-                Transform your space with timeless granite designs built to impress.
-                </p>
-                <a href="#contact" class="btn btn-primary btn-xl">Contact Us</a>
-            </div>
-            </div>
-
-            <!-- Slide 2 -->
-            <div class="carousel-item" style="background: url('assets/img/portfolio/project2.jpg') center/cover no-repeat;">
-            <div class="carousel-caption text-center">
-                <h1 class="text-white fw-bold">Gym Walls Tailored to You</h1>
-                <p class="text-white mb-4" style="line-height:1.6;">
-                Durable stone surfaces for fitness and commercial spaces.
-                </p>
-                <a href="#contact" class="btn btn-primary btn-xl">Contact Us</a>
-            </div>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="carousel-item" style="background: url('assets/img/portfolio/project3.jpg') center/cover no-repeat;">
-            <div class="carousel-caption text-center">
-                <h1 class="text-white fw-bold">Custom Granite Countertops</h1>
-                <p class="text-white mb-4" style="line-height:1.6;">
-                Bespoke designs crafted for your kitchen renovation.
-                </p>
-                <a href="#contact" class="btn btn-primary btn-xl">Contact Us</a>
-            </div>
-            </div>
-
-            <!-- add more slides here by copying a .carousel-item block and updating the image URL -->
-
+    <header
+      id="heroCarousel"
+      class="carousel slide carousel-fade"
+      data-bs-ride="carousel"
+      data-bs-interval="3000"
+      data-bs-pause="false"
+    >
+      <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div
+          class="carousel-item active"
+          style="background: url('assets/img/portfolio/project1.png') center/cover no-repeat;"
+        >
+          <div class="carousel-caption text-center">
+            <h1 class="text-white fw-bold">Hand-Crafted Granite Elegance</h1>
+            <p class="text-white mb-4" style="line-height:1.6;">
+              Transform your space with timeless granite designs built to
+              impress.
+            </p>
+            <a href="#contact" class="btn btn-primary btn-xl">Contact Us</a>
+          </div>
         </div>
-
-        <!-- carousel controls -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+        <!-- Slide 2 -->
+        <div
+          class="carousel-item"
+          style="background: url('assets/img/portfolio/project2.png') center/cover no-repeat;"
+        >
+          <div class="carousel-caption text-center">
+            <h1 class="text-white fw-bold">Gym Walls Tailored to You</h1>
+            <p class="text-white mb-4" style="line-height:1.6;">
+              Durable stone surfaces for fitness and commercial spaces.
+            </p>
+            <a href="#contact" class="btn btn-primary btn-xl">Contact Us</a>
+          </div>
+        </div>
+        <!-- Slide 3 -->
+        <div
+          class="carousel-item"
+          style="background: url('assets/img/portfolio/project3.png') center/cover no-repeat;"
+        >
+          <div class="carousel-caption text-center">
+            <h1 class="text-white fw-bold">Custom Granite Countertops</h1>
+            <p class="text-white mb-4" style="line-height:1.6;">
+              Bespoke designs crafted for your kitchen renovation.
+            </p>
+            <a href="#contact" class="btn btn-primary btn-xl">Contact Us</a>
+          </div>
+        </div>
+      </div>
+      <!-- carousel controls -->
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#heroCarousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#heroCarousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </header>
 
     <!-- About-->
@@ -188,14 +217,13 @@
             <h2 class="mt-0">We've got what you need!</h2>
             <hr class="divider divider-light" />
             <p class="lead mb-4" style="line-height: 1.6;">
-              We specialize in the fabrication and installation of
-              high-quality countertops, offering a wide range of materials,
-              including Granite, Marble, Quartzite, and more.
-              Our commitment to craftsmanship and customer satisfaction
-              ensures every project is completed to perfection.
-              If you are interested in learning more about how we can
-              support your projects, we would be happy to discuss your
-              needs in detail. Please do not hesitate to reach out!
+              We specialize in the fabrication and installation of high-quality
+              countertops, offering a wide range of materials, including
+              Granite, Marble, Quartzite, and more. Our commitment to craftsmanship
+              and customer satisfaction ensures every project is completed to
+              perfection. If you are interested in learning more about how we can
+              support your projects, we would be happy to discuss your needs in
+              detail. Please do not hesitate to reach out!
             </p>
             <a class="btn btn-light btn-xl" href="#services">Get Started!</a>
           </div>
@@ -238,8 +266,7 @@
               </div>
               <h3 class="h4 mb-2">Locker Rooms</h3>
               <p class="text-muted mb-0">
-                Custom granite surfaces for locker rooms—functionality meets
-                style.
+                Custom granite surfaces for locker rooms—functionality meets style.
               </p>
             </div>
           </div>
@@ -247,66 +274,134 @@
       </div>
     </section>
 
-    <!-- Portfolio-->
+    <!-- Portfolio (Swiper slider)-->
     <section class="page-section" id="portfolio">
-      <div class="container-fluid p-0">
-        <div class="row gx-2 gy-2">
-          <div class="col-lg-4 col-sm-6">
-            <a
-              class="portfolio-box"
-              href="assets/img/portfolio/project1.jpg"
-              title="Granite Kitchen Island"
-            >
-              <img
-                class="img-fluid"
-                src="assets/img/portfolio/project1.jpg"
-                alt="Granite Kitchen Island"
-                loading="lazy"
-              />
-              <div class="portfolio-box-caption">
-                <div class="project-category text-white-50">Kitchen</div>
-                <div class="project-name">Granite Kitchen Island</div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a
-              class="portfolio-box"
-              href="assets/img/portfolio/project2.jpg"
-              title="Granite Kitchen Island"
-            >
-              <img
-                class="img-fluid"
-                src="assets/img/portfolio/project2.jpg"
-                alt="Granite Kitchen Island"
-                loading="lazy"
-              />
-              <div class="portfolio-box-caption">
-                <div class="project-category text-white-50">Kitchen</div>
-                <div class="project-name">Granite Kitchen Island</div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a
-              class="portfolio-box"
-              href="assets/img/portfolio/project3.jpg"
-              title="Custom Reception Desk"
-            >
-              <img
-                class="img-fluid"
-                src="assets/img/portfolio/project3.jpg"
-                alt="Custom Reception Desk"
-                loading="lazy"
-              />
-              <div class="portfolio-box-caption">
-                <div class="project-category text-white-50">Commercial</div>
-                <div class="project-name">Custom Reception Desk</div>
-              </div>
-            </a>
-          </div>
+        <div class="container-fluid p-0">
+            <div class="swiper portfolio-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a class="portfolio-box" href="assets/img/portfolio/project1.png" title="Elegant Kitchen, Refined Details">
+                            <img class="img-fluid" src="assets/img/portfolio/project1.png" alt="Elegant kitchen with brass fixtures and marble countertops" loading="lazy" />
+                            <div class="portfolio-caption">
+                                <h5>Elegant Kitchen, Refined Details</h5>
+                                <p>Custom cabinetry, brass fixtures, and luxury countertops create a timeless kitchen space.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="portfolio-box" href="assets/img/portfolio/project2.png" title="Stylish Powder Room">
+                            <img class="img-fluid" src="assets/img/portfolio/project2.png" alt="Chic bathroom with ornate mirror and elegant lighting" loading="lazy" />
+                            <div class="portfolio-caption">
+                                <h5>Stylish Powder Room</h5>
+                                <p>Graceful lines, unique mirrors, and warm lighting make this bathroom cozy and chic.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="portfolio-box" href="assets/img/portfolio/project3.png" title="Rustic Meets Modern">
+                            <img class="img-fluid" src="assets/img/portfolio/project3.png" alt="Bathroom with wooden mirror frame and black fixtures" loading="lazy" />
+                            <div class="portfolio-caption">
+                                <h5>Rustic Meets Modern</h5>
+                                <p>Wood-framed mirrors and black fixtures balance charm and elegance in this bathroom.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="portfolio-box" href="assets/img/portfolio/project4.png" title="Contemporary Commercial Design">
+                            <img class="img-fluid" src="assets/img/portfolio/project4.png" alt="Commercial restroom with backlit mirrors and sleek surfaces" loading="lazy" />
+                            <div class="portfolio-caption">
+                                <h5>Contemporary Commercial Design</h5>
+                                <p>Sleek lines and durable finishes define this modern restroom with backlit mirrors.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="portfolio-box" href="assets/img/portfolio/project5.png" title="Kitchen in Progress">
+                            <img class="img-fluid" src="assets/img/portfolio/project5.png" alt="Modern kitchen under construction with central island and open shelving" loading="lazy" />
+                            <div class="portfolio-caption">
+                                <h5>Kitchen in Progress</h5>
+                                <p>Open shelving and a central island set the foundation for a high-end culinary space.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="portfolio-box" href="assets/img/portfolio/project6.png" title="Charming Pantry Nook">
+                            <img class="img-fluid" src="assets/img/portfolio/project6.png" alt="Pantry nook with wallpaper, window, and upper cabinets" loading="lazy" />
+                            <div class="portfolio-caption">
+                                <h5>Charming Pantry Nook</h5>
+                                <p>Natural light and detailed wallpaper create a delightful utility space with custom cabinetry.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="portfolio-box" href="assets/img/portfolio/project7.png" title="Outdoor Living Perfected">
+                            <img class="img-fluid" src="assets/img/portfolio/project7.png" alt="Outdoor kitchen with granite countertop and brick backdrop" loading="lazy" />
+                            <div class="portfolio-caption">
+                                <h5>Outdoor Living Perfected</h5>
+                                <p>Enjoy luxury outside with this granite-topped grill station surrounded by brick and comfort.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="portfolio-box" href="assets/img/portfolio/project8.png" title="Bright and Refined Bath">
+                            <img class="img-fluid" src="assets/img/portfolio/project8.png" alt="White bathroom with marble counter and wall sconces" loading="lazy" />
+                            <div class="portfolio-caption">
+                                <h5>Bright and Refined Bath</h5>
+                                <p>Crisp white tones and simple lines offer a fresh, spacious bathroom experience.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="portfolio-box" href="assets/img/portfolio/project9.png" title="Bold Gym Restroom Design">
+                            <img class="img-fluid" src="assets/img/portfolio/project9.png" alt="Gym restroom with purple walls and stainless fixtures" loading="lazy" />
+                            <div class="portfolio-caption">
+                                <h5>Bold Gym Restroom Design</h5>
+                                <p>Statement lighting and tile work give this fitness center bathroom its own personality.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="portfolio-box" href="assets/img/portfolio/project10.png" title="Streamlined Modern Kitchen">
+                            <img class="img-fluid" src="assets/img/portfolio/project10.png" alt="Bright kitchen counter with large window and wood floors" loading="lazy" />
+                            <div class="portfolio-caption">
+                                <h5>Streamlined Modern Kitchen</h5>
+                                <p>Bright, bold counters and a seamless flow elevate this kitchen's functionality and style.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="portfolio-box" href="assets/img/portfolio/project11.png" title="Luxurious Double Vanity Design">
+                            <img class="img-fluid" src="assets/img/portfolio/project11.png" alt="Bathroom with dual mirrors, scallop tile wall, and brass accents" loading="lazy" />
+                            <div class="portfolio-caption">
+                            <h5>Luxurious Double Vanity Design</h5>
+                            <p>Scallop-tiled walls, brass fixtures, and elegant lighting define this high-end bathroom setup.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="portfolio-box" href="assets/img/portfolio/project12.png" title="Statement Kitchen Hood">
+                            <img class="img-fluid" src="assets/img/portfolio/project12.png" alt="Black range hood over modern electric stove with white counters" loading="lazy" />
+                            <div class="portfolio-caption">
+                                <h5>Statement Kitchen Hood</h5>
+                                <p>A bold matte-black hood and marble-patterned backsplash anchor this modern cooking area.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="portfolio-box" href="assets/img/portfolio/project13.png" title="Accessible Shower Installation">
+                            <img class="img-fluid" src="assets/img/portfolio/project13.png" alt="Commercial tiled shower with bench and grab bars" loading="lazy" />
+                            <div class="portfolio-caption">
+                                <h5>Accessible Shower Installation</h5>
+                                <p>Functional yet sleek, this tiled shower offers built-in seating and safety without compromising style.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-pagination"></div>
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- Contact-->
@@ -317,11 +412,17 @@
             <h2 class="h4 mb-3">Contact Ixmex Stone Design</h2>
             <p class="mb-2">
               <i class="bi-telephone-fill"></i>
-              <a href="tel:+17132026877" class="text-decoration-none text-primary">+1 (713) 202-6877</a>
+              <a href="tel:+17132026877" class="text-decoration-none text-primary"
+                >+1 (713) 202-6877</a
+              >
             </p>
             <p class="mb-2">
               <i class="bi-envelope-fill"></i>
-              <a href="mailto:ixmexstone@gmail.com" class="text-decoration-none text-primary">ixmexstone@gmail.com</a>
+              <a
+                href="mailto:ixmexstone@gmail.com"
+                class="text-decoration-none text-primary"
+                >ixmexstone@gmail.com</a
+              >
             </p>
             <p class="mb-0">
               <i class="bi-geo-alt-fill"></i>
@@ -392,15 +493,50 @@
     </footer>
 
     <!-- Bootstrap core JS (deferred) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
     <!-- SimpleLightbox plugin JS (deferred) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js" defer></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"
+      defer
+    ></script>
+    <!-- Swiper JS (deferred) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"
+      defer
+    ></script>
     <!-- Core theme JS (deferred) -->
     <script src="js/scripts.js" defer></script>
-    <!-- Lightbox init -->
-    <script>
+    <!-- Initialize Lightbox -->
+    <script defer>
       document.addEventListener("DOMContentLoaded", function () {
         new SimpleLightbox(".portfolio-box");
+      });
+    </script>
+    <!-- Initialize Swiper -->
+    <script defer>
+      document.addEventListener("DOMContentLoaded", function () {
+        new Swiper(".portfolio-swiper", {
+          slidesPerView: 4,
+          spaceBetween: 16,
+          loop: true,
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true
+          },
+          breakpoints: {
+            0: { slidesPerView: 1 },
+            576: { slidesPerView: 2 },
+            768: { slidesPerView: 3 },
+            992: { slidesPerView: 4 }
+          }
+        });
       });
     </script>
   </body>

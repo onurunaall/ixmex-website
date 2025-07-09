@@ -53,7 +53,15 @@ window.addEventListener('DOMContentLoaded', event => {
 
     // Activate SimpleLightbox plugin for portfolio items
     new SimpleLightbox({
-        elements: '#portfolio a.portfolio-box'
+        elements: '#portfolio a.portfolio-box',
+        caption: true,
+        captionsData: 'title',
+        captionPosition: 'bottom',
+        fadeSpeed: 600,     // fade overlay in 0.6s
+        showSpeed: 400,     // delay before showing image
+        nav: true,          // prev/next arrows inside lightbox
+        close: true,        // show close button
+        docClose: true      // click outside closes
     });
 
 });
