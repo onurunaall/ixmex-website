@@ -21,6 +21,8 @@
     <link rel="preconnect" href="https://maps.googleapis.com" />
     <link rel="preconnect" href="https://maps.gstatic.com" crossorigin />
 
+    <link rel="preload" as="image" href="assets/img/portfolio/project1.png" />
+    
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap Icons -->
@@ -47,50 +49,56 @@
     <link href="css/styles.css" rel="stylesheet" />
 
     <style>
-      html {
-        scroll-behavior: smooth;
-      }
-      :root {
-        --bs-primary: #22324c;
-        --bs-secondary: #6c757d;
-        --accent: #e07a5f;
-      }
-      hr.divider,
-      hr.divider-light {
-        border-color: rgba(255, 255, 255, 0.2) !important;
-      }
-      .btn-primary {
-        background-color: var(--accent);
-        border-color: var(--accent);
-      }
-      .btn-primary:hover {
-        background-color: #d56c54;
-      }
-      .service-icon {
-        color: var(--accent);
-      }
-      .service-card {
-        background: rgba(224, 122, 95, 0.1);
-        border-radius: 0.5rem;
-        padding: 1.5rem;
-      }
-      /* Uniform portfolio image sizing */
-      .portfolio-box img {
-        width: 100%;
-        aspect-ratio: 4 / 3;
-        object-fit: cover;
-      }
-      /* Reduce vertical padding on portfolio & contact */
-      #portfolio,
-      #contact {
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-      }
-      /* Swiper arrow color */
-      .swiper-button-prev,
-      .swiper-button-next {
-        color: var(--accent);
-      }
+        html {
+            scroll-behavior: smooth;
+        }
+        :root {
+            --bs-primary: #22324c;
+            --bs-secondary: #6c757d;
+            --accent: #e07a5f;
+        }
+        hr.divider,
+        hr.divider-light {
+            border-color: rgba(255, 255, 255, 0.2) !important;
+        }
+        .btn-primary {
+            background-color: var(--accent);
+            border-color: var(--accent);
+        }
+        .btn-primary:hover {
+            background-color: #d56c54;
+        }
+        .service-icon {
+            color: var(--accent);
+        }
+        .service-card {
+            background: rgba(224, 122, 95, 0.1);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+        }
+        /* Uniform portfolio image sizing */
+        .portfolio-box img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+        }
+        /* Reduce vertical padding on portfolio & contact */
+        #portfolio,
+        #contact {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+        /* Swiper arrow color */
+        .swiper-button-prev,
+        .swiper-button-next {
+            color: var(--accent);
+        }
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: rgba(0,0,0,0.4);
+            border-radius: 50%;
+            background-size: 1.5rem 1.5rem;
+        }
     </style>
   </head>
 
