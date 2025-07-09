@@ -1,19 +1,21 @@
 /*!
  * Start Bootstrap - Creative v7.0.7 (https://startbootstrap.com/theme/creative)
- * Licensed under MIT
+ * Copyright 2013-2023 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-creative/blob/master/LICENSE)
  */
 
+// All DOM-ready behavior
 window.addEventListener('DOMContentLoaded', () => {
-  // NAVBAR SHRINK
+  // Navbar shrink on scroll
   const navbar = document.querySelector('#mainNav');
-  const shrinkNav = () => {
+  const shrink = () => {
     if (!navbar) return;
     navbar.classList.toggle('navbar-shrink', window.scrollY > 0);
   };
-  shrinkNav();
-  document.addEventListener('scroll', shrinkNav);
+  shrink();
+  document.addEventListener('scroll', shrink);
 
-  // SCROLLSPY
+  // Bootstrap scrollspy
   if (navbar) {
     new bootstrap.ScrollSpy(document.body, {
       target: '#mainNav',
@@ -21,7 +23,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // COLLAPSE MOBILE NAV
+  // Collapse mobile nav on click
   const toggler = document.querySelector('.navbar-toggler');
   document
     .querySelectorAll('#navbarResponsive .nav-link')
@@ -33,7 +35,7 @@ window.addEventListener('DOMContentLoaded', () => {
       })
     );
 
-  // SIMPLELIGHTBOX
+  // SimpleLightbox for portfolio
   try {
     new SimpleLightbox({
       elements: '#portfolio a.portfolio-box',
@@ -46,42 +48,38 @@ window.addEventListener('DOMContentLoaded', () => {
       docClose: true,
     });
   } catch (e) {
-    console.warn('SimpleLightbox init failed:', e);
+    console.warn('Lightbox init failed:', e);
   }
+});
 
-  // SWIPER: wait until library & DOM are ready
-  (function initSwiper() {
-    if (typeof Swiper !== 'function') {
-      // Swiper JS not loaded yet
-      return setTimeout(initSwiper, 100);
-    }
-    const container = document.querySelector('.portfolio-swiper');
-    if (!container) {
-      console.warn('Swiper container ".portfolio-swiper" not found');
-      return;
-    }
-    // Only initialize once
-    if (container.dataset.swiperInitialized) return;
-    container.dataset.swiperInitialized = 'true';
-
-    new Swiper(container, {
-      slidesPerView: 4,
-      spaceBetween: 16,
-      loop: true,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      breakpoints: {
-        0:   { slidesPerView: 1 },
-        576: { slidesPerView: 2 },
-        768: { slidesPerView: 3 },
-        992: { slidesPerView: 4 },
-      },
-    });
-  })();
+// All-load behavior (ensures Swiper script & CSS are fully loaded)
+window.addEventListener('load', () => {
+  const container = document.querySelector('.portfolio-swiper');
+  if (!container) {
+    console.error('Swiper container .portfolio-swiper not found');
+    return;
+  }
+  if (typeof Swiper !== 'function') {
+    console.error('Swiper library not loaded');
+    return;
+  }
+  new Swiper(container, {
+    slidesPerView: 4,
+    spaceBetween: 16,
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      0:   { slidesPerView: 1 },
+      576: { slidesPerView: 2 },
+      768: { slidesPerView: 3 },
+      992: { slidesPerView: 4 },
+    },
+  });
 });
