@@ -21,8 +21,10 @@
     <link rel="preconnect" href="https://maps.googleapis.com" />
     <link rel="preconnect" href="https://maps.gstatic.com" crossorigin />
 
-    <link rel="preload" as="image" href="assets/img/portfolio/project1.png" />
-    
+    <!-- Preload hero’s first slide in WebP -->
+    <link rel="preload" as="image"
+          href="assets/img/portfolio/project1.webp" type="image/webp" />
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap Icons -->
@@ -45,135 +47,86 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
-    <!-- Core theme CSS (includes Bootstrap) -->
+    <!-- Core theme CSS -->
     <link href="css/styles.css" rel="stylesheet" />
 
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        :root {
-            --bs-primary: #22324c;
-            --bs-secondary: #6c757d;
-            --accent: #e07a5f;
-        }
-        hr.divider,
-        hr.divider-light {
-            border-color: rgba(255, 255, 255, 0.2) !important;
-        }
-        .btn-primary {
-            background-color: var(--accent);
-            border-color: var(--accent);
-        }
-        .btn-primary:hover {
-            background-color: #d56c54;
-        }
-        .service-icon {
-            color: var(--accent);
-        }
-        .service-card {
-            background: rgba(224, 122, 95, 0.1);
-            border-radius: 0.5rem;
-            padding: 1.5rem;
-        }
-        /* Uniform portfolio image sizing */
-        .portfolio-box img {
-            width: 100%;
-            aspect-ratio: 4 / 3;
-            object-fit: cover;
-        }
-        /* Reduce vertical padding on portfolio & contact */
-        #portfolio,
-        #contact {
-            padding-top: 2rem;
-            padding-bottom: 2rem;
-        }
-        /* Swiper arrow color */
-        .swiper-button-prev,
-        .swiper-button-next {
-            color: var(--accent);
-        }
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            background-color: rgba(0,0,0,0.4);
-            border-radius: 50%;
-            background-size: 1.5rem 1.5rem;
-        }
+      html      { scroll-behavior: smooth; }
+      :root     { --bs-primary:#22324c; --bs-secondary:#6c757d; --accent:#e07a5f; }
+      hr.divider,
+      hr.divider-light        { border-color: rgba(255,255,255,.2)!important; }
+      .btn-primary            { background:var(--accent); border-color:var(--accent); }
+      .btn-primary:hover      { background:#d56c54; }
+      .service-icon           { color:var(--accent); }
+      .service-card           { background:rgba(224,122,95,.1); border-radius:.5rem; padding:1.5rem; }
+      .portfolio-box img      { width:100%; aspect-ratio:4/3; object-fit:cover; }
+      #portfolio,#contact     { padding-block:2rem; }
+      .swiper-button-prev,
+      .swiper-button-next     { color:var(--accent); }
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon { background:#0006; border-radius:50%; background-size:1.5rem 1.5rem; }
     </style>
   </head>
 
   <body id="page-top">
-    <!-- Navigation-->
-    <nav
-      aria-label="Main navigation"
-      class="navbar navbar-expand-lg navbar-light fixed-top py-3"
-      id="mainNav"
-    >
+    <!-- Navigation -->
+    <nav aria-label="Main navigation"
+         class="navbar navbar-expand-lg navbar-light fixed-top py-3"
+         id="mainNav">
       <div class="container px-4 px-lg-5">
         <a class="navbar-brand d-flex align-items-center gap-2" href="#page-top">
-          <img
-            src="assets/img/logo.png"
-            height="40"
-            alt="Ixmex Stone Design logo"
-          />
+          <img src="assets/img/logo.png" height="40" alt="Ixmex Stone Design logo" />
           <span>Ixmex Stone Design</span>
         </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarResponsive"
-          aria-controls="navbarResponsive"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ms-auto my-2 my-lg-0">
             <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-            <li class="nav-item">
-              <a class="nav-link" href="#services">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#portfolio">Portfolio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
+            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- Masthead-->
-    <header
-      id="heroCarousel"
-      class="carousel slide carousel-fade"
-      data-bs-ride="carousel"
-      data-bs-interval="3000"
-      data-bs-pause="false"
-    >
+    <!-- Masthead -->
+    <header id="heroCarousel" class="carousel slide carousel-fade"
+            data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="false">
       <div class="carousel-inner">
+
         <!-- Slide 1 -->
-        <div
-          class="carousel-item active"
-          style="background: url('assets/img/portfolio/project1.png') center/cover no-repeat;"
-        >
+        <div class="carousel-item active">
+          <picture>
+            <source type="image/webp" srcset="assets/img/portfolio/project1.webp"/>
+            <img src="assets/img/portfolio/project1.png"
+                 class="d-block w-100"
+                 alt="Hand-Crafted Granite Elegance"
+                 loading="lazy" fetchpriority="high">
+          </picture>
           <div class="carousel-caption text-center">
             <h1 class="text-white fw-bold">Hand-Crafted Granite Elegance</h1>
             <p class="text-white mb-4" style="line-height:1.6;">
-              Transform your space with timeless granite designs built to
-              impress.
+              Transform your space with timeless granite designs built to impress.
             </p>
             <a href="#contact" class="btn btn-primary btn-xl">Contact Us</a>
           </div>
         </div>
+
         <!-- Slide 2 -->
-        <div
-          class="carousel-item"
-          style="background: url('assets/img/portfolio/project2.png') center/cover no-repeat;"
-        >
+        <div class="carousel-item">
+          <picture>
+            <source type="image/webp" srcset="assets/img/portfolio/project2.webp"/>
+            <img src="assets/img/portfolio/project2.png"
+                 class="d-block w-100"
+                 alt="Gym Walls Tailored to You"
+                 loading="lazy">
+          </picture>
           <div class="carousel-caption text-center">
             <h1 class="text-white fw-bold">Gym Walls Tailored to You</h1>
             <p class="text-white mb-4" style="line-height:1.6;">
@@ -182,11 +135,16 @@
             <a href="#contact" class="btn btn-primary btn-xl">Contact Us</a>
           </div>
         </div>
+
         <!-- Slide 3 -->
-        <div
-          class="carousel-item"
-          style="background: url('assets/img/portfolio/project3.png') center/cover no-repeat;"
-        >
+        <div class="carousel-item">
+          <picture>
+            <source type="image/webp" srcset="assets/img/portfolio/project3.webp"/>
+            <img src="assets/img/portfolio/project3.png"
+                 class="d-block w-100"
+                 alt="Custom Granite Countertops"
+                 loading="lazy">
+          </picture>
           <div class="carousel-caption text-center">
             <h1 class="text-white fw-bold">Custom Granite Countertops</h1>
             <p class="text-white mb-4" style="line-height:1.6;">
@@ -196,22 +154,15 @@
           </div>
         </div>
       </div>
-      <!-- carousel controls -->
-      <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#heroCarousel"
-        data-bs-slide="prev"
-      >
+
+      <!-- controls -->
+      <button class="carousel-control-prev" type="button"
+              data-bs-target="#heroCarousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#heroCarousel"
-        data-bs-slide="next"
-      >
+      <button class="carousel-control-next" type="button"
+              data-bs-target="#heroCarousel" data-bs-slide="next">
         <span class="carousel-control-next-icon"></span>
         <span class="visually-hidden">Next</span>
       </button>
@@ -282,134 +233,278 @@
       </div>
     </section>
 
-    <!-- Portfolio (Swiper slider)-->
+    <!-- Portfolio -->
     <section class="page-section" id="portfolio">
-        <div class="container-fluid p-0">
-            <div class="swiper portfolio-swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <a class="portfolio-box" href="assets/img/portfolio/project1.png" title="Elegant Kitchen, Refined Details">
-                            <img class="img-fluid" src="assets/img/portfolio/project1.png" alt="Elegant kitchen with brass fixtures and marble countertops" loading="lazy" />
-                            <div class="portfolio-caption">
-                                <h5>Elegant Kitchen, Refined Details</h5>
-                                <p>Custom cabinetry, brass fixtures, and luxury countertops create a timeless kitchen space.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a class="portfolio-box" href="assets/img/portfolio/project2.png" title="Stylish Powder Room">
-                            <img class="img-fluid" src="assets/img/portfolio/project2.png" alt="Chic bathroom with ornate mirror and elegant lighting" loading="lazy" />
-                            <div class="portfolio-caption">
-                                <h5>Stylish Powder Room</h5>
-                                <p>Graceful lines, unique mirrors, and warm lighting make this bathroom cozy and chic.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a class="portfolio-box" href="assets/img/portfolio/project3.png" title="Rustic Meets Modern">
-                            <img class="img-fluid" src="assets/img/portfolio/project3.png" alt="Bathroom with wooden mirror frame and black fixtures" loading="lazy" />
-                            <div class="portfolio-caption">
-                                <h5>Rustic Meets Modern</h5>
-                                <p>Wood-framed mirrors and black fixtures balance charm and elegance in this bathroom.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a class="portfolio-box" href="assets/img/portfolio/project4.png" title="Contemporary Commercial Design">
-                            <img class="img-fluid" src="assets/img/portfolio/project4.png" alt="Commercial restroom with backlit mirrors and sleek surfaces" loading="lazy" />
-                            <div class="portfolio-caption">
-                                <h5>Contemporary Commercial Design</h5>
-                                <p>Sleek lines and durable finishes define this modern restroom with backlit mirrors.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a class="portfolio-box" href="assets/img/portfolio/project5.png" title="Kitchen in Progress">
-                            <img class="img-fluid" src="assets/img/portfolio/project5.png" alt="Modern kitchen under construction with central island and open shelving" loading="lazy" />
-                            <div class="portfolio-caption">
-                                <h5>Kitchen in Progress</h5>
-                                <p>Open shelving and a central island set the foundation for a high-end culinary space.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a class="portfolio-box" href="assets/img/portfolio/project6.png" title="Charming Pantry Nook">
-                            <img class="img-fluid" src="assets/img/portfolio/project6.png" alt="Pantry nook with wallpaper, window, and upper cabinets" loading="lazy" />
-                            <div class="portfolio-caption">
-                                <h5>Charming Pantry Nook</h5>
-                                <p>Natural light and detailed wallpaper create a delightful utility space with custom cabinetry.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a class="portfolio-box" href="assets/img/portfolio/project7.png" title="Outdoor Living Perfected">
-                            <img class="img-fluid" src="assets/img/portfolio/project7.png" alt="Outdoor kitchen with granite countertop and brick backdrop" loading="lazy" />
-                            <div class="portfolio-caption">
-                                <h5>Outdoor Living Perfected</h5>
-                                <p>Enjoy luxury outside with this granite-topped grill station surrounded by brick and comfort.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a class="portfolio-box" href="assets/img/portfolio/project8.png" title="Bright and Refined Bath">
-                            <img class="img-fluid" src="assets/img/portfolio/project8.png" alt="White bathroom with marble counter and wall sconces" loading="lazy" />
-                            <div class="portfolio-caption">
-                                <h5>Bright and Refined Bath</h5>
-                                <p>Crisp white tones and simple lines offer a fresh, spacious bathroom experience.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a class="portfolio-box" href="assets/img/portfolio/project9.png" title="Bold Gym Restroom Design">
-                            <img class="img-fluid" src="assets/img/portfolio/project9.png" alt="Gym restroom with purple walls and stainless fixtures" loading="lazy" />
-                            <div class="portfolio-caption">
-                                <h5>Bold Gym Restroom Design</h5>
-                                <p>Statement lighting and tile work give this fitness center bathroom its own personality.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a class="portfolio-box" href="assets/img/portfolio/project10.png" title="Streamlined Modern Kitchen">
-                            <img class="img-fluid" src="assets/img/portfolio/project10.png" alt="Bright kitchen counter with large window and wood floors" loading="lazy" />
-                            <div class="portfolio-caption">
-                                <h5>Streamlined Modern Kitchen</h5>
-                                <p>Bright, bold counters and a seamless flow elevate this kitchen's functionality and style.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a class="portfolio-box" href="assets/img/portfolio/project11.png" title="Luxurious Double Vanity Design">
-                            <img class="img-fluid" src="assets/img/portfolio/project11.png" alt="Bathroom with dual mirrors, scallop tile wall, and brass accents" loading="lazy" />
-                            <div class="portfolio-caption">
-                            <h5>Luxurious Double Vanity Design</h5>
-                            <p>Scallop-tiled walls, brass fixtures, and elegant lighting define this high-end bathroom setup.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a class="portfolio-box" href="assets/img/portfolio/project12.png" title="Statement Kitchen Hood">
-                            <img class="img-fluid" src="assets/img/portfolio/project12.png" alt="Black range hood over modern electric stove with white counters" loading="lazy" />
-                            <div class="portfolio-caption">
-                                <h5>Statement Kitchen Hood</h5>
-                                <p>A bold matte-black hood and marble-patterned backsplash anchor this modern cooking area.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a class="portfolio-box" href="assets/img/portfolio/project13.png" title="Accessible Shower Installation">
-                            <img class="img-fluid" src="assets/img/portfolio/project13.png" alt="Commercial tiled shower with bench and grab bars" loading="lazy" />
-                            <div class="portfolio-caption">
-                                <h5>Accessible Shower Installation</h5>
-                                <p>Functional yet sleek, this tiled shower offers built-in seating and safety without compromising style.</p>
-                            </div>
-                        </a>
-                    </div>
+      <div class="container-fluid p-0">
+        <div class="swiper portfolio-swiper">
+          <div class="swiper-wrapper">
+
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <a class="portfolio-box"
+                 href="assets/img/portfolio/project1.webp"
+                 title="Elegant Kitchen, Refined Details">
+                <picture>
+                  <source type="image/webp"
+                          srcset="assets/img/portfolio/project1.webp"/>
+                  <img class="img-fluid"
+                       src="assets/img/portfolio/project1.png"
+                       alt="Elegant kitchen with brass fixtures and marble countertops"
+                       loading="lazy">
+                </picture>
+                <div class="portfolio-caption">
+                  <h5>Elegant Kitchen, Refined Details</h5>
+                  <p>Custom cabinetry, brass fixtures, and luxury countertops create a timeless kitchen space.</p>
                 </div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-pagination"></div>
+              </a>
             </div>
-        </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+              <a class="portfolio-box"
+                 href="assets/img/portfolio/project2.webp"
+                 title="Stylish Powder Room">
+                <picture>
+                  <source type="image/webp"
+                          srcset="assets/img/portfolio/project2.webp"/>
+                  <img class="img-fluid"
+                       src="assets/img/portfolio/project2.png"
+                       alt="Chic bathroom with ornate mirror and elegant lighting"
+                       loading="lazy">
+                </picture>
+                <div class="portfolio-caption">
+                  <h5>Stylish Powder Room</h5>
+                  <p>Graceful lines, unique mirrors, and warm lighting make this bathroom cozy and chic.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+              <a class="portfolio-box"
+                 href="assets/img/portfolio/project3.webp"
+                 title="Rustic Meets Modern">
+                <picture>
+                  <source type="image/webp"
+                          srcset="assets/img/portfolio/project3.webp"/>
+                  <img class="img-fluid"
+                       src="assets/img/portfolio/project3.png"
+                       alt="Bathroom with wooden mirror frame and black fixtures"
+                       loading="lazy">
+                </picture>
+                <div class="portfolio-caption">
+                  <h5>Rustic Meets Modern</h5>
+                  <p>Wood-framed mirrors and black fixtures balance charm and elegance in this bathroom.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="swiper-slide">
+              <a class="portfolio-box"
+                 href="assets/img/portfolio/project4.webp"
+                 title="Contemporary Commercial Design">
+                <picture>
+                  <source type="image/webp"
+                          srcset="assets/img/portfolio/project4.webp"/>
+                  <img class="img-fluid"
+                       src="assets/img/portfolio/project4.png"
+                       alt="Commercial restroom with backlit mirrors and sleek surfaces"
+                       loading="lazy">
+                </picture>
+                <div class="portfolio-caption">
+                  <h5>Contemporary Commercial Design</h5>
+                  <p>Sleek lines and durable finishes define this modern restroom with backlit mirrors.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="swiper-slide">
+              <a class="portfolio-box"
+                 href="assets/img/portfolio/project5.webp"
+                 title="Kitchen in Progress">
+                <picture>
+                  <source type="image/webp"
+                          srcset="assets/img/portfolio/project5.webp"/>
+                  <img class="img-fluid"
+                       src="assets/img/portfolio/project5.png"
+                       alt="Modern kitchen under construction with central island and open shelving"
+                       loading="lazy">
+                </picture>
+                <div class="portfolio-caption">
+                  <h5>Kitchen in Progress</h5>
+                  <p>Open shelving and a central island set the foundation for a high-end culinary space.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Slide 6 -->
+            <div class="swiper-slide">
+              <a class="portfolio-box"
+                 href="assets/img/portfolio/project6.webp"
+                 title="Charming Pantry Nook">
+                <picture>
+                  <source type="image/webp"
+                          srcset="assets/img/portfolio/project6.webp"/>
+                  <img class="img-fluid"
+                       src="assets/img/portfolio/project6.png"
+                       alt="Pantry nook with wallpaper, window, and upper cabinets"
+                       loading="lazy">
+                </picture>
+                <div class="portfolio-caption">
+                  <h5>Charming Pantry Nook</h5>
+                  <p>Natural light and detailed wallpaper create a delightful utility space with custom cabinetry.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Slide 7 -->
+            <div class="swiper-slide">
+              <a class="portfolio-box"
+                 href="assets/img/portfolio/project7.webp"
+                 title="Outdoor Living Perfected">
+                <picture>
+                  <source type="image/webp"
+                          srcset="assets/img/portfolio/project7.webp"/>
+                  <img class="img-fluid"
+                       src="assets/img/portfolio/project7.png"
+                       alt="Outdoor kitchen with granite countertop and brick backdrop"
+                       loading="lazy">
+                </picture>
+                <div class="portfolio-caption">
+                  <h5>Outdoor Living Perfected</h5>
+                  <p>Enjoy luxury outside with this granite-topped grill station surrounded by brick and comfort.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Slide 8 -->
+            <div class="swiper-slide">
+              <a class="portfolio-box"
+                 href="assets/img/portfolio/project8.webp"
+                 title="Bright and Refined Bath">
+                <picture>
+                  <source type="image/webp"
+                          srcset="assets/img/portfolio/project8.webp"/>
+                  <img class="img-fluid"
+                       src="assets/img/portfolio/project8.png"
+                       alt="White bathroom with marble counter and wall sconces"
+                       loading="lazy">
+                </picture>
+                <div class="portfolio-caption">
+                  <h5>Bright and Refined Bath</h5>
+                  <p>Crisp white tones and simple lines offer a fresh, spacious bathroom experience.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Slide 9 -->
+            <div class="swiper-slide">
+              <a class="portfolio-box"
+                 href="assets/img/portfolio/project9.webp"
+                 title="Bold Gym Restroom Design">
+                <picture>
+                  <source type="image/webp"
+                          srcset="assets/img/portfolio/project9.webp"/>
+                  <img class="img-fluid"
+                       src="assets/img/portfolio/project9.png"
+                       alt="Gym restroom with purple walls and stainless fixtures"
+                       loading="lazy">
+                </picture>
+                <div class="portfolio-caption">
+                  <h5>Bold Gym Restroom Design</h5>
+                  <p>Statement lighting and tile work give this fitness center bathroom its own personality.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Slide 10 -->
+            <div class="swiper-slide">
+              <a class="portfolio-box"
+                 href="assets/img/portfolio/project10.webp"
+                 title="Streamlined Modern Kitchen">
+                <picture>
+                  <source type="image/webp"
+                          srcset="assets/img/portfolio/project10.webp"/>
+                  <img class="img-fluid"
+                       src="assets/img/portfolio/project10.png"
+                       alt="Bright kitchen counter with large window and wood floors"
+                       loading="lazy">
+                </picture>
+                <div class="portfolio-caption">
+                  <h5>Streamlined Modern Kitchen</h5>
+                  <p>Bright, bold counters and a seamless flow elevate this kitchen's functionality and style.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Slide 11 -->
+            <div class="swiper-slide">
+              <a class="portfolio-box"
+                 href="assets/img/portfolio/project11.webp"
+                 title="Luxurious Double Vanity Design">
+                <picture>
+                  <source type="image/webp"
+                          srcset="assets/img/portfolio/project11.webp"/>
+                  <img class="img-fluid"
+                       src="assets/img/portfolio/project11.png"
+                       alt="Bathroom with dual mirrors, scallop tile wall, and brass accents"
+                       loading="lazy">
+                </picture>
+                <div class="portfolio-caption">
+                  <h5>Luxurious Double Vanity Design</h5>
+                  <p>Scallop-tiled walls, brass fixtures, and elegant lighting define this high-end bathroom setup.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Slide 12 -->
+            <div class="swiper-slide">
+              <a class="portfolio-box"
+                 href="assets/img/portfolio/project12.webp"
+                 title="Statement Kitchen Hood">
+                <picture>
+                  <source type="image/webp"
+                          srcset="assets/img/portfolio/project12.webp"/>
+                  <img class="img-fluid"
+                       src="assets/img/portfolio/project12.png"
+                       alt="Black range hood over modern electric stove with white counters"
+                       loading="lazy">
+                </picture>
+                <div class="portfolio-caption">
+                  <h5>Statement Kitchen Hood</h5>
+                  <p>A bold matte-black hood and marble-patterned backsplash anchor this modern cooking area.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Slide 13 -->
+            <div class="swiper-slide">
+              <a class="portfolio-box"
+                 href="assets/img/portfolio/project13.webp"
+                 title="Accessible Shower Installation">
+                <picture>
+                  <source type="image/webp"
+                          srcset="assets/img/portfolio/project13.webp"/>
+                  <img class="img-fluid"
+                       src="assets/img/portfolio/project13.png"
+                       alt="Commercial tiled shower with bench and grab bars"
+                       loading="lazy">
+                </picture>
+                <div class="portfolio-caption">
+                  <h5>Accessible Shower Installation</h5>
+                  <p>Functional yet sleek, this tiled shower offers built-in seating and safety without compromising style.</p>
+                </div>
+              </a>
+            </div>
+
+          </div><!-- .swiper-wrapper -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
+        </div><!-- .swiper -->
+      </div>
     </section>
 
     <!-- Contact-->
@@ -501,6 +596,7 @@
     </footer>
 
     <!-- Bootstrap core JS (deferred) -->
+     
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       defer
@@ -517,12 +613,14 @@
     ></script>
     <!-- Core theme JS (deferred) -->
     <script src="js/scripts.js" defer></script>
+
     <!-- Initialize Lightbox -->
     <script defer>
-      document.addEventListener("DOMContentLoaded", function () {
+      document.addEventListener("DOMContentLoaded", () => {
         new SimpleLightbox(".portfolio-box");
       });
     </script>
+    
     <!-- Initialize Swiper -->
     <script defer>
       document.addEventListener("DOMContentLoaded", function () {
