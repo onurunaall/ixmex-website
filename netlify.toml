@@ -7,6 +7,10 @@
   to     = "https://:splat"
   status = 301
   force  = true
+  
+[build.processing.js]
+  bundle = false
+  minify = false
 
 [[headers]]
   for = "/*"
