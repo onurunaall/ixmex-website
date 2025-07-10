@@ -8,74 +8,69 @@
     <meta name="author" content="Ixmex Stone Design" />
     <title>Ixmex Stone Design – Crafting Quality Granite Surfaces in Houston</title>
 
-    <!-- ========== PERFORMANCE HOOKS ========== -->
+    <!-- ───── performance hooks ───── -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
     <link rel="preconnect" href="https://maps.googleapis.com" />
     <link rel="preconnect" href="https://maps.gstatic.com" crossorigin />
-    <!-- Pre-load first hero frame (WebP) -->
+    <!-- preload first hero frame -->
     <link rel="preload" as="image"
           href="assets/img/portfolio/project1.webp" type="image/webp" />
 
-    <!-- ========== ASSETS ========== -->
+    <!-- ───── assets ───── -->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
 
-    <!-- ========== IN-PAGE TWEAKS ========== -->
+    <!-- ───── critical tweaks ───── -->
     <style>
-      /* ---------- theme colours / global tweaks ---------- */
       html{scroll-behavior:smooth}
-      :root{
-        --bs-primary:#22324c;
-        --bs-secondary:#6c757d;
-        --accent:#e07a5f;
-        --safe-top:env(safe-area-inset-top);
-      }
+      :root{--bs-primary:#22324c;--accent:#e07a5f;--safe-top:env(safe-area-inset-top)}
       hr.divider,hr.divider-light{border-color:rgba(255,255,255,.2)!important}
       .btn-primary{background:var(--accent);border-color:var(--accent)}
       .btn-primary:hover{background:#d56c54}
+      .btn-xl{padding:1rem 2rem;font-size:1.25rem;font-weight:700}
       .service-icon{color:var(--accent)}
       .service-card{background:rgba(224,122,95,.1);border-radius:.5rem;padding:1.5rem}
       .portfolio-box img{width:100%;aspect-ratio:4/3;object-fit:cover}
       #portfolio,#contact{padding-block:2rem}
       .swiper-button-prev,.swiper-button-next{color:var(--accent)}
       .navbar.fixed-top{padding-top:var(--safe-top)}
-      .carousel-control-prev-icon,.carousel-control-next-icon{
-        background:#0006;border-radius:50%;
-        width:1.5rem;height:1.5rem;background-size:1.5rem 1.5rem;
+      /* restore arrow SVG, tint only the circle */
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon{
+        background-color:#0006;          /* tint circle */
+        border-radius:50%;
+        width:1.8rem;height:1.8rem;
+        background-size:1.8rem 1.8rem;   /* keep svg */
       }
-
-      /* ---------- ≤575 px: mobile polish ---------- */
+      /* ≤575 px polish */
       @media (max-width:575.98px){
         .carousel-caption{padding:0 1rem 1.25rem}
-        .carousel-caption h1{font-size:1.75rem}
+        .carousel-caption h1{font-size:1.7rem}
         .carousel-caption p{font-size:.95rem}
-
         .carousel-control-prev-icon,
         .carousel-control-next-icon,
         .swiper-button-prev,
         .swiper-button-next{
-          width:2.75rem;height:2.75rem;background-size:2.75rem 2.75rem;
+          width:2.4rem;height:2.4rem;background-size:2.4rem 2.4rem
         }
       }
-
-      /* Hint at more slides on small phones */
+      /* swipe hint */
       body.phone-hint .portfolio-swiper .swiper-wrapper{padding-right:16px}
       body.phone-hint .portfolio-swiper .swiper-slide{width:82%!important}
-
-      /* brand-colour tel/mail links */
+      /* keep brand colour for tel/mail */
       #contact a[href^="tel"],#contact a[href^="mailto"]{color:inherit}
     </style>
   </head>
 
   <body id="page-top">
-    <!-- ================================================= NAVBAR ================================================= -->
+    <!-- ========== NAVBAR =================================================== -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav" aria-label="Main navigation">
       <div class="container px-4 px-lg-5">
         <a class="navbar-brand d-flex align-items-center gap-2" href="#page-top">
@@ -99,28 +94,24 @@
       </div>
     </nav>
 
-    <!-- ================================================= HERO ================================================= -->
+    <!-- ========== HERO ===================================================== -->
     <header id="heroCarousel" class="carousel slide carousel-fade"
             data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="false">
       <div class="carousel-inner">
-
-        <!-- ----- Slide 1 ----- -->
+        <!-- Slide 1 -->
         <div class="carousel-item active">
           <picture>
             <source type="image/webp" srcset="assets/img/portfolio/project1.webp" />
             <img src="assets/img/portfolio/project1.png" class="d-block w-100"
-                 alt="Hand-Crafted Granite Elegance" loading="lazy" fetchpriority="high" />
+                 alt="Hand-Crafted Granite Elegance" fetchpriority="high" />
           </picture>
           <div class="carousel-caption text-center">
             <h1 class="text-white fw-bold">Hand-Crafted Granite Elegance</h1>
-            <p class="text-white mb-4" style="line-height:1.6;">
-              Transform your space with timeless granite designs built to impress.
-            </p>
+            <p class="text-white mb-4" style="line-height:1.6">Transform your space with timeless granite designs built to impress.</p>
             <a href="#contact" class="btn btn-primary btn-xl">Contact Us</a>
           </div>
         </div>
-
-        <!-- ----- Slide 2 ----- -->
+        <!-- Slide 2 -->
         <div class="carousel-item">
           <picture>
             <source type="image/webp" srcset="assets/img/portfolio/project2.webp" />
@@ -129,14 +120,11 @@
           </picture>
           <div class="carousel-caption text-center">
             <h1 class="text-white fw-bold">Gym Walls Tailored to You</h1>
-            <p class="text-white mb-4" style="line-height:1.6;">
-              Durable stone surfaces for fitness and commercial spaces.
-            </p>
+            <p class="text-white mb-4" style="line-height:1.6">Durable stone surfaces for fitness and commercial spaces.</p>
             <a href="#contact" class="btn btn-primary btn-xl">Contact Us</a>
           </div>
         </div>
-
-        <!-- ----- Slide 3 ----- -->
+        <!-- Slide 3 -->
         <div class="carousel-item">
           <picture>
             <source type="image/webp" srcset="assets/img/portfolio/project3.webp" />
@@ -145,24 +133,18 @@
           </picture>
           <div class="carousel-caption text-center">
             <h1 class="text-white fw-bold">Custom Granite Countertops</h1>
-            <p class="text-white mb-4" style="line-height:1.6;">
-              Bespoke designs crafted for your kitchen renovation.
-            </p>
+            <p class="text-white mb-4" style="line-height:1.6">Bespoke designs crafted for your kitchen renovation.</p>
             <a href="#contact" class="btn btn-primary btn-xl">Contact Us</a>
           </div>
         </div>
       </div>
-
-      <!-- hero controls -->
       <button class="carousel-control-prev" type="button"
               data-bs-target="#heroCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-        <span class="visually-hidden">Previous</span>
+        <span class="carousel-control-prev-icon"></span><span class="visually-hidden">Previous</span>
       </button>
       <button class="carousel-control-next" type="button"
               data-bs-target="#heroCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-        <span class="visually-hidden">Next</span>
+        <span class="carousel-control-next-icon"></span><span class="visually-hidden">Next</span>
       </button>
     </header>
 
@@ -222,13 +204,11 @@
       </div>
     </section>
 
-    <!-- ================================================= PORTFOLIO ================================================= -->
+    <!-- ========== PORTFOLIO (larger slides) =============================== -->
     <section class="page-section" id="portfolio">
       <div class="container-fluid p-0">
         <div class="swiper portfolio-swiper">
           <div class="swiper-wrapper">
-
-            <!-- ========== 13 SLIDES: each uses WebP + PNG fallback ========== -->
             <!-- Slide 1 -->
             <div class="swiper-slide">
               <a class="portfolio-box" href="assets/img/portfolio/project1.webp" title="Elegant Kitchen, Refined Details">
@@ -402,7 +382,7 @@
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
           <div class="swiper-pagination"></div>
-        </div><!-- /.swiper -->
+        </div>
       </div>
     </section>
 
@@ -413,12 +393,20 @@
           <div class="col-lg-8">
             <h2 class="h4 mb-3">Contact Ixmex Stone Design</h2>
             <p class="mb-2"><i class="bi-telephone-fill"></i>
-              <a href="tel:+17132026877" class="text-decoration-none text-primary">+1 (713) 202-6877</a></p>
+              <a href="tel:+17132026877" class="text-decoration-none text-primary">+1 (713) 202-6877</a>
+            </p>
+            <!-- TikTok -->
+            <p class="mb-2"><i class="bi-tiktok"></i>
+              <a href="https://www.tiktok.com/@ixmexstonedesign" target="_blank"
+                 rel="noopener" class="text-decoration-none text-primary">@ixmexstonedesign</a>
+            </p>
             <p class="mb-2"><i class="bi-envelope-fill"></i>
-              <a href="mailto:ixmexstone@gmail.com" class="text-decoration-none text-primary">ixmexstone@gmail.com</a></p>
+              <a href="mailto:ixmexstone@gmail.com" class="text-decoration-none text-primary">ixmexstone@gmail.com</a>
+            </p>
             <p class="mb-0"><i class="bi-geo-alt-fill"></i>513 Shane St, Houston, TX 77037</p>
           </div>
         </div>
+        
         <div class="row gx-5 align-items-start">
           <div class="col-lg-7 mb-4 mb-lg-0">
             <div class="ratio ratio-16x9">
@@ -454,35 +442,32 @@
       </div>
     </footer>
 
-    <!-- ================================================= SCRIPTS ================================================= -->
+    <!-- ========== SCRIPTS ================================================== -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
     <script src="js/scripts.js" defer></script>
 
-    <!-- inline helpers -->
+    <!-- helpers -->
     <script defer>
-      /* SimpleLightbox init */
-      document.addEventListener('DOMContentLoaded', () => {
-        new SimpleLightbox('.portfolio-box');
-      });
+      /* SimpleLightbox */
+      document.addEventListener('DOMContentLoaded',()=>new SimpleLightbox('.portfolio-box'));
 
-      /* Swiper + phone tweaks */
-      document.addEventListener('DOMContentLoaded', () => {
-        const isPhone = window.matchMedia('(max-width:575.98px)').matches;
-        if (isPhone) document.body.classList.add('phone-hint');
+      /* Swiper – bigger slides (3 / 2 / 1) */
+      document.addEventListener('DOMContentLoaded',()=>{
+        const isPhone = matchMedia('(max-width:575.98px)').matches;
+        if(isPhone) document.body.classList.add('phone-hint');
 
-        new Swiper('.portfolio-swiper', {
-          slidesPerView: isPhone ? 1.2 : 4,
-          spaceBetween: 16,
-          loop: true,
-          navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-          pagination: { el: '.swiper-pagination', clickable: true },
-          breakpoints: !isPhone && {
-            0:   { slidesPerView: 1 },
-            576: { slidesPerView: 2 },
-            768: { slidesPerView: 3 },
-            992: { slidesPerView: 4 }
+        new Swiper('.portfolio-swiper',{
+          slidesPerView: isPhone ? 1.2 : 3,
+          spaceBetween:16,
+          loop:true,
+          navigation:{nextEl:'.swiper-button-next',prevEl:'.swiper-button-prev'},
+          pagination:{el:'.swiper-pagination',clickable:true},
+          breakpoints:{
+            0:   {slidesPerView:1},
+            576: {slidesPerView:2},
+            992: {slidesPerView:3}
           }
         });
       });
