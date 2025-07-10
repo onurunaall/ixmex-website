@@ -11099,6 +11099,25 @@ header.masthead h1, header.masthead .h1 {
   display: block;
 }
 
+/* ========== mobile refinements (≤575 px) ========== */
+@media (max-width:575.98px){
+
+  /* a) tighten the fixed navbar */
+  #mainNav{padding-block:0.25rem!important}
+  #mainNav .navbar-brand img{height:32px}
+
+  /* b) smaller hero heading / paragraph */
+  .carousel-caption h1{font-size:1.5rem}
+  .carousel-caption p {font-size:.9rem}
+
+  /* c) make hero picture always fill the viewport height */
+  .carousel-item > picture > img{
+    height:100vh;           /* full phone height           */
+    object-fit:cover;       /* zoom to fill                */
+    object-position:center; /* keep it centred             */
+  }
+}
+
 
 
 
