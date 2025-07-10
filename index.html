@@ -2,77 +2,81 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta
-      name="description"
-      content="Ixmex Stone Design—Houston’s experts in granite countertops, gym walls, and custom stone accents. Call +1 (713) 202-6877."
-    />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description"
+          content="Ixmex Stone Design—Houston’s experts in granite countertops, gym walls, and custom stone accents. Call +1 (713) 202-6877." />
     <meta name="author" content="Ixmex Stone Design" />
     <title>Ixmex Stone Design – Crafting Quality Granite Surfaces in Houston</title>
 
-    <!-- Preconnects for performance -->
+    <!-- ========== PERFORMANCE HOOKS ========== -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
     <link rel="preconnect" href="https://maps.googleapis.com" />
     <link rel="preconnect" href="https://maps.gstatic.com" crossorigin />
-
-    <!-- Preload hero’s first slide in WebP -->
+    <!-- Pre-load first hero frame (WebP) -->
     <link rel="preload" as="image"
           href="assets/img/portfolio/project1.webp" type="image/webp" />
 
-    <!-- Favicon -->
+    <!-- ========== ASSETS ========== -->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- Bootstrap Icons -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <!-- Google Font: Merriweather Sans -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- SimpleLightbox plugin CSS -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css"
-      rel="stylesheet"
-    />
-    <!-- Swiper CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
-    />
-    <!-- Core theme CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
 
+    <!-- ========== IN-PAGE TWEAKS ========== -->
     <style>
-      html      { scroll-behavior: smooth; }
-      :root     { --bs-primary:#22324c; --bs-secondary:#6c757d; --accent:#e07a5f; }
-      hr.divider,
-      hr.divider-light        { border-color: rgba(255,255,255,.2)!important; }
-      .btn-primary            { background:var(--accent); border-color:var(--accent); }
-      .btn-primary:hover      { background:#d56c54; }
-      .service-icon           { color:var(--accent); }
-      .service-card           { background:rgba(224,122,95,.1); border-radius:.5rem; padding:1.5rem; }
-      .portfolio-box img      { width:100%; aspect-ratio:4/3; object-fit:cover; }
-      #portfolio,#contact     { padding-block:2rem; }
-      .swiper-button-prev,
-      .swiper-button-next     { color:var(--accent); }
-      .carousel-control-prev-icon,
-      .carousel-control-next-icon { background:#0006; border-radius:50%; background-size:1.5rem 1.5rem; }
+      /* ---------- theme colours / global tweaks ---------- */
+      html{scroll-behavior:smooth}
+      :root{
+        --bs-primary:#22324c;
+        --bs-secondary:#6c757d;
+        --accent:#e07a5f;
+        --safe-top:env(safe-area-inset-top);
+      }
+      hr.divider,hr.divider-light{border-color:rgba(255,255,255,.2)!important}
+      .btn-primary{background:var(--accent);border-color:var(--accent)}
+      .btn-primary:hover{background:#d56c54}
+      .service-icon{color:var(--accent)}
+      .service-card{background:rgba(224,122,95,.1);border-radius:.5rem;padding:1.5rem}
+      .portfolio-box img{width:100%;aspect-ratio:4/3;object-fit:cover}
+      #portfolio,#contact{padding-block:2rem}
+      .swiper-button-prev,.swiper-button-next{color:var(--accent)}
+      .navbar.fixed-top{padding-top:var(--safe-top)}
+      .carousel-control-prev-icon,.carousel-control-next-icon{
+        background:#0006;border-radius:50%;
+        width:1.5rem;height:1.5rem;background-size:1.5rem 1.5rem;
+      }
+
+      /* ---------- ≤575 px: mobile polish ---------- */
+      @media (max-width:575.98px){
+        .carousel-caption{padding:0 1rem 1.25rem}
+        .carousel-caption h1{font-size:1.75rem}
+        .carousel-caption p{font-size:.95rem}
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon,
+        .swiper-button-prev,
+        .swiper-button-next{
+          width:2.75rem;height:2.75rem;background-size:2.75rem 2.75rem;
+        }
+      }
+
+      /* Hint at more slides on small phones */
+      body.phone-hint .portfolio-swiper .swiper-wrapper{padding-right:16px}
+      body.phone-hint .portfolio-swiper .swiper-slide{width:82%!important}
+
+      /* brand-colour tel/mail links */
+      #contact a[href^="tel"],#contact a[href^="mailto"]{color:inherit}
     </style>
   </head>
 
   <body id="page-top">
-    <!-- Navigation -->
-    <nav aria-label="Main navigation"
-         class="navbar navbar-expand-lg navbar-light fixed-top py-3"
-         id="mainNav">
+    <!-- ================================================= NAVBAR ================================================= -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav" aria-label="Main navigation">
       <div class="container px-4 px-lg-5">
         <a class="navbar-brand d-flex align-items-center gap-2" href="#page-top">
           <img src="assets/img/logo.png" height="40" alt="Ixmex Stone Design logo" />
@@ -95,19 +99,17 @@
       </div>
     </nav>
 
-    <!-- Masthead -->
+    <!-- ================================================= HERO ================================================= -->
     <header id="heroCarousel" class="carousel slide carousel-fade"
             data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="false">
       <div class="carousel-inner">
 
-        <!-- Slide 1 -->
+        <!-- ----- Slide 1 ----- -->
         <div class="carousel-item active">
           <picture>
-            <source type="image/webp" srcset="assets/img/portfolio/project1.webp"/>
-            <img src="assets/img/portfolio/project1.png"
-                 class="d-block w-100"
-                 alt="Hand-Crafted Granite Elegance"
-                 loading="lazy" fetchpriority="high">
+            <source type="image/webp" srcset="assets/img/portfolio/project1.webp" />
+            <img src="assets/img/portfolio/project1.png" class="d-block w-100"
+                 alt="Hand-Crafted Granite Elegance" loading="lazy" fetchpriority="high" />
           </picture>
           <div class="carousel-caption text-center">
             <h1 class="text-white fw-bold">Hand-Crafted Granite Elegance</h1>
@@ -118,14 +120,12 @@
           </div>
         </div>
 
-        <!-- Slide 2 -->
+        <!-- ----- Slide 2 ----- -->
         <div class="carousel-item">
           <picture>
-            <source type="image/webp" srcset="assets/img/portfolio/project2.webp"/>
-            <img src="assets/img/portfolio/project2.png"
-                 class="d-block w-100"
-                 alt="Gym Walls Tailored to You"
-                 loading="lazy">
+            <source type="image/webp" srcset="assets/img/portfolio/project2.webp" />
+            <img src="assets/img/portfolio/project2.png" class="d-block w-100"
+                 alt="Gym Walls Tailored to You" loading="lazy" />
           </picture>
           <div class="carousel-caption text-center">
             <h1 class="text-white fw-bold">Gym Walls Tailored to You</h1>
@@ -136,14 +136,12 @@
           </div>
         </div>
 
-        <!-- Slide 3 -->
+        <!-- ----- Slide 3 ----- -->
         <div class="carousel-item">
           <picture>
-            <source type="image/webp" srcset="assets/img/portfolio/project3.webp"/>
-            <img src="assets/img/portfolio/project3.png"
-                 class="d-block w-100"
-                 alt="Custom Granite Countertops"
-                 loading="lazy">
+            <source type="image/webp" srcset="assets/img/portfolio/project3.webp" />
+            <img src="assets/img/portfolio/project3.png" class="d-block w-100"
+                 alt="Custom Granite Countertops" loading="lazy" />
           </picture>
           <div class="carousel-caption text-center">
             <h1 class="text-white fw-bold">Custom Granite Countertops</h1>
@@ -155,7 +153,7 @@
         </div>
       </div>
 
-      <!-- controls -->
+      <!-- hero controls -->
       <button class="carousel-control-prev" type="button"
               data-bs-target="#heroCarousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon"></span>
@@ -168,7 +166,7 @@
       </button>
     </header>
 
-    <!-- About-->
+    <!-- ================================================= ABOUT ================================================= -->
     <section class="page-section bg-dark text-white" id="about">
       <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
@@ -190,68 +188,53 @@
       </div>
     </section>
 
-    <!-- Services-->
+    <!-- ================================================= SERVICES ================================================= -->
     <section class="page-section bg-light py-5" id="services">
       <div class="container px-4 px-lg-5">
         <h2 class="text-center mt-0">At Your Service</h2>
         <hr class="divider" />
         <div class="row gx-2 gy-2">
+          <!-- service card 1 -->
           <div class="col-lg-4 col-md-6 d-flex">
             <div class="service-card d-flex flex-column w-100">
-              <div class="mb-3">
-                <i class="bi-gem service-icon display-4"></i>
-              </div>
+              <div class="mb-3"><i class="bi-gem service-icon display-4"></i></div>
               <h3 class="h4 mb-2">Kitchen Countertops</h3>
-              <p class="text-muted mb-0">
-                Premium granite surfaces custom-cut for your kitchen remodel.
-              </p>
+              <p class="text-muted mb-0">Premium granite surfaces custom-cut for your kitchen remodel.</p>
             </div>
           </div>
+          <!-- service card 2 -->
           <div class="col-lg-4 col-md-6 d-flex">
             <div class="service-card d-flex flex-column w-100">
-              <div class="mb-3">
-                <i class="bi-building service-icon display-4"></i>
-              </div>
+              <div class="mb-3"><i class="bi-building service-icon display-4"></i></div>
               <h3 class="h4 mb-2">Gym Walls</h3>
-              <p class="text-muted mb-0">
-                Durable granite walls tailored for gym and commercial spaces.
-              </p>
+              <p class="text-muted mb-0">Durable granite walls tailored for gym and commercial spaces.</p>
             </div>
           </div>
+          <!-- service card 3 -->
           <div class="col-lg-4 col-md-6 d-flex">
             <div class="service-card d-flex flex-column w-100">
-              <div class="mb-3">
-                <i class="bi-shop-window service-icon display-4"></i>
-              </div>
+              <div class="mb-3"><i class="bi-shop-window service-icon display-4"></i></div>
               <h3 class="h4 mb-2">Locker Rooms</h3>
-              <p class="text-muted mb-0">
-                Custom granite surfaces for locker rooms—functionality meets style.
-              </p>
+              <p class="text-muted mb-0">Custom granite surfaces for locker rooms—functionality meets style.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Portfolio -->
+    <!-- ================================================= PORTFOLIO ================================================= -->
     <section class="page-section" id="portfolio">
       <div class="container-fluid p-0">
         <div class="swiper portfolio-swiper">
           <div class="swiper-wrapper">
 
+            <!-- ========== 13 SLIDES: each uses WebP + PNG fallback ========== -->
             <!-- Slide 1 -->
             <div class="swiper-slide">
-              <a class="portfolio-box"
-                 href="assets/img/portfolio/project1.webp"
-                 title="Elegant Kitchen, Refined Details">
-                <picture>
-                  <source type="image/webp"
-                          srcset="assets/img/portfolio/project1.webp"/>
-                  <img class="img-fluid"
-                       src="assets/img/portfolio/project1.png"
-                       alt="Elegant kitchen with brass fixtures and marble countertops"
-                       loading="lazy">
-                </picture>
+              <a class="portfolio-box" href="assets/img/portfolio/project1.webp" title="Elegant Kitchen, Refined Details">
+                <picture><source type="image/webp" srcset="assets/img/portfolio/project1.webp" />
+                <img class="img-fluid" src="assets/img/portfolio/project1.png"
+                     alt="Elegant kitchen with brass fixtures and marble countertops" loading="lazy" /></picture>
                 <div class="portfolio-caption">
                   <h5>Elegant Kitchen, Refined Details</h5>
                   <p>Custom cabinetry, brass fixtures, and luxury countertops create a timeless kitchen space.</p>
@@ -261,17 +244,10 @@
 
             <!-- Slide 2 -->
             <div class="swiper-slide">
-              <a class="portfolio-box"
-                 href="assets/img/portfolio/project2.webp"
-                 title="Stylish Powder Room">
-                <picture>
-                  <source type="image/webp"
-                          srcset="assets/img/portfolio/project2.webp"/>
-                  <img class="img-fluid"
-                       src="assets/img/portfolio/project2.png"
-                       alt="Chic bathroom with ornate mirror and elegant lighting"
-                       loading="lazy">
-                </picture>
+              <a class="portfolio-box" href="assets/img/portfolio/project2.webp" title="Stylish Powder Room">
+                <picture><source type="image/webp" srcset="assets/img/portfolio/project2.webp" />
+                <img class="img-fluid" src="assets/img/portfolio/project2.png"
+                     alt="Chic bathroom with ornate mirror and elegant lighting" loading="lazy" /></picture>
                 <div class="portfolio-caption">
                   <h5>Stylish Powder Room</h5>
                   <p>Graceful lines, unique mirrors, and warm lighting make this bathroom cozy and chic.</p>
@@ -281,17 +257,10 @@
 
             <!-- Slide 3 -->
             <div class="swiper-slide">
-              <a class="portfolio-box"
-                 href="assets/img/portfolio/project3.webp"
-                 title="Rustic Meets Modern">
-                <picture>
-                  <source type="image/webp"
-                          srcset="assets/img/portfolio/project3.webp"/>
-                  <img class="img-fluid"
-                       src="assets/img/portfolio/project3.png"
-                       alt="Bathroom with wooden mirror frame and black fixtures"
-                       loading="lazy">
-                </picture>
+              <a class="portfolio-box" href="assets/img/portfolio/project3.webp" title="Rustic Meets Modern">
+                <picture><source type="image/webp" srcset="assets/img/portfolio/project3.webp" />
+                <img class="img-fluid" src="assets/img/portfolio/project3.png"
+                     alt="Bathroom with wooden mirror frame and black fixtures" loading="lazy" /></picture>
                 <div class="portfolio-caption">
                   <h5>Rustic Meets Modern</h5>
                   <p>Wood-framed mirrors and black fixtures balance charm and elegance in this bathroom.</p>
@@ -301,17 +270,10 @@
 
             <!-- Slide 4 -->
             <div class="swiper-slide">
-              <a class="portfolio-box"
-                 href="assets/img/portfolio/project4.webp"
-                 title="Contemporary Commercial Design">
-                <picture>
-                  <source type="image/webp"
-                          srcset="assets/img/portfolio/project4.webp"/>
-                  <img class="img-fluid"
-                       src="assets/img/portfolio/project4.png"
-                       alt="Commercial restroom with backlit mirrors and sleek surfaces"
-                       loading="lazy">
-                </picture>
+              <a class="portfolio-box" href="assets/img/portfolio/project4.webp" title="Contemporary Commercial Design">
+                <picture><source type="image/webp" srcset="assets/img/portfolio/project4.webp" />
+                <img class="img-fluid" src="assets/img/portfolio/project4.png"
+                     alt="Commercial restroom with backlit mirrors and sleek surfaces" loading="lazy" /></picture>
                 <div class="portfolio-caption">
                   <h5>Contemporary Commercial Design</h5>
                   <p>Sleek lines and durable finishes define this modern restroom with backlit mirrors.</p>
@@ -321,17 +283,10 @@
 
             <!-- Slide 5 -->
             <div class="swiper-slide">
-              <a class="portfolio-box"
-                 href="assets/img/portfolio/project5.webp"
-                 title="Kitchen in Progress">
-                <picture>
-                  <source type="image/webp"
-                          srcset="assets/img/portfolio/project5.webp"/>
-                  <img class="img-fluid"
-                       src="assets/img/portfolio/project5.png"
-                       alt="Modern kitchen under construction with central island and open shelving"
-                       loading="lazy">
-                </picture>
+              <a class="portfolio-box" href="assets/img/portfolio/project5.webp" title="Kitchen in Progress">
+                <picture><source type="image/webp" srcset="assets/img/portfolio/project5.webp" />
+                <img class="img-fluid" src="assets/img/portfolio/project5.png"
+                     alt="Modern kitchen under construction with central island and open shelving" loading="lazy" /></picture>
                 <div class="portfolio-caption">
                   <h5>Kitchen in Progress</h5>
                   <p>Open shelving and a central island set the foundation for a high-end culinary space.</p>
@@ -341,17 +296,10 @@
 
             <!-- Slide 6 -->
             <div class="swiper-slide">
-              <a class="portfolio-box"
-                 href="assets/img/portfolio/project6.webp"
-                 title="Charming Pantry Nook">
-                <picture>
-                  <source type="image/webp"
-                          srcset="assets/img/portfolio/project6.webp"/>
-                  <img class="img-fluid"
-                       src="assets/img/portfolio/project6.png"
-                       alt="Pantry nook with wallpaper, window, and upper cabinets"
-                       loading="lazy">
-                </picture>
+              <a class="portfolio-box" href="assets/img/portfolio/project6.webp" title="Charming Pantry Nook">
+                <picture><source type="image/webp" srcset="assets/img/portfolio/project6.webp" />
+                <img class="img-fluid" src="assets/img/portfolio/project6.png"
+                     alt="Pantry nook with wallpaper, window, and upper cabinets" loading="lazy" /></picture>
                 <div class="portfolio-caption">
                   <h5>Charming Pantry Nook</h5>
                   <p>Natural light and detailed wallpaper create a delightful utility space with custom cabinetry.</p>
@@ -361,17 +309,10 @@
 
             <!-- Slide 7 -->
             <div class="swiper-slide">
-              <a class="portfolio-box"
-                 href="assets/img/portfolio/project7.webp"
-                 title="Outdoor Living Perfected">
-                <picture>
-                  <source type="image/webp"
-                          srcset="assets/img/portfolio/project7.webp"/>
-                  <img class="img-fluid"
-                       src="assets/img/portfolio/project7.png"
-                       alt="Outdoor kitchen with granite countertop and brick backdrop"
-                       loading="lazy">
-                </picture>
+              <a class="portfolio-box" href="assets/img/portfolio/project7.webp" title="Outdoor Living Perfected">
+                <picture><source type="image/webp" srcset="assets/img/portfolio/project7.webp" />
+                <img class="img-fluid" src="assets/img/portfolio/project7.png"
+                     alt="Outdoor kitchen with granite countertop and brick backdrop" loading="lazy" /></picture>
                 <div class="portfolio-caption">
                   <h5>Outdoor Living Perfected</h5>
                   <p>Enjoy luxury outside with this granite-topped grill station surrounded by brick and comfort.</p>
@@ -381,17 +322,10 @@
 
             <!-- Slide 8 -->
             <div class="swiper-slide">
-              <a class="portfolio-box"
-                 href="assets/img/portfolio/project8.webp"
-                 title="Bright and Refined Bath">
-                <picture>
-                  <source type="image/webp"
-                          srcset="assets/img/portfolio/project8.webp"/>
-                  <img class="img-fluid"
-                       src="assets/img/portfolio/project8.png"
-                       alt="White bathroom with marble counter and wall sconces"
-                       loading="lazy">
-                </picture>
+              <a class="portfolio-box" href="assets/img/portfolio/project8.webp" title="Bright and Refined Bath">
+                <picture><source type="image/webp" srcset="assets/img/portfolio/project8.webp" />
+                <img class="img-fluid" src="assets/img/portfolio/project8.png"
+                     alt="White bathroom with marble counter and wall sconces" loading="lazy" /></picture>
                 <div class="portfolio-caption">
                   <h5>Bright and Refined Bath</h5>
                   <p>Crisp white tones and simple lines offer a fresh, spacious bathroom experience.</p>
@@ -401,17 +335,10 @@
 
             <!-- Slide 9 -->
             <div class="swiper-slide">
-              <a class="portfolio-box"
-                 href="assets/img/portfolio/project9.webp"
-                 title="Bold Gym Restroom Design">
-                <picture>
-                  <source type="image/webp"
-                          srcset="assets/img/portfolio/project9.webp"/>
-                  <img class="img-fluid"
-                       src="assets/img/portfolio/project9.png"
-                       alt="Gym restroom with purple walls and stainless fixtures"
-                       loading="lazy">
-                </picture>
+              <a class="portfolio-box" href="assets/img/portfolio/project9.webp" title="Bold Gym Restroom Design">
+                <picture><source type="image/webp" srcset="assets/img/portfolio/project9.webp" />
+                <img class="img-fluid" src="assets/img/portfolio/project9.png"
+                     alt="Gym restroom with purple walls and stainless fixtures" loading="lazy" /></picture>
                 <div class="portfolio-caption">
                   <h5>Bold Gym Restroom Design</h5>
                   <p>Statement lighting and tile work give this fitness center bathroom its own personality.</p>
@@ -421,17 +348,10 @@
 
             <!-- Slide 10 -->
             <div class="swiper-slide">
-              <a class="portfolio-box"
-                 href="assets/img/portfolio/project10.webp"
-                 title="Streamlined Modern Kitchen">
-                <picture>
-                  <source type="image/webp"
-                          srcset="assets/img/portfolio/project10.webp"/>
-                  <img class="img-fluid"
-                       src="assets/img/portfolio/project10.png"
-                       alt="Bright kitchen counter with large window and wood floors"
-                       loading="lazy">
-                </picture>
+              <a class="portfolio-box" href="assets/img/portfolio/project10.webp" title="Streamlined Modern Kitchen">
+                <picture><source type="image/webp" srcset="assets/img/portfolio/project10.webp" />
+                <img class="img-fluid" src="assets/img/portfolio/project10.png"
+                     alt="Bright kitchen counter with large window and wood floors" loading="lazy" /></picture>
                 <div class="portfolio-caption">
                   <h5>Streamlined Modern Kitchen</h5>
                   <p>Bright, bold counters and a seamless flow elevate this kitchen's functionality and style.</p>
@@ -441,17 +361,10 @@
 
             <!-- Slide 11 -->
             <div class="swiper-slide">
-              <a class="portfolio-box"
-                 href="assets/img/portfolio/project11.webp"
-                 title="Luxurious Double Vanity Design">
-                <picture>
-                  <source type="image/webp"
-                          srcset="assets/img/portfolio/project11.webp"/>
-                  <img class="img-fluid"
-                       src="assets/img/portfolio/project11.png"
-                       alt="Bathroom with dual mirrors, scallop tile wall, and brass accents"
-                       loading="lazy">
-                </picture>
+              <a class="portfolio-box" href="assets/img/portfolio/project11.webp" title="Luxurious Double Vanity Design">
+                <picture><source type="image/webp" srcset="assets/img/portfolio/project11.webp" />
+                <img class="img-fluid" src="assets/img/portfolio/project11.png"
+                     alt="Bathroom with dual mirrors, scallop tile wall, and brass accents" loading="lazy" /></picture>
                 <div class="portfolio-caption">
                   <h5>Luxurious Double Vanity Design</h5>
                   <p>Scallop-tiled walls, brass fixtures, and elegant lighting define this high-end bathroom setup.</p>
@@ -461,17 +374,10 @@
 
             <!-- Slide 12 -->
             <div class="swiper-slide">
-              <a class="portfolio-box"
-                 href="assets/img/portfolio/project12.webp"
-                 title="Statement Kitchen Hood">
-                <picture>
-                  <source type="image/webp"
-                          srcset="assets/img/portfolio/project12.webp"/>
-                  <img class="img-fluid"
-                       src="assets/img/portfolio/project12.png"
-                       alt="Black range hood over modern electric stove with white counters"
-                       loading="lazy">
-                </picture>
+              <a class="portfolio-box" href="assets/img/portfolio/project12.webp" title="Statement Kitchen Hood">
+                <picture><source type="image/webp" srcset="assets/img/portfolio/project12.webp" />
+                <img class="img-fluid" src="assets/img/portfolio/project12.png"
+                     alt="Black range hood over modern electric stove with white counters" loading="lazy" /></picture>
                 <div class="portfolio-caption">
                   <h5>Statement Kitchen Hood</h5>
                   <p>A bold matte-black hood and marble-patterned backsplash anchor this modern cooking area.</p>
@@ -481,17 +387,10 @@
 
             <!-- Slide 13 -->
             <div class="swiper-slide">
-              <a class="portfolio-box"
-                 href="assets/img/portfolio/project13.webp"
-                 title="Accessible Shower Installation">
-                <picture>
-                  <source type="image/webp"
-                          srcset="assets/img/portfolio/project13.webp"/>
-                  <img class="img-fluid"
-                       src="assets/img/portfolio/project13.png"
-                       alt="Commercial tiled shower with bench and grab bars"
-                       loading="lazy">
-                </picture>
+              <a class="portfolio-box" href="assets/img/portfolio/project13.webp" title="Accessible Shower Installation">
+                <picture><source type="image/webp" srcset="assets/img/portfolio/project13.webp" />
+                <img class="img-fluid" src="assets/img/portfolio/project13.png"
+                     alt="Commercial tiled shower with bench and grab bars" loading="lazy" /></picture>
                 <div class="portfolio-caption">
                   <h5>Accessible Shower Installation</h5>
                   <p>Functional yet sleek, this tiled shower offers built-in seating and safety without compromising style.</p>
@@ -499,50 +398,33 @@
               </a>
             </div>
 
-          </div><!-- .swiper-wrapper -->
+          </div><!-- /.swiper-wrapper -->
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
           <div class="swiper-pagination"></div>
-        </div><!-- .swiper -->
+        </div><!-- /.swiper -->
       </div>
     </section>
 
-    <!-- Contact-->
+    <!-- ================================================= CONTACT ================================================= -->
     <section class="page-section" id="contact">
       <div class="container">
         <div class="row justify-content-center text-center mb-5">
           <div class="col-lg-8">
             <h2 class="h4 mb-3">Contact Ixmex Stone Design</h2>
-            <p class="mb-2">
-              <i class="bi-telephone-fill"></i>
-              <a href="tel:+17132026877" class="text-decoration-none text-primary"
-                >+1 (713) 202-6877</a
-              >
-            </p>
-            <p class="mb-2">
-              <i class="bi-envelope-fill"></i>
-              <a
-                href="mailto:ixmexstone@gmail.com"
-                class="text-decoration-none text-primary"
-                >ixmexstone@gmail.com</a
-              >
-            </p>
-            <p class="mb-0">
-              <i class="bi-geo-alt-fill"></i>
-              513 Shane St, Houston, TX 77037
-            </p>
+            <p class="mb-2"><i class="bi-telephone-fill"></i>
+              <a href="tel:+17132026877" class="text-decoration-none text-primary">+1 (713) 202-6877</a></p>
+            <p class="mb-2"><i class="bi-envelope-fill"></i>
+              <a href="mailto:ixmexstone@gmail.com" class="text-decoration-none text-primary">ixmexstone@gmail.com</a></p>
+            <p class="mb-0"><i class="bi-geo-alt-fill"></i>513 Shane St, Houston, TX 77037</p>
           </div>
         </div>
         <div class="row gx-5 align-items-start">
           <div class="col-lg-7 mb-4 mb-lg-0">
             <div class="ratio ratio-16x9">
-              <iframe
-                title="Location Map"
+              <iframe title="Location Map"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3458.6651812766077!2d-95.41201842445557!3d29.90274672527042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c9b0f2cf7807%3A0x4dd84f804b925c7a!2sIxmex%20Stone%20Design!5e0!3m2!1str!2sde!4v1751648451778!5m2!1str!2sde"
-                allowfullscreen
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
+                allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
           <div class="col-lg-5">
@@ -550,34 +432,13 @@
               <h3 class="h4 mb-3 text-center text-lg-start">Business Hours</h3>
               <table class="table table-sm table-borderless mb-0">
                 <tbody>
-                  <tr class="border-bottom" style="border-color: rgba(0, 0, 0, 0.1)">
-                    <th scope="row" class="pe-4">Mon</th>
-                    <td>8:00 AM – 6:00 PM</td>
-                  </tr>
-                  <tr class="border-bottom" style="border-color: rgba(0, 0, 0, 0.1)">
-                    <th scope="row" class="pe-4">Tue</th>
-                    <td>8:00 AM – 6:00 PM</td>
-                  </tr>
-                  <tr class="border-bottom" style="border-color: rgba(0, 0, 0, 0.1)">
-                    <th scope="row" class="pe-4">Wed</th>
-                    <td>8:00 AM – 6:00 PM</td>
-                  </tr>
-                  <tr class="border-bottom" style="border-color: rgba(0, 0, 0, 0.1)">
-                    <th scope="row" class="pe-4">Thu</th>
-                    <td>8:00 AM – 6:00 PM</td>
-                  </tr>
-                  <tr class="border-bottom" style="border-color: rgba(0, 0, 0, 0.1)">
-                    <th scope="row" class="pe-4">Fri</th>
-                    <td>8:00 AM – 6:00 PM</td>
-                  </tr>
-                  <tr class="border-bottom" style="border-color: rgba(0, 0, 0, 0.1)">
-                    <th scope="row" class="pe-4">Sat</th>
-                    <td class="text-muted">Closed</td>
-                  </tr>
-                  <tr>
-                    <th scope="row" class="pe-4">Sun</th>
-                    <td class="text-muted">Closed</td>
-                  </tr>
+                  <tr class="border-bottom" style="border-color:rgba(0,0,0,.1)"><th scope="row" class="pe-4">Mon</th><td>8:00 AM – 6:00 PM</td></tr>
+                  <tr class="border-bottom" style="border-color:rgba(0,0,0,.1)"><th scope="row" class="pe-4">Tue</th><td>8:00 AM – 6:00 PM</td></tr>
+                  <tr class="border-bottom" style="border-color:rgba(0,0,0,.1)"><th scope="row" class="pe-4">Wed</th><td>8:00 AM – 6:00 PM</td></tr>
+                  <tr class="border-bottom" style="border-color:rgba(0,0,0,.1)"><th scope="row" class="pe-4">Thu</th><td>8:00 AM – 6:00 PM</td></tr>
+                  <tr class="border-bottom" style="border-color:rgba(0,0,0,.1)"><th scope="row" class="pe-4">Fri</th><td>8:00 AM – 6:00 PM</td></tr>
+                  <tr class="border-bottom" style="border-color:rgba(0,0,0,.1)"><th scope="row" class="pe-4">Sat</th><td class="text-muted">Closed</td></tr>
+                  <tr><th scope="row" class="pe-4">Sun</th><td class="text-muted">Closed</td></tr>
                 </tbody>
               </table>
             </div>
@@ -586,58 +447,39 @@
       </div>
     </section>
 
-    <!-- Footer-->
+    <!-- ================================================= FOOTER ================================================= -->
     <footer class="bg-light py-5">
       <div class="container px-4 px-lg-5">
-        <div class="small text-center text-muted">
-          Copyright &copy; 2025 – Ixmex Stone Design
-        </div>
+        <div class="small text-center text-muted">Copyright © 2025 – Ixmex Stone Design</div>
       </div>
     </footer>
 
-    <!-- Bootstrap core JS (deferred) -->
-     
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      defer
-    ></script>
-    <!-- SimpleLightbox plugin JS (deferred) -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"
-      defer
-    ></script>
-    <!-- Swiper JS (deferred) -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"
-      defer
-    ></script>
-    <!-- Core theme JS (deferred) -->
+    <!-- ================================================= SCRIPTS ================================================= -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
     <script src="js/scripts.js" defer></script>
 
-    <!-- Initialize Lightbox -->
+    <!-- inline helpers -->
     <script defer>
-      document.addEventListener("DOMContentLoaded", () => {
-        new SimpleLightbox(".portfolio-box");
+      /* SimpleLightbox init */
+      document.addEventListener('DOMContentLoaded', () => {
+        new SimpleLightbox('.portfolio-box');
       });
-    </script>
-    
-    <!-- Initialize Swiper -->
-    <script defer>
-      document.addEventListener("DOMContentLoaded", function () {
-        new Swiper(".portfolio-swiper", {
-          slidesPerView: 4,
+
+      /* Swiper + phone tweaks */
+      document.addEventListener('DOMContentLoaded', () => {
+        const isPhone = window.matchMedia('(max-width:575.98px)').matches;
+        if (isPhone) document.body.classList.add('phone-hint');
+
+        new Swiper('.portfolio-swiper', {
+          slidesPerView: isPhone ? 1.2 : 4,
           spaceBetween: 16,
           loop: true,
-          navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev"
-          },
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true
-          },
-          breakpoints: {
-            0: { slidesPerView: 1 },
+          navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+          pagination: { el: '.swiper-pagination', clickable: true },
+          breakpoints: !isPhone && {
+            0:   { slidesPerView: 1 },
             576: { slidesPerView: 2 },
             768: { slidesPerView: 3 },
             992: { slidesPerView: 4 }
