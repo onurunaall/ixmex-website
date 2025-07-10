@@ -8,7 +8,7 @@
     <meta name="author" content="Ixmex Stone Design" />
     <title>Ixmex Stone Design – Crafting Quality Granite Surfaces in Houston</title>
 
-    <!-- ───── performance hooks ───── -->
+    <!-- ─── performance hooks ─── -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
@@ -19,7 +19,7 @@
     <link rel="preload" as="image"
           href="assets/img/portfolio/project1.webp" type="image/webp" />
 
-    <!-- ───── assets ───── -->
+    <!-- ─── assets ─── -->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700&display=swap" rel="stylesheet" />
@@ -27,7 +27,7 @@
     <link href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
 
-    <!-- ───── critical tweaks ───── -->
+    <!-- ─── critical tweaks ─── -->
     <style>
       html{scroll-behavior:smooth}
       :root{--bs-primary:#22324c;--accent:#e07a5f;--safe-top:env(safe-area-inset-top)}
@@ -37,18 +37,29 @@
       .btn-xl{padding:1rem 2rem;font-size:1.25rem;font-weight:700}
       .service-icon{color:var(--accent)}
       .service-card{background:rgba(224,122,95,.1);border-radius:.5rem;padding:1.5rem}
-      .portfolio-box img{width:100%;aspect-ratio:4/3;object-fit:cover}
+
+      /* bigger portfolio thumbs */
+      .portfolio-box img{
+        width:100%;
+        aspect-ratio:3/2;          /* taller */
+        object-fit:cover;
+        min-height:225px;          /* keep height on huge monitors */
+      }
+
       #portfolio,#contact{padding-block:2rem}
+
       .swiper-button-prev,.swiper-button-next{color:var(--accent)}
       .navbar.fixed-top{padding-top:var(--safe-top)}
-      /* restore arrow SVG, tint only the circle */
+
+      /* hero arrows – enlarge visual hit-box */
       .carousel-control-prev-icon,
       .carousel-control-next-icon{
-        background-color:#0006;          /* tint circle */
+        background-color:#0006;
         border-radius:50%;
-        width:1.8rem;height:1.8rem;
-        background-size:1.8rem 1.8rem;   /* keep svg */
+        width:2.5rem;height:2.5rem;
+        background-size:2.5rem 2.5rem;
       }
+
       /* ≤575 px polish */
       @media (max-width:575.98px){
         .carousel-caption{padding:0 1rem 1.25rem}
@@ -57,20 +68,16 @@
         .carousel-control-prev-icon,
         .carousel-control-next-icon,
         .swiper-button-prev,
-        .swiper-button-next{
-          width:2.4rem;height:2.4rem;background-size:2.4rem 2.4rem
-        }
+        .swiper-button-next{width:2.4rem;height:2.4rem}
       }
-      /* swipe hint */
-      body.phone-hint .portfolio-swiper .swiper-wrapper{padding-right:16px}
-      body.phone-hint .portfolio-swiper .swiper-slide{width:82%!important}
-      /* keep brand colour for tel/mail */
+
+      /* tel/mail keep theme colour */
       #contact a[href^="tel"],#contact a[href^="mailto"]{color:inherit}
     </style>
   </head>
 
   <body id="page-top">
-    <!-- ========== NAVBAR =================================================== -->
+    <!-- ========== NAVBAR (unchanged) ===================================== -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav" aria-label="Main navigation">
       <div class="container px-4 px-lg-5">
         <a class="navbar-brand d-flex align-items-center gap-2" href="#page-top">
@@ -453,21 +460,22 @@
       /* SimpleLightbox */
       document.addEventListener('DOMContentLoaded',()=>new SimpleLightbox('.portfolio-box'));
 
-      /* Swiper – bigger slides (3 / 2 / 1) */
+      /* Swiper – 2 slides on tablet/desktop, 3 on ≥1200 px */
       document.addEventListener('DOMContentLoaded',()=>{
-        const isPhone = matchMedia('(max-width:575.98px)').matches;
-        if(isPhone) document.body.classList.add('phone-hint');
+        const phone = matchMedia('(max-width:575.98px)').matches;
+        if(phone) document.body.classList.add('phone-hint');
 
         new Swiper('.portfolio-swiper',{
-          slidesPerView: isPhone ? 1.2 : 3,
+          slidesPerView: phone ? 1.2 : 2,
           spaceBetween:16,
           loop:true,
           navigation:{nextEl:'.swiper-button-next',prevEl:'.swiper-button-prev'},
           pagination:{el:'.swiper-pagination',clickable:true},
           breakpoints:{
-            0:   {slidesPerView:1},
-            576: {slidesPerView:2},
-            992: {slidesPerView:3}
+            0:{slidesPerView:1},
+            576:{slidesPerView:1.5},
+            768:{slidesPerView:2},
+            1200:{slidesPerView:3}
           }
         });
       });
