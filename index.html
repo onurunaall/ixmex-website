@@ -457,28 +457,35 @@
 
     <!-- helpers -->
     <script defer>
-      /* SimpleLightbox */
-      document.addEventListener('DOMContentLoaded',()=>new SimpleLightbox('.portfolio-box'));
+  document.addEventListener('DOMContentLoaded', () => {
+    new SimpleLightbox('.portfolio-box');
 
-      /* Swiper – 2 slides on tablet/desktop, 3 on ≥1200 px */
-      document.addEventListener('DOMContentLoaded',()=>{
-        const phone = matchMedia('(max-width:575.98px)').matches;
-        if(phone) document.body.classList.add('phone-hint');
-
-        new Swiper('.portfolio-swiper',{
-          slidesPerView: phone ? 1.2 : 2,
-          spaceBetween:16,
-          loop:true,
-          navigation:{nextEl:'.swiper-button-next',prevEl:'.swiper-button-prev'},
-          pagination:{el:'.swiper-pagination',clickable:true},
-          breakpoints:{
-            0:{slidesPerView:1},
-            576:{slidesPerView:1.5},
-            768:{slidesPerView:2},
-            1200:{slidesPerView:3}
-          }
-        });
-      });
-    </script>
+    new Swiper('.portfolio-swiper', {
+      loop: true,
+      spaceBetween: 16,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      // ⚠️ NO top-level slidesPerView here ⚠️
+      breakpoints: {
+        // mobile
+        0:   { slidesPerView: 1.2 },  // “peek” hint
+        // small tablets
+        576: { slidesPerView: 2 },
+        // larger tablets / small desktops
+        768: { slidesPerView: 2 },
+        // medium desktops
+        992: { slidesPerView: 3 },
+        // full-width desktops
+        1200:{ slidesPerView: 4 },
+      },
+    });
+  });
+</script>
   </body>
 </html>
