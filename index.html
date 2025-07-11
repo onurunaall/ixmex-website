@@ -43,10 +43,10 @@
         width:100%;
         aspect-ratio:3/2;          /* taller */
         object-fit:cover;
-        min-height:225px;          /* keep height on huge monitors */
+        min-height:350px;          /* keep height on huge monitors */
       }
 
-      #portfolio,#contact{padding-block:2rem}
+      #portfolio,#contact{padding-block:4rem}
 
       .swiper-button-prev,.swiper-button-next{color:var(--accent)}
       .navbar.fixed-top{padding-top:var(--safe-top)}
@@ -457,35 +457,35 @@
 
     <!-- helpers -->
     <script defer>
-  document.addEventListener('DOMContentLoaded', () => {
-    new SimpleLightbox('.portfolio-box');
-
-    new Swiper('.portfolio-swiper', {
-      loop: true,
-      spaceBetween: 16,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      // ⚠️ NO top-level slidesPerView here ⚠️
-      breakpoints: {
-        // mobile
-        0:   { slidesPerView: 1.2 },  // “peek” hint
-        // small tablets
-        576: { slidesPerView: 2 },
-        // larger tablets / small desktops
-        768: { slidesPerView: 2 },
-        // medium desktops
-        992: { slidesPerView: 3 },
-        // full-width desktops
-        1200:{ slidesPerView: 4 },
-      },
-    });
-  });
-</script>
+      document.addEventListener('DOMContentLoaded', () => {
+        new SimpleLightbox('.portfolio-box');
+    
+        new Swiper('.portfolio-swiper', {
+          loop: true,
+          spaceBetween: 24,
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          // ⚠️ NO top-level slidesPerView here ⚠️
+          breakpoints: {
+            // mobile
+            0:   { slidesPerView: 1.2 },  // “peek” hint
+            // small tablets
+            576: { slidesPerView: 1.5 },
+            // larger tablets / small desktops
+            768: { slidesPerView: 2 },
+            // medium desktops
+            992: { slidesPerView: 2.5 },
+            // full-width desktops
+            1200:{ slidesPerView: 3 },
+          },
+        });
+      });
+    </script>
   </body>
 </html>
