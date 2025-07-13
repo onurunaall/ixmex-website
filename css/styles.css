@@ -11164,3 +11164,29 @@ header.masthead h1, header.masthead .h1 {
     grid-template-columns: 1fr;
   }
 }
+
+:root {
+  --accent-teal: #2a9d8f;
+}
+
+/* Override primary button to teal */
+.btn-primary {
+  background-color: var(--accent-teal) !important;
+  border-color: var(--accent-teal) !important;
+  color: #fff;
+}
+.btn-primary:hover {
+  background-color: #238678 !important; /* 10% darker teal */
+  border-color: #238678 !important;
+}
+
+/* New outline-teal button */
+.btn-outline-teal {
+  color: var(--accent-teal);
+  border: 2px solid var(--accent-teal);
+  background: transparent;
+}
+.btn-outline-teal:hover {
+  background: var(--accent-teal);
+  color: #fff;
+}
