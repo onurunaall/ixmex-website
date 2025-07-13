@@ -11184,3 +11184,21 @@ header.masthead h1, header.masthead .h1 {
   height: 60px;
   width: auto;
 }
+
+/* ─── Logo cleanup ─── */
+.navbar-brand img {
+  background: transparent !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+
+/* ─── Tidy footer spacing ─── */
+footer {
+  padding-bottom: 1rem !important; /* reduce heavy padding */
+  margin-bottom: 0 !important;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
