@@ -11169,24 +11169,18 @@ header.masthead h1, header.masthead .h1 {
   --accent-teal: #2a9d8f;
 }
 
-/* Override primary button to teal */
+/* ─── Pill-shaped primary buttons ─── */
 .btn-primary {
-  background-color: var(--accent-teal) !important;
-  border-color: var(--accent-teal) !important;
-  color: #fff;
-}
-.btn-primary:hover {
-  background-color: #238678 !important; /* 10% darker teal */
-  border-color: #238678 !important;
+  border-radius: 50px !important;
 }
 
-/* New outline-teal button */
-.btn-outline-teal {
-  color: var(--accent-teal);
-  border: 2px solid var(--accent-teal);
-  background: transparent;
+/* Optional: ensure the smaller btn-lg scales nicely */
+.btn-lg {
+  padding: 0.65rem 1.25rem;
 }
-.btn-outline-teal:hover {
-  background: var(--accent-teal);
-  color: #fff;
+
+/* Navbar logo sizing */
+.navbar-brand img {
+  height: 60px;
+  width: auto;
 }
