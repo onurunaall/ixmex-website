@@ -11118,84 +11118,49 @@ header.masthead h1, header.masthead .h1 {
   }
 }
 
-/*==========================================
-  Services: semicircle layout
-==========================================*/
 :root {
   --accent-teal: #2a9d8f;
 }
 
-.services-circle {
-  text-align: center;
-  padding: 4rem 1rem;
-}
-
-.services-circle .circle-container {
-  position: relative;
-  height: 20rem;       /* adjust height as needed */
+/*==========================================
+  Services: vertical card grid
+==========================================*/
+.services-grid .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
   margin-top: 2rem;
 }
 
-/* Base node style */
-.services-circle .service-node {
-  position: absolute;
-  width: 10rem;
-  height: 10rem;
+.services-grid .card {
+  position: relative;
   background: #fff;
-  border-radius: 50%;
+  border-radius: .5rem;
   box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1);
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  transition: transform .2s;
+  text-align: center;
 }
 
-.services-circle .service-node:hover {
-  transform: translateY(-.5rem);
+.services-grid .card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4rem; height: .25rem;
+  background: var(--accent-teal);
+  border-top-left-radius: .5rem;
 }
 
-/* Icon circle inside each node */
-.services-circle .service-node .icon-circle {
-  width: 3rem;
-  height: 3rem;
-  background: rgba(42,157,143,0.1);  /* 10% opacity of teal */
+.services-grid .card i {
+  font-size: 2rem;
   color: var(--accent-teal);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.75rem;
-  margin-bottom: .5rem;
+  margin-bottom: 1rem;
 }
 
-/* Position the five nodes on a semicircle */
-.services-circle .node-1 { left: 15%; top: 0;    transform: translate(-50%, 0); }
-.services-circle .node-2 { left: 50%; top: 0;    transform: translate(-50%, 0); }
-.services-circle .node-3 { left: 85%; top: 0;    transform: translate(-50%, 0); }
-.services-circle .node-4 { left: 33%; bottom: 0; transform: translate(-50%, 0); }
-.services-circle .node-5 { left: 67%; bottom: 0; transform: translate(-50%, 0); }
-
-/* Mobile fallback: single-column list */
-@media (max-width: 768px) {
-  .services-circle .circle-container {
-    position: static;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-  }
-  .services-circle .service-node {
-    position: static;
-    width: 80%;
-    height: auto;
-    border-radius: .5rem;
-    flex-direction: row;
-    text-align: left;
-  }
-  .services-circle .service-node .icon-circle {
-    margin-right: 1rem;
+@media (max-width: 576px) {
+  .services-grid .grid {
+    grid-template-columns: 1fr;
   }
 }
