@@ -11181,7 +11181,7 @@ header.masthead h1, header.masthead .h1 {
 
 /* Navbar logo sizing */
 .navbar-brand img {
-  height: 60px;
+  height: 80px;
   width: auto;
 }
 
@@ -11202,3 +11202,101 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
+#heroCarousel .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+  transition: opacity 0.7s cubic-bezier(.4,0,.2,1);
+}
+
+:root {
+  --bs-orange: #35507a !important;
+  --bs-primary: #35507a !important;
+  --bs-primary-rgb: 53, 80, 122 !important;
+  --bs-link-color: #35507a !important;
+  --bs-link-hover-color: #22324c !important;
+  --bs-btn-bg: #35507a !important;
+  --bs-btn-border-color: #35507a !important;
+  --bs-btn-hover-bg: #22324c !important;
+  --bs-btn-hover-border-color: #22324c !important;
+  --bs-btn-active-bg: #22324c !important;
+  --bs-btn-active-border-color: #22324c !important;
+  --bs-btn-disabled-bg: #35507a !important;
+  --bs-btn-disabled-border-color: #35507a !important;
+  --bs-dropdown-link-active-bg: #35507a !important;
+  --bs-nav-pills-link-active-bg: #35507a !important;
+  --bs-list-group-active-bg: #35507a !important;
+  --bs-list-group-active-border-color: #35507a !important;
+  --bs-pagination-active-bg: #35507a !important;
+  --bs-pagination-active-border-color: #35507a !important;
+}
+
+hr.divider,
+hr.divider-light {
+  background-color: #35507a !important;
+}
+
+.btn-primary,
+.btn-outline-primary {
+  background-color: #35507a !important;
+  border-color: #35507a !important;
+  color: #fff !important;
+}
+.btn-primary:hover,
+.btn-outline-primary:hover {
+  background-color: #22324c !important;
+  border-color: #22324c !important;
+}
+
+a,
+a.text-primary,
+a.link-primary {
+  color: #35507a !important;
+}
+a:hover,
+a.text-primary:hover,
+a.link-primary:hover {
+  color: #22324c !important;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link:hover,
+#mainNav .navbar-nav .nav-item .nav-link.active {
+  color: #35507a !important;
+}
+
+#portfolio .container-fluid .portfolio-box .portfolio-box-caption,
+#portfolio .container-sm .portfolio-box .portfolio-box-caption,
+#portfolio .container-md .portfolio-box .portfolio-box-caption,
+#portfolio .container-lg .portfolio-box .portfolio-box-caption,
+#portfolio .container-xl .portfolio-box .portfolio-box-caption,
+#portfolio .container-xxl .portfolio-box .portfolio-box-caption {
+  background: rgba(53, 80, 122, 0.9) !important;
+}
+
+/* Navbar at top (transparent) */
+#mainNav {
+  background-color: transparent !important;
+}
+#mainNav .navbar-brand,
+#mainNav .navbar-nav .nav-item .nav-link {
+  color: #fff !important;
+  transition: color 0.2s;
+}
+
+/* Navbar after scroll (navbar-shrink) */
+#mainNav.navbar-shrink {
+  background-color: #fff !important;
+}
+#mainNav.navbar-shrink .navbar-brand,
+#mainNav.navbar-shrink .navbar-nav .nav-item .nav-link {
+  color: #000 !important;
+}
+
+/* Active nav link (section highlight) */
+#mainNav .navbar-nav .nav-item .nav-link.active {
+  color: #35507a !important;
+}
+
