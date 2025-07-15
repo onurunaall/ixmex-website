@@ -18,11 +18,9 @@
     
     <!-- preload first hero frame -->
     <link rel="preload" as="image" href="assets/img/portfolio/pexels_black_granite_surf_2.webp" type="image/webp" />
-    
-    <!-- prefetch the rest of the hero images -->
-    <link rel="prefetch" as="image" href="assets/img/portfolio/pexels-white.webp" type="image/webp" />
-    <link rel="prefetch" as="image" href="assets/img/portfolio/pexels_white_quartz_surf.webp" type="image/webp" />
-    <link rel="prefetch" as="image" href="assets/img/portfolio/pexels_black_granite_surface.webp" type="image/webp" />    
+    <link rel="preload" as="image" href="assets/img/portfolio/pexels-white.webp" type="image/webp" />
+    <link rel="preload" as="image" href="assets/img/portfolio/pexels_white_quartz_surf.webp" type="image/webp" />
+    <link rel="preload" as="image" href="assets/img/portfolio/pexels_black_granite_surface.webp" type="image/webp" />  
 
     <!-- ─── assets ─── -->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -116,7 +114,7 @@
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav" aria-label="Main navigation">
       <div class="container px-4 px-lg-5">
         <a class="navbar-brand d-flex align-items-center gap-2" href="#page-top">
-          <img src="assets/img/logo.png" height="60" alt="Ixmex Stone Design logo" />
+          <img src="assets/img/logo.png" height="60" alt="Ixmex Stone Design logo" onerror="this.onerror=null;this.src='assets/img/logo.webp';" />
           <span>Ixmex Stone Design</span>
         </a>
         <button class="navbar-toggler" type="button"
@@ -135,7 +133,8 @@
         </div>
       </div>
     </nav>
-
+    
+    
     <!-- === HERO === -->
     <header id="heroCarousel" class="carousel slide carousel-fade"
             data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="false">
