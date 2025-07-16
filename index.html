@@ -97,18 +97,25 @@
 
   <body id="page-top">
     <!-- === Navbar === -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav" aria-label="Main navigation">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
       <div class="container px-4 px-lg-5">
         <a class="navbar-brand d-flex align-items-center gap-2" href="#page-top">
-          <img src="assets/img/logo.webp" height="80" alt="Ixmex Stone Design logo" onerror="this.onerror=null;this.src='assets/img/logo.webp';" />
+          <picture>
+            <source srcset="/assets/img/logo.webp" type="image/webp" />
+            <img src="/assets/img/logo.png" alt="Ixmex Stone Design logo" class="brand-logo" height="80" />
+          </picture>
           <span>Ixmex Stone Design</span>
         </a>
+    
+        <!-- mobile toggle -->
         <button class="navbar-toggler" type="button"
                 data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false"
                 aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+    
+        <!-- Nav links -->
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ms-auto my-2 my-lg-0">
             <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
