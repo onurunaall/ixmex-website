@@ -11308,4 +11308,14 @@ a.link-primary:hover {
     background-size: cover;
     background-position: center;
 }
+/* Flickering Fix */
+#heroCarousel .carousel-inner {
+  background-color: #000;
+}
 
+.carousel-item {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
