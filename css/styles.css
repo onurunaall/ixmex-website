@@ -11304,3 +11304,8 @@ a.link-primary:hover {
   background-color: #000;
 }
 
+#heroCarousel .carousel-item {
+    background-size: cover;
+    background-position: center;
+}
+
