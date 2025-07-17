@@ -11300,3 +11300,7 @@ a.link-primary:hover {
   color: #35507a !important;
 }
 
+#heroCarousel .carousel-inner {
+  background-color: #000;
+}
+
