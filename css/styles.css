@@ -11019,6 +11019,10 @@ header.masthead h1, header.masthead .h1 {
   background-position: center;
 }
 
+#heroCarousel .carousel-item img {
+  aspect-ratio: 16/9; /* fallback hint for better scaling */
+}
+
 .carousel-fade .carousel-item {
   transition: opacity .8s ease;
 }
