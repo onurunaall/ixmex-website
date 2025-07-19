@@ -11215,14 +11215,19 @@ html, body {
 }
 
 #heroCarousel {
-  background: linear-gradient(to bottom, #e5e5e5, #ccc)
+  background-color: #ddd; /* Fallback base */
+  background-image: linear-gradient(to bottom, #e5e5e5, #ccc); /* Aesthetic layer */
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #heroCarousel .carousel-inner {
-  background-color: #ddd;
+  background-color: transparent; /* Let parent shine through */
 }
 
-
+.carousel-item {
+  transition: opacity 0.6s ease-in-out !important;
+}
 
 #heroCarousel .carousel-item {
   position: absolute;
