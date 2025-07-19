@@ -11320,11 +11320,3 @@ a.link-primary:hover {
   transform: translate3d(0, 0, 0);
 }
 
-.carousel-item {
-  opacity: 0;
-  transition: opacity 0.8s ease;
-}
-.carousel-item.active {
-  opacity: 1;
-}
-
