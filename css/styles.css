@@ -11215,14 +11215,13 @@ html, body {
 }
 
 #heroCarousel {
-  background:
-    linear-gradient(to bottom, #222, #111),
-    radial-gradient(circle at center, #333 0%, #222 100%);
+  background: linear-gradient(to bottom, #e5e5e5, #ccc)
 }
 
 #heroCarousel .carousel-inner {
-  background-color: #222;
+  background-color: #ddd;
 }
+
 
 
 #heroCarousel .carousel-item {
