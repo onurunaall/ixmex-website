@@ -11214,6 +11214,14 @@ html, body {
   position: relative;
 }
 
+#heroCarousel {
+  background: linear-gradient(to bottom, #222, #111); /* dark neutral */
+}
+
+#heroCarousel .carousel-inner {
+  background-color: #111; /* or a dark gray close to your image tones */
+}
+
 #heroCarousel .carousel-item {
   position: absolute;
   top: 0; left: 0;
