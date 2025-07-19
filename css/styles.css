@@ -11209,33 +11209,44 @@ html, body {
   padding: 0;
 }
 
-#heroCarousel,
-#heroCarousel .carousel-inner,
-#heroCarousel .carousel-item,
-#heroCarousel .carousel-item picture,
-#heroCarousel .carousel-item img {
-  height: 100vh;
+/* Force carousel-fade layout */
+#heroCarousel .carousel-inner {
+  position: relative;
 }
 
-/* 1. Neutral fallback so a gap never blinds the user */
 #heroCarousel {
-  background-color: #b5b5b5;        /* solid, mid‑light grey */
+  background-color: #b5b5b5;
+  background-image: linear-gradient(to bottom, #c8c8c8, #aaa);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-/* 2. Keep inner wrapper transparent so the fallback can show if ever needed */
+
+#heroCarousel {
+  background-color: #b5b5b5; /* mid-light neutral, non-shiny */
+}
 #heroCarousel .carousel-inner {
   background-color: transparent;
 }
 
-/* 3. Images fill slide without distortion */
-#heroCarousel .carousel-item img {
+
+#heroCarousel .carousel-item {
+  position: absolute;
+  top: 0; left: 0;
   width: 100%;
-  object-fit: cover;
-  display: block;
+  height: 100%;
+  opacity: 0;
+  transition: opacity .7s ease-in-out;
+  z-index: 0;
+}
+#heroCarousel .carousel-item.active,
+#heroCarousel .carousel-item-next,          /* <- incoming   */
+#heroCarousel .carousel-item-prev {         /* <- incoming   */
+  opacity: 1;                               /* always opaque */
 }
 
-/* 4. Slightly slower fade for smoother overlap
-      (Bootstrap default is .6 s; 0.8 s feels softer)                       */
-.carousel-fade .carousel-item {
-  transition: opacity 0.8s ease-in-out;
+#heroCarousel .carousel-item.active {
+  position: relative;
+  opacity: 1;
+  z-index: 1;
 }
