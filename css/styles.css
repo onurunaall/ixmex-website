@@ -11215,20 +11215,20 @@ html, body {
 }
 
 #heroCarousel {
-  background-color: #b5b5b5;
+  background-color: #bbb;
   background-image: linear-gradient(to bottom, #c8c8c8, #aaa);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-
-#heroCarousel {
-  background-color: #b5b5b5; /* mid-light neutral, non-shiny */
-}
 #heroCarousel .carousel-inner {
   background-color: transparent;
 }
 
+
+.carousel-item {
+  transition: opacity 0.6s ease-in-out !important;
+}
 
 #heroCarousel .carousel-item {
   position: absolute;
@@ -11236,13 +11236,8 @@ html, body {
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: opacity .7s ease-in-out;
+  transition: opacity 1s ease-in-out;
   z-index: 0;
-}
-#heroCarousel .carousel-item.active,
-#heroCarousel .carousel-item-next,          /* <- incoming   */
-#heroCarousel .carousel-item-prev {         /* <- incoming   */
-  opacity: 1;                               /* always opaque */
 }
 
 #heroCarousel .carousel-item.active {
