@@ -11215,12 +11215,15 @@ html, body {
 }
 
 #heroCarousel {
-  background: linear-gradient(to bottom, #222, #111); /* dark neutral */
+  background:
+    linear-gradient(to bottom, #222, #111),
+    radial-gradient(circle at center, #333 0%, #222 100%);
 }
 
 #heroCarousel .carousel-inner {
-  background-color: #111; /* or a dark gray close to your image tones */
+  background-color: #222;
 }
+
 
 #heroCarousel .carousel-item {
   position: absolute;
