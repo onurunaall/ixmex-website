@@ -34,12 +34,23 @@
 
     <!-- ─── critical tweaks ─── -->
     <style>
-      html{scroll-behavior:smooth}
-      :root{--bs-primary:#22324c;--accent:#e07a5f;--safe-top:env(safe-area-inset-top)}
-      hr.divider,hr.divider-light{border-color:rgba(255,255,255,.2)!important}
-      .btn-primary{background:var(--accent);border-color:var(--accent)}
-      .btn-primary:hover{background:#d56c54}
-      .btn-xl{padding:1rem 2rem;font-size:1.25rem;font-weight:700}
+      html {scroll-behavior:smooth}
+      :root {
+        --bs-primary:#22324c;
+        --accent:#22324c;
+        --safe-top: env(safe-area-inset-top)
+      }
+      
+      hr.divider,hr.divider-light {
+        border-color: rgba(255,255,255,.2) !important
+      }
+      .btn-primary {
+        background: var(--accent);
+        border-color:var(--accent)
+      }
+      
+      .btn-primary: hover {background:#d56c54}
+      .btn-xl {padding: 1rem 2rem; font-size: 1.25rem;font-weight:700}
       .service-icon{color:var(--accent)}
       .service-card{background:rgba(224,122,95,.1);border-radius:.5rem;padding:1.5rem}
       
