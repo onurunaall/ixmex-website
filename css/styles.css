@@ -11322,53 +11322,14 @@ html, body {
   outline: none       !important;
   box-shadow: none    !important;
 }
-
-/* — Safari/iOS tap-highlight removal — */
-a, button {
-  -webkit-tap-highlight-color: transparent !important;
+/* a) Blue tap-highlight on iOS/Safari for nav links */
+#mainNav .navbar-nav .nav-link {
+  -webkit-tap-highlight-color: rgba(34,50,76,0.3) !important;
 }
 
-/* — Ensure .btn-primary is blue (fixes the stray colon typo) — */
-.btn-primary {
-  background: var(--bs-primary) !important;
-  border-color: var(--bs-primary) !important;  /* ← semicolon, not colon */
-}
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active {
-  background: #1b293a !important;
-}
-
-/* — Force .btn-light (e.g. “Get Started!”) into blue too — */
-.btn-light {
-  background-color: var(--bs-primary) !important;
-  border: 1px solid var(--bs-primary) !important;
-  color: #fff !important;
-}
-.btn-light:hover,
-.btn-light:focus,
-.btn-light:active {
-  background-color: #1b293a !important;
-  border-color:     #1b293a !important;
-}
-
-/* — Kill any default focus/active outlines — */
-.btn,
-.btn:focus,
-.btn:active {
-  outline: none !important;
-  box-shadow: none !important;
-}
-
-/* — Navbar links: normal, hover, focus & active all blue — */
-#mainNav .nav-link,
-#mainNav .nav-link:hover,
-#mainNav .nav-link:focus,
-#mainNav .nav-link.active {
+/* b) Only the clicked/active nav-link turns blue */
+#mainNav .navbar-nav .nav-link:focus,
+#mainNav .navbar-nav .nav-link:active,
+#mainNav .navbar-nav .nav-link.active {
   color: var(--bs-primary) !important;
-}
-
-/* — Divider under “Our Services” — */
-hr.divider {
-  background-color: var(--bs-primary) !important;
 }
