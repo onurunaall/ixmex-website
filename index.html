@@ -128,41 +128,8 @@
       /* tel/mail keep theme colour */
       #contact a[href^="tel"],#contact a[href^="mailto"]{color:inherit}
     </style>
+    <script src="contact.js" defer></script>
   </head>
-
-  <script>
-    emailjs.init('ssSRpGPXlKcgNLafj');
-
-    document.getElementById('submitBtn').addEventListener('click', function(e) {
-      e.preventDefault();
-      
-      const form = document.getElementById('contactForm');
-      const submitBtn = document.getElementById('submitBtn');
-      
-      // Validate form
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-      
-      submitBtn.textContent = 'Sending...';
-      submitBtn.disabled = true;
-      
-      emailjs.sendForm('onur.unal492@gmail.com', 'template_6jsroul', form)
-        .then(function() {
-          alert('Message sent successfully!');
-          form.reset();
-          submitBtn.textContent = 'Submit';
-          submitBtn.disabled = false;
-        })
-        .catch(function(error) {
-          console.error('Error:', error);
-          alert('Failed to send message. Please try again.');
-          submitBtn.textContent = 'Submit';
-          submitBtn.disabled = false;
-        });
-    });
-  </script>
 
   <body id="page-top">
     <!-- === Navbar === -->
