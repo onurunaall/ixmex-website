@@ -10895,9 +10895,7 @@ hr.divider-light {
 #mainNav .navbar-nav .nav-item .nav-link:hover, #mainNav .navbar-nav .nav-item .nav-link:active {
   color: #f4623a;
 }
-#mainNav .navbar-nav .nav-item .nav-link.active {
-  color: #f4623a !important;
-}
+
 @media (min-width: 992px) {
   #mainNav {
     box-shadow: none;
