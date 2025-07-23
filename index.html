@@ -32,8 +32,7 @@
     <link href="css/styles.css" rel="stylesheet" />
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <form id="contactForm" data-netlify="false"></form>
-    
+
     <!-- ─── critical tweaks ─── -->
     <style>
       html {scroll-behavior:smooth}
@@ -130,6 +129,40 @@
       #contact a[href^="tel"],#contact a[href^="mailto"]{color:inherit}
     </style>
   </head>
+
+  <script>
+    emailjs.init('ssSRpGPXlKcgNLafj');
+
+    document.getElementById('submitBtn').addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const form = document.getElementById('contactForm');
+      const submitBtn = document.getElementById('submitBtn');
+      
+      // Validate form
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+      
+      emailjs.sendForm('onur.unal492@gmail.com', 'template_6jsroul', form)
+        .then(function() {
+          alert('Message sent successfully!');
+          form.reset();
+          submitBtn.textContent = 'Submit';
+          submitBtn.disabled = false;
+        })
+        .catch(function(error) {
+          console.error('Error:', error);
+          alert('Failed to send message. Please try again.');
+          submitBtn.textContent = 'Submit';
+          submitBtn.disabled = false;
+        });
+    });
+  </script>
 
   <body id="page-top">
     <!-- === Navbar === -->
@@ -782,31 +815,7 @@
       });
     </script>
 
-    <script>
-    // Initialize EmailJS - Replace with your keys
-    emailjs.init('ssSRpGPXlKcgNLafj');
-
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const submitBtn = this.querySelector('button[type="submit"]');
-      submitBtn.textContent = 'Sending...';
-      submitBtn.disabled = true;
-      
-      emailjs.sendForm('onur.unal492@gmail.com', 'template_6jsroul', this)
-        .then(function() {
-          alert('Message sent successfully!');
-          document.getElementById('contactForm').reset();
-          submitBtn.textContent = 'Submit';
-          submitBtn.disabled = false;
-        })
-        .catch(function() {
-          alert('Failed to send message. Please try again.');
-          submitBtn.textContent = 'Submit';
-          submitBtn.disabled = false;
-        });
-    });
-    </script>
+    
 
 
   </body>
