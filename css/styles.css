@@ -11394,3 +11394,27 @@ html, body {
 
 /* --- 5. Divider Color Fix --- */
 hr.divider { background-color: #22324c; }
+
+/* --- 6. Performance and Layout Fixes --- */
+
+/* Hardware acceleration hint for hero carousel on mobile */
+#heroCarousel .carousel-item {
+    will-change: opacity; /* Promotes the layer for smoother transitions */
+}
+
+/* Styling for the new Services slider */
+.services-swiper {
+    padding-bottom: 3rem; /* Space for pagination dots */
+}
+.services-swiper .swiper-slide {
+    height: auto; /* Allow slides to grow to content height */
+    padding: 0.5rem;
+}
+.service-card {
+    background-color: #f8f9fa;
+    border-radius: 0.5rem;
+    padding: 2rem 1.5rem;
+    height: 100%; /* Make all cards in view the same height */
+    text-align: center;
+    border: 1px solid #dee2e6;
+}
