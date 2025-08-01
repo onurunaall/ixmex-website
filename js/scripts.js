@@ -50,9 +50,9 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   // PORTFOLIO SWIPER
-  (function initSwiper() {
+  (function initPortfolioSwiper() {
     if (typeof Swiper !== 'function') {
-      return setTimeout(initSwiper, 100);
+      return setTimeout(initPortfolioSwiper, 100);
     }
     const container = document.querySelector('.portfolio-swiper');
     if (!container) {
@@ -66,11 +66,11 @@ window.addEventListener('DOMContentLoaded', () => {
       spaceBetween: 16,
       loop: true,
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.portfolio-swiper .swiper-button-next',
+        prevEl: '.portfolio-swiper .swiper-button-prev',
       },
       pagination: {
-        el: '.swiper-pagination',
+        el: '.portfolio-swiper .swiper-pagination',
         clickable: true,
       },
       breakpoints: {
@@ -97,25 +97,15 @@ window.addEventListener('DOMContentLoaded', () => {
     new Swiper(container, {
         slidesPerView: 1,
         spaceBetween: 15,
-        loop: false, // <-- Set to false as requested
+        loop: false,
         centeredSlides: true,
         navigation: {
             nextEl: '.services-swiper .swiper-button-next',
             prevEl: '.services-swiper .swiper-button-prev',
         },
         breakpoints: {
-            // 2 slides per view on medium screens
-            768: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-                centeredSlides: false,
-            },
-            // 3 slides per view on large screens
-            992: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-                centeredSlides: false,
-            }
+            768: { slidesPerView: 2, spaceBetween: 20, centeredSlides: false },
+            992: { slidesPerView: 3, spaceBetween: 30, centeredSlides: false }
         },
     });
   })();
