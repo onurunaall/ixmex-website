@@ -98,21 +98,19 @@ window.addEventListener('DOMContentLoaded', () => {
 
     new Swiper(container, {
       slidesPerView: 1,
-      spaceBetween: 16,
+      spaceBetween: 30,
       loop: true,
-      centeredSlides: true,
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
       },
-      navigation: { // Link to the new, external buttons
-        nextEl: '.services-swiper-navigation .swiper-button-next',
-        prevEl: '.services-swiper-navigation .swiper-button-prev',
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
       },
       breakpoints: {
-        576: { slidesPerView: 2, centeredSlides: false },
-        992: { slidesPerView: 2, centeredSlides: false }, // Show 2 on larger screens
-        1200: { slidesPerView: 3, centeredSlides: false }, // Show 3 on extra-large screens
+        768: { slidesPerView: 2 },
+        992: { slidesPerView: 3 },
       },
     });
   })();
