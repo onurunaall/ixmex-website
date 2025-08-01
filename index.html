@@ -684,30 +684,30 @@
               <div class="col-12 flex-grow-1">
                 <div class="bg-white p-4 rounded-3 shadow-sm h-100">
                   <h3 class="h4 mb-3 text-center">Send Us a Message</h3>
-                    <form name="contact" action="https://formsubmit.co/onur.unal492@gmail.com" method="POST">
+                    <form name="contact" method="POST" data-netlify="true">
+                      <input type="hidden" name="form-name" value="contact">
+                  
                       <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" required>
-                        <label for="name">Full Name</label>
+                          <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" required>
+                          <label for="name">Full Name</label>
                       </div>
                   
                       <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
-                        <label for="email">Email address</label>
+                          <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
+                          <label for="email">Email address</label>
                       </div>
                   
                       <div class="form-floating mb-3">
-                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number">
-                        <label for="phone">Phone Number (Optional)</label>
+                          <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number">
+                          <label for="phone">Phone Number (Optional)</label>
                       </div>
                   
                       <div class="form-floating mb-3">
-                        <textarea class="form-control" id="message" name="message" placeholder="Enter your message here..." required style="height: 12rem"></textarea>
-                        <label for="message">Message</label>
+                          <textarea class="form-control" id="message" name="message" placeholder="Enter your message here..." required style="height: 12rem"></textarea>
+                          <label for="message">Message</label>
                       </div>
-                  
                       <button type="submit" class="btn btn-primary btn-xl w-100">Submit</button>
                   </form>
-
                 </div>
               </div>
             </div>
