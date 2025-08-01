@@ -11396,7 +11396,6 @@ html, body {
   }
 }
 
-
 /* --- 3. Contact Section Redesign --- */
 #contact .form-control {
   border-color: #ced4da;
@@ -11408,8 +11407,6 @@ html, body {
   box-shadow: 0 0 0 0.25rem rgba(34, 50, 76, 0.25);
 }
 
-#contact .bi-telephone-fill, 
-#contact .bi-envelope-fill, 
-#contact .bi-geo-alt-fill {
+#contact a.text-primary {
   color: #22324c !important; /* Use your navy blue */
 }
