@@ -11383,56 +11383,42 @@ html, body {
 /* --- 5. Divider Color Fix --- */
 hr.divider { background-color: #22324c; }
 
-/* --- 6. Services Slider (Final Grid Style) --- */
-#services .swiper-container {
-    padding: 0 4rem; /* Add padding on the sides for the arrows */
-}
-#services .swiper-slide {
-    height: auto;
-    padding-bottom: 3rem; /* Space for pagination dots */
-}
-#services .service-card {
+/* --- 6. Services Slider (Final Corrected Style) --- */
+.services-swiper { position: relative; padding-bottom: 3rem; }
+.services-swiper .swiper-slide { height: auto; }
+.services-swiper .service-card {
     background: #ffffff;
     border-radius: 0.5rem;
-    padding: 2.5rem 1.5rem;
+    padding: 2rem 1.5rem;
     text-align: center;
-    border: 1px solid #e0e0e0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid #e9ecef;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     height: 100%;
 }
-#services .service-card i {
-    font-size: 2.5rem;
-    color: #22324c;
-    margin-bottom: 1.25rem;
-}
-#services .swiper-button-prev,
-#services .swiper-button-next {
-    top: 50%;
-    transform: translateY(-65%); /* Adjust vertical alignment */
+.services-swiper .service-card i { font-size: 2.5rem; color: #22324c; margin-bottom: 1.25rem; }
+.services-swiper .swiper-pagination-bullet-active { background: #22324c; }
+
+/* Consistent Arrow Styles for ALL sliders */
+.swiper-button-prev, .swiper-button-next {
     width: 2.75rem;
     height: 2.75rem;
-    background-color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-    color: #22324c;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    color: #ffffff !important;
+    transition: background-color 0.2s ease;
 }
-#services .swiper-button-prev:hover,
-#services .swiper-button-next:hover {
-    background-color: #22324c;
-    color: #ffffff;
+.swiper-button-prev:hover, .swiper-button-next:hover {
+    background-color: rgba(0, 0, 0, 0.5);
 }
-#services .swiper-button-prev {
-    left: 0.5rem;
-}
-#services .swiper-button-next {
-    right: 0.5rem;
-}
-#services .swiper-button-prev::after,
-#services .swiper-button-next::after {
+.swiper-button-prev::after, .swiper-button-next::after {
     font-size: 1rem;
     font-weight: bold;
 }
-#services .swiper-pagination-bullet-active {
-    background: #22324c;
-}
+
+/* Arrow positioning for Services slider */
+.services-swiper .swiper-button-prev { left: -10px; }
+.services-swiper .swiper-button-next { right: -10px; }
+
+/* Arrow positioning for Portfolio slider */
+.portfolio-swiper .swiper-button-prev { left: 10px; }
+.portfolio-swiper .swiper-button-next { right: 10px; }
