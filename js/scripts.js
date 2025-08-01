@@ -84,4 +84,25 @@ window.addEventListener('DOMContentLoaded', () => {
       },
     });
   })();
+
+  // --- Custom Script for Ixmex Website File Upload ---
+  const fileInput = document.getElementById('file-upload');
+  const fileUploadButton = document.getElementById('file-upload-button');
+  const filenameDisplay = document.getElementById('file-upload-filename');
+
+  if (fileUploadButton && fileInput && filenameDisplay) {
+      // Trigger the hidden file input when the custom button is clicked
+      fileUploadButton.addEventListener('click', () => {
+          fileInput.click();
+      });
+
+      // Display the selected filename
+      fileInput.addEventListener('change', function() {
+          if (this.files && this.files.length > 0) {
+              filenameDisplay.textContent = 'Selected: ' + this.files[0].name;
+          } else {
+              filenameDisplay.textContent = '';
+          }
+      });
+  }
 });
