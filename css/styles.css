@@ -11395,4 +11395,21 @@ html, body {
     color: #dddddd !important; /* A lighter color for hover on transparent background */
   }
 }
+
+
+/* --- 3. Contact Section Redesign --- */
+#contact .form-control {
+  border-color: #ced4da;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+#contact .form-control:focus {
+  border-color: #22324c;
+  box-shadow: 0 0 0 0.25rem rgba(34, 50, 76, 0.25);
+}
+
+#contact .bi-telephone-fill, 
+#contact .bi-envelope-fill, 
+#contact .bi-geo-alt-fill {
+  color: #22324c !important; /* Use your navy blue */
 }
