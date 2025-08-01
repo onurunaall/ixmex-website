@@ -49,10 +49,9 @@ window.addEventListener('DOMContentLoaded', () => {
     console.warn('SimpleLightbox init failed:', e);
   }
 
-  // SWIPER: wait until library & DOM are ready
+  // SWIPER
   (function initSwiper() {
     if (typeof Swiper !== 'function') {
-      // Swiper JS not loaded yet
       return setTimeout(initSwiper, 100);
     }
     const container = document.querySelector('.portfolio-swiper');
@@ -60,7 +59,6 @@ window.addEventListener('DOMContentLoaded', () => {
       console.warn('Swiper container ".portfolio-swiper" not found');
       return;
     }
-    // Only initialize once
     if (container.dataset.swiperInitialized) return;
     container.dataset.swiperInitialized = 'true';
 
@@ -85,24 +83,33 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   })();
 
-  // --- Custom Script for Ixmex Website File Upload ---
+  // --- Custom Script for Ixmex Website File Upload with Remove ---
   const fileInput = document.getElementById('file-upload');
   const fileUploadButton = document.getElementById('file-upload-button');
+  const fileUploadDisplay = document.getElementById('file-upload-display');
   const filenameDisplay = document.getElementById('file-upload-filename');
+  const removeFileButton = document.getElementById('remove-file-button');
 
-  if (fileUploadButton && fileInput && filenameDisplay) {
+  if (fileUploadButton && fileInput && fileUploadDisplay && filenameDisplay && removeFileButton) {
+      
       // Trigger the hidden file input when the custom button is clicked
       fileUploadButton.addEventListener('click', () => {
           fileInput.click();
       });
 
-      // Display the selected filename
+      // When a file is selected, show its name and the remove button
       fileInput.addEventListener('change', function() {
           if (this.files && this.files.length > 0) {
-              filenameDisplay.textContent = 'Selected: ' + this.files[0].name;
-          } else {
-              filenameDisplay.textContent = '';
+              filenameDisplay.textContent = this.files[0].name;
+              fileUploadDisplay.classList.remove('d-none'); // Show the container
           }
+      });
+
+      // When the remove button is clicked, clear the input and hide the display
+      removeFileButton.addEventListener('click', () => {
+          fileInput.value = null; // This is the crucial step to clear the file
+          filenameDisplay.textContent = '';
+          fileUploadDisplay.classList.add('d-none'); // Hide the container again
       });
   }
 });
