@@ -11383,37 +11383,56 @@ html, body {
 /* --- 5. Divider Color Fix --- */
 hr.divider { background-color: #22324c; }
 
-/* --- 6. Services "Showcase" Slider --- */
-.services-swiper {
-    width: 100%;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+/* --- 6. Services Slider (Final Grid Style) --- */
+#services .swiper-container {
+    padding: 0 4rem; /* Add padding on the sides for the arrows */
 }
-.services-swiper .swiper-slide {
-    background-position: center;
-    background-size: cover;
-    width: 320px;
+#services .swiper-slide {
     height: auto;
-    opacity: 0.4;
-    transition: opacity 0.3s ease;
+    padding-bottom: 3rem; /* Space for pagination dots */
 }
-.services-swiper .swiper-slide-active {
-    opacity: 1;
-}
-.services-swiper .service-card {
-    background: #fff;
-    border-radius: .5rem;
+#services .service-card {
+    background: #ffffff;
+    border-radius: 0.5rem;
     padding: 2.5rem 1.5rem;
     text-align: center;
-    border: 1px solid #e9ecef;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,0.05);
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    height: 100%;
 }
-.services-swiper .service-card i {
+#services .service-card i {
     font-size: 2.5rem;
     color: #22324c;
     margin-bottom: 1.25rem;
 }
-.services-swiper .swiper-button-prev,
-.services-swiper .swiper-button-next {
+#services .swiper-button-prev,
+#services .swiper-button-next {
+    top: 50%;
+    transform: translateY(-65%); /* Adjust vertical alignment */
+    width: 2.75rem;
+    height: 2.75rem;
+    background-color: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
     color: #22324c;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+#services .swiper-button-prev:hover,
+#services .swiper-button-next:hover {
+    background-color: #22324c;
+    color: #ffffff;
+}
+#services .swiper-button-prev {
+    left: 0.5rem;
+}
+#services .swiper-button-next {
+    right: 0.5rem;
+}
+#services .swiper-button-prev::after,
+#services .swiper-button-next::after {
+    font-size: 1rem;
+    font-weight: bold;
+}
+#services .swiper-pagination-bullet-active {
+    background: #22324c;
 }
