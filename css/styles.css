@@ -11340,10 +11340,10 @@ html, body {
   color: var(--bs-primary) !important;
 }
 
-/* === Custom Fixes for Ixmex Stone Design === */
+//* === Custom Fixes for Ixmex Stone Design === */
 
-/* --- 1. Force Smooth Hero Carousel Cross-Fade --- */
-#heroCarousel.carousel-fade .carousel-item { opacity: 0; transition-property: opacity; transition-duration: .8s; }
+/* --- 1. Hero Carousel Performance & Cross-Fade --- */
+#heroCarousel .carousel-item { will-change: opacity; opacity: 0; transition-property: opacity; transition-duration: .8s; }
 #heroCarousel.carousel-fade .carousel-item.active { opacity: 1; z-index: 1; }
 #heroCarousel.carousel-fade .carousel-item-next.carousel-item-start,
 #heroCarousel.carousel-fade .carousel-item-prev.carousel-item-end { opacity: 1; z-index: 0; }
@@ -11377,44 +11377,32 @@ html, body {
 /* --- 4. Custom File Upload Button & Display --- */
 #contact .btn-outline-secondary { border-color: #ced4da; color: #495057; }
 #contact .btn-outline-secondary:hover { background-color: #f1f3f5; color: #22324c; }
-#file-upload-display {
-    display: flex;
-    padding: 0.5rem 0.75rem;
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
-    border-radius: 0.375rem;
-}
-#file-upload-filename {
-    font-style: italic;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding-right: 1rem; /* Add space between filename and remove button */
-}
+#file-upload-display { display: flex; padding: 0.5rem 0.75rem; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 0.375rem; }
+#file-upload-filename { font-style: italic; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-right: 1rem; }
 
 /* --- 5. Divider Color Fix --- */
 hr.divider { background-color: #22324c; }
 
-/* --- 6. Performance and Layout Fixes --- */
+/* --- 6. Services Slider Styling --- */
+.services-swiper .swiper-slide { height: auto; padding-bottom: 3rem; }
+.services-swiper .card { position: relative; background: #fff; border-radius: .5rem; box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1); padding: 2rem 1.5rem; display: flex; flex-direction: column; align-items: center; text-align: center; height: 100%; }
+.services-swiper .card::before { content: ''; position: absolute; top: 0; left: 0; width: 4rem; height: .25rem; background: #2a9d8f; border-top-left-radius: .5rem; }
+.services-swiper .card i { font-size: 2rem; color: #2a9d8f; margin-bottom: 1rem; }
 
-/* Hardware acceleration hint for hero carousel on mobile */
-#heroCarousel .carousel-item {
-    will-change: opacity; /* Promotes the layer for smoother transitions */
+/* Custom Swiper Navigation Buttons */
+.services-swiper-navigation .swiper-button-prev,
+.services-swiper-navigation .swiper-button-next {
+    position: static;
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    margin: 0;
+    color: #22324c;
+    background-color: #e9ecef;
+    border-radius: 50%;
 }
-
-/* Styling for the new Services slider */
-.services-swiper {
-    padding-bottom: 3rem; /* Space for pagination dots */
-}
-.services-swiper .swiper-slide {
-    height: auto; /* Allow slides to grow to content height */
-    padding: 0.5rem;
-}
-.service-card {
-    background-color: #f8f9fa;
-    border-radius: 0.5rem;
-    padding: 2rem 1.5rem;
-    height: 100%; /* Make all cards in view the same height */
-    text-align: center;
-    border: 1px solid #dee2e6;
+.services-swiper-navigation .swiper-button-prev::after,
+.services-swiper-navigation .swiper-button-next::after {
+    font-size: 1rem;
+    font-weight: bold;
 }
