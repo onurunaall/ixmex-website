@@ -11340,7 +11340,7 @@ html, body {
   color: var(--bs-primary) !important;
 }
 
-//* === Custom Fixes for Ixmex Stone Design === */
+/* === Custom Fixes for Ixmex Stone Design === */
 
 /* --- 1. Hero Carousel Performance & Cross-Fade --- */
 #heroCarousel .carousel-item { will-change: opacity; opacity: 0; transition-property: opacity; transition-duration: .8s; }
@@ -11383,26 +11383,33 @@ html, body {
 /* --- 5. Divider Color Fix --- */
 hr.divider { background-color: #22324c; }
 
-/* --- 6. Services Slider Styling --- */
-.services-swiper .swiper-slide { height: auto; padding-bottom: 3rem; }
-.services-swiper .card { position: relative; background: #fff; border-radius: .5rem; box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1); padding: 2rem 1.5rem; display: flex; flex-direction: column; align-items: center; text-align: center; height: 100%; }
-.services-swiper .card::before { content: ''; position: absolute; top: 0; left: 0; width: 4rem; height: .25rem; background: #2a9d8f; border-top-left-radius: .5rem; }
-.services-swiper .card i { font-size: 2rem; color: #2a9d8f; margin-bottom: 1rem; }
-
-/* Custom Swiper Navigation Buttons */
-.services-swiper-navigation .swiper-button-prev,
-.services-swiper-navigation .swiper-button-next {
-    position: static;
-    display: inline-block;
-    width: 3rem;
-    height: 3rem;
-    margin: 0;
-    color: #22324c;
-    background-color: #e9ecef;
-    border-radius: 50%;
+/* --- 6. Services Slider Final --- */
+.services-swiper {
+  position: relative;
+  padding: 1rem 0 3rem 0; /* Add top padding and space for pagination */
 }
-.services-swiper-navigation .swiper-button-prev::after,
-.services-swiper-navigation .swiper-button-next::after {
-    font-size: 1rem;
-    font-weight: bold;
+.services-swiper .swiper-slide {
+  height: auto; /* Allow slides to grow to content height */
+}
+.services-swiper .card {
+    position: relative;
+    background: #e07a5f1a; /* Restored light orange background */
+    border-radius: .5rem;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.services-swiper .card i {
+    font-size: 2rem;
+    color: #22324c; /* Navy Blue Icon */
+    margin-bottom: 1rem;
+}
+.services-swiper .swiper-button-prev,
+.services-swiper .swiper-button-next {
+    color: #22324c; /* Navy Blue Arrows */
+}
+.services-swiper .swiper-pagination-bullet-active {
+    background: #22324c; /* Navy Blue Pagination Dot */
 }
