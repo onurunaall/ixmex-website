@@ -11365,34 +11365,32 @@ html, body {
 }
 
 /* --- 3. Contact Section Redesign & Fixes --- */
-#contact .h3, #contact .h6 {
-    color: #22324c; /* Navy blue for ALL titles in contact section */
-}
+#contact .h4, #contact .h6 { color: #22324c; }
 #contact table .bordered-row th,
-#contact table .bordered-row td {
-    border-top: 1px solid #dee2e6; /* Thin line for business hours */
-}
+#contact table .bordered-row td { border-top: 1px solid #dee2e6; }
 #contact .form-control { border-width: 1px; border-color: #ced4da; transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out; }
 #contact .form-control:focus { border-color: #22324c; border-width: 1px; box-shadow: 0 0 0 0.25rem rgba(34, 50, 76, 0.25); }
+#contact .text-center .bi { color: #22324c !important; }
+#contact .text-center a { color: #212529 !important; text-decoration: none !important; }
+#contact .text-center a:hover { text-decoration: underline !important; }
 
-/* CORRECTED Icon and Link Colors */
-#contact .text-center .bi { /* Target icons specifically */
-    color: #22324c !important; 
-}
-#contact .text-center a { /* Target links specifically */
-    color: #212529 !important; /* Standard dark text color */
-    text-decoration: none !important;
-}
-#contact .text-center a:hover {
-    text-decoration: underline !important;
-}
-
-/* --- 4. Custom File Upload Button --- */
+/* --- 4. Custom File Upload Button & Display --- */
 #contact .btn-outline-secondary { border-color: #ced4da; color: #495057; }
 #contact .btn-outline-secondary:hover { background-color: #f1f3f5; color: #22324c; }
-#file-upload-filename { font-style: italic; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#file-upload-display {
+    display: flex;
+    padding: 0.5rem 0.75rem;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+}
+#file-upload-filename {
+    font-style: italic;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 1rem; /* Add space between filename and remove button */
+}
 
 /* --- 5. Divider Color Fix --- */
-hr.divider {
-  background-color: #22324c; /* Navy blue for all divider lines */
-}
+hr.divider { background-color: #22324c; }
