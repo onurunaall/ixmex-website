@@ -11343,78 +11343,56 @@ html, body {
 /* === Custom Fixes for Ixmex Stone Design === */
 
 /* --- 1. Force Smooth Hero Carousel Cross-Fade --- */
-#heroCarousel.carousel-fade .carousel-item {
-    opacity: 0;
-    transition-property: opacity;
-    transition-duration: .8s;
-}
-#heroCarousel.carousel-fade .carousel-item.active {
-    opacity: 1;
-    z-index: 1;
-}
+#heroCarousel.carousel-fade .carousel-item { opacity: 0; transition-property: opacity; transition-duration: .8s; }
+#heroCarousel.carousel-fade .carousel-item.active { opacity: 1; z-index: 1; }
 #heroCarousel.carousel-fade .carousel-item-next.carousel-item-start,
-#heroCarousel.carousel-fade .carousel-item-prev.carousel-item-end {
-    opacity: 1;
-    z-index: 0;
-}
+#heroCarousel.carousel-fade .carousel-item-prev.carousel-item-end { opacity: 1; z-index: 0; }
 #heroCarousel.carousel-fade .active.carousel-item-start,
-#heroCarousel.carousel-fade .active.carousel-item-end {
-    opacity: 0;
-    transition: opacity 0s .8s;
-}
+#heroCarousel.carousel-fade .active.carousel-item-end { opacity: 0; transition: opacity 0s .8s; }
 
 /* --- 2. Navbar Color Corrections --- */
 #mainNav.navbar-shrink .navbar-brand,
-#mainNav.navbar-shrink .navbar-nav .nav-link {
-  color: #000000 !important;
-}
+#mainNav.navbar-shrink .navbar-nav .nav-link { color: #000000 !important; }
 #mainNav.navbar-shrink .navbar-brand:hover,
 #mainNav.navbar-shrink .navbar-nav .nav-link:hover,
-#mainNav.navbar-shrink .navbar-nav .nav-link.active {
-  color: #22324c !important;
-}
+#mainNav.navbar-shrink .navbar-nav .nav-link.active { color: #22324c !important; }
 @media (min-width: 992px) {
   #mainNav .navbar-brand,
-  #mainNav .navbar-nav .nav-link {
-    color: #ffffff !important;
-  }
+  #mainNav .navbar-nav .nav-link { color: #ffffff !important; }
   #mainNav .navbar-brand:hover,
   #mainNav .navbar-nav .nav-link:hover,
-  #mainNav .navbar-nav .nav-link.active {
-    color: #dddddd !important;
-  }
+  #mainNav .navbar-nav .nav-link.active { color: #dddddd !important; }
 }
 
 /* --- 3. Contact Section Redesign & Fixes --- */
-#contact .h5 {
-    color: #22324c; /* Navy blue for "Contact Information" title */
+#contact .h4, #contact .h6 {
+    color: #22324c; /* Navy blue for ALL titles in contact section */
 }
 #contact table .bordered-row th,
 #contact table .bordered-row td {
     border-top: 1px solid #dee2e6; /* Thin line for business hours */
 }
-#contact .form-control {
-  border-width: 1px;
-  border-color: #ced4da;
-  transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
-}
-#contact .form-control:focus {
-  border-color: #22324c;
-  border-width: 2px;
-  box-shadow: 0 0 0 0.25rem rgba(34, 50, 76, 0.25);
-}
-#contact a.text-primary {
-  color: #22324c !important;
-}
-#contact .form-label {
-    font-size: 0.9rem;
+#contact .form-control { border-width: 1px; border-color: #ced4da; transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out; }
+#contact .form-control:focus { border-color: #22324c; border-width: 1px; box-shadow: 0 0 0 0.25rem rgba(34, 50, 76, 0.25); }
+#contact a.text-primary { color: #22324c !important; }
+
+/* --- 4. Custom File Upload Button --- */
+#contact .btn-outline-secondary {
+    border-color: #ced4da;
     color: #495057;
 }
-#contact .form-control[type="file"] {
-    background-color: #f8f9fa;
+#contact .btn-outline-secondary:hover {
+    background-color: #f1f3f5;
+    color: #22324c;
+}
+#file-upload-filename {
+    font-style: italic;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-/* --- 4. Divider Color Fix --- */
+/* --- 5. Divider Color Fix --- */
 hr.divider {
   background-color: #22324c; /* Navy blue for all divider lines */
 }
