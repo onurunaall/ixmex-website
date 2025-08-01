@@ -11416,8 +11416,12 @@ hr.divider { background-color: #22324c; }
 }
 
 /* Arrow positioning for Services slider */
-.services-swiper .swiper-button-prev { left: 10px; }
-.services-swiper .swiper-button-next { right: 10px; }
+.services-swiper .swiper-button-prev {
+    left: 1.5rem;
+}
+.services-swiper .swiper-button-next {
+    right: 1.5rem;
+}
 
 /* Arrow positioning for Portfolio slider */
 .portfolio-swiper .swiper-button-prev { left: 10px; }
