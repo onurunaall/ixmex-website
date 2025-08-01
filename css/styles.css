@@ -11386,14 +11386,14 @@ hr.divider { background-color: #22324c; }
 /* --- 6. Services Slider Final --- */
 .services-swiper {
   position: relative;
-  padding: 1rem 0 3rem 0; /* Add top padding and space for pagination */
+  padding: 1rem 0 3rem 0;
 }
 .services-swiper .swiper-slide {
-  height: auto; /* Allow slides to grow to content height */
+  height: auto;
 }
 .services-swiper .card {
     position: relative;
-    background: #e07a5f1a; /* Restored light orange background */
+    background: #e07a5f1a;
     border-radius: .5rem;
     padding: 2rem 1.5rem;
     display: flex;
@@ -11403,13 +11403,29 @@ hr.divider { background-color: #22324c; }
 }
 .services-swiper .card i {
     font-size: 2rem;
-    color: #22324c; /* Navy Blue Icon */
+    color: #22324c;
     margin-bottom: 1rem;
 }
+.services-swiper .swiper-pagination-bullet-active {
+    background: #22324c;
+}
+
+/* Hero-Style Navigation Arrows for Services Slider */
 .services-swiper .swiper-button-prev,
 .services-swiper .swiper-button-next {
-    color: #22324c; /* Navy Blue Arrows */
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    color: #fff;
+    transition: background-color 0.15s ease;
 }
-.services-swiper .swiper-pagination-bullet-active {
-    background: #22324c; /* Navy Blue Pagination Dot */
+.services-swiper .swiper-button-prev:hover,
+.services-swiper .swiper-button-next:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.services-swiper .swiper-button-prev::after,
+.services-swiper .swiper-button-next::after {
+    font-size: 1.25rem;
+    font-weight: bold;
 }
