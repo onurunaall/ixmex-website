@@ -631,7 +631,7 @@
               <div class="col-lg-6 mb-5 mb-lg-0">
                   <div class="bg-white p-4 rounded-3 shadow-sm h-100 d-flex flex-column">
                       <h3 class="h4 mb-3 text-center">Send Us a Message</h3>
-                      <form name="contact" action="https://formspree.io/f/myzppqde" method="POST" enctype="multipart/form-data" class="d-flex flex-column h-100">
+                      <form name="contact" action="https://formspree.io/f/YOUR_UNIQUE_ID" method="POST" enctype="multipart/form-data" class="d-flex flex-column h-100">
                           <div class="form-floating mb-3">
                               <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" required>
                               <label for="name">Full Name</label>
@@ -644,12 +644,16 @@
                               <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number">
                               <label for="phone">Phone Number (Optional)</label>
                           </div>
-                          
+  
                           <div class="mb-3">
-                              <label for="file-upload" class="form-label">Attach an image (optional)</label>
-                              <input class="form-control" type="file" id="file-upload" name="upload" accept="image/*">
+                              <label for="file-upload" class="form-label visually-hidden">Attach an image or PDF</label>
+                              <input class="form-control" type="file" id="file-upload" name="upload" accept="image/*,.pdf" style="display: none;">
+                              <button type="button" class="btn btn-outline-secondary w-100" onclick="document.getElementById('file-upload').click();">
+                                  <i class="bi-plus-circle me-2"></i>Attach Image or PDF
+                              </button>
+                               <small id="file-upload-filename" class="form-text text-muted d-block mt-2"></small>
                           </div>
-                      
+  
                           <div class="form-floating mb-3 flex-grow-1">
                               <textarea class="form-control" id="message" name="message" placeholder="Enter your message here..." required style="min-height: 8rem;"></textarea>
                               <label for="message">Message</label>
@@ -664,7 +668,7 @@
                       <div class="col-12">
                           <div class="bg-white p-4 rounded-3 shadow-sm">
                               <div class="text-center">
-                                  <h3 class="h5 mb-3">Contact Information</h3>
+                                  <h3 class="h4 mb-3">Contact Information</h3>
                                   <p class="mb-2"><i class="bi-telephone-fill me-2"></i><a href="tel:+17132026877" class="text-decoration-none text-primary">+1 (713) 202-6877</a></p>
                                   <p class="mb-2"><i class="bi-tiktok me-2"></i><a href="https://www.tiktok.com/@ixmexstonedesign" target="_blank" rel="noopener" class="text-decoration-none text-primary">@ixmexstonedesign</a></p>
                                   <p class="mb-2"><i class="bi-envelope-fill me-2"></i><a href="mailto:ixmexstone@gmail.com" class="text-decoration-none text-primary">ixmexstone@gmail.com</a></p>
