@@ -11342,14 +11342,28 @@ html, body {
 
 /* === Custom Fixes for Ixmex Stone Design === */
 
-/* --- 1. Smooth Hero Carousel Cross-Fade Transition --- */
+/* --- 1. Force Smooth Hero Carousel Cross-Fade --- */
 #heroCarousel.carousel-fade .carousel-item {
-  transition-duration: .8s; /* Slows down the fade for a smoother effect */
-  opacity: 0;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: .8s; /* Controls the speed of the fade */
 }
 
 #heroCarousel.carousel-fade .carousel-item.active {
-  opacity: 1;
+    opacity: 1;
+    z-index: 1; /* Ensure active slide is on top */
+}
+
+#heroCarousel.carousel-fade .carousel-item-next.carousel-item-start,
+#heroCarousel.carousel-fade .carousel-item-prev.carousel-item-end {
+    opacity: 1; /* Keep the outgoing slide visible during the transition */
+    z-index: 0;
+}
+
+#heroCarousel.carousel-fade .active.carousel-item-start,
+#heroCarousel.carousel-fade .active.carousel-item-end {
+    opacity: 0; /* Force the new active slide to fade in */
+    transition: opacity 0s .8s; /* Make the old active slide disappear instantly AFTER the new one fades in */
 }
 
 /* --- 2. Navbar Color Corrections --- */
@@ -11380,4 +11394,5 @@ html, body {
   #mainNav .navbar-nav .nav-link.active {
     color: #dddddd !important; /* A lighter color for hover on transparent background */
   }
+}
 }
