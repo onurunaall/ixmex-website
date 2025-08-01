@@ -49,7 +49,7 @@ window.addEventListener('DOMContentLoaded', () => {
     console.warn('SimpleLightbox init failed:', e);
   }
 
-  // SWIPER
+  // PORTFOLIO SWIPER
   (function initSwiper() {
     if (typeof Swiper !== 'function') {
       return setTimeout(initSwiper, 100);
@@ -79,6 +79,36 @@ window.addEventListener('DOMContentLoaded', () => {
         576: { slidesPerView: 2 },
         768: { slidesPerView: 3 },
         992: { slidesPerView: 4 },
+      },
+    });
+  })();
+
+  // SERVICES SWIPER
+  (function initServicesSwiper() {
+    if (typeof Swiper !== 'function') {
+      return setTimeout(initServicesSwiper, 100);
+    }
+    const container = document.querySelector('.services-swiper');
+    if (!container) {
+      console.warn('Swiper container ".services-swiper" not found');
+      return;
+    }
+    if (container.dataset.swiperInitialized) return;
+    container.dataset.swiperInitialized = 'true';
+
+    new Swiper(container, {
+      slidesPerView: 1,
+      spaceBetween: 16,
+      loop: true,
+      centeredSlides: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        576: { slidesPerView: 2 },
+        768: { slidesPerView: 3 },
+        1200: { slidesPerView: 4 },
       },
     });
   })();
