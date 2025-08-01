@@ -29,7 +29,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
-    <!-- ─── critical tweaks ─── -->
+
     <style>
       html {scroll-behavior:smooth}
       :root {
@@ -101,7 +101,6 @@
       .swiper-button-prev,.swiper-button-next{color:var(--accent)}
       .navbar.fixed-top{padding-top:var(--safe-top)}
 
-      /* hero arrows – enlarge visual hit-box */
       .carousel-control-prev-icon,
       .carousel-control-next-icon{
         background-color:#0006;
@@ -110,7 +109,6 @@
         background-size:2.5rem 2.5rem;
       }
 
-      /* ≤575 px polish */
       @media (max-width:575.98px){
         .carousel-caption{padding:0 1rem 1.25rem}
         .carousel-caption h1{font-size:1.7rem}
@@ -121,25 +119,10 @@
         .swiper-button-next{width:2.4rem;height:2.4rem}
       }
 
-      /* tel/mail keep theme colour */
       #contact a[href^="tel"],#contact a[href^="mailto"]{color:inherit}
     </style>
-    
   </head>
-  <form name="test-contact" method="POST" data-netlify="true">
-    <p>
-      <label>Your Name: <input type="text" name="name" /></label>
-    </p>
-    <p>
-      <label>Your Email: <input type="email" name="email" /></label>
-    </p>
-    <p>
-      <label>Message: <textarea name="message"></textarea></label>
-    </p>
-    <p>
-      <button type="submit">Send</button>
-    </p>
-  </form>
+  
   <body id="page-top">
     <!-- === Navbar === -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
@@ -182,8 +165,6 @@
       <img src="assets/img/portfolio/pexel5.webp" decoding="sync" fetchpriority="high" alt="" />
     </div>
 
-    
-    
     <!-- === HERO === -->
     <header id="heroCarousel"
             class="carousel slide carousel-fade"
@@ -703,31 +684,30 @@
               <div class="col-12 flex-grow-1">
                 <div class="bg-white p-4 rounded-3 shadow-sm h-100">
                   <h3 class="h4 mb-3 text-center">Send Us a Message</h3>
-                  <form name="contact" method="POST" netlify data-netlify="true">
-                    <input type="hidden" name="form-name" value="contact">
-                    
-                    <div class="form-floating mb-3">
-                      <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" required>
-                      <label for="name">Full Name</label>
-                    </div>
-                    
-                    <div class="form-floating mb-3">
-                      <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
-                      <label for="email">Email address</label>
-                    </div>
-                    
-                    <div class="form-floating mb-3">
-                      <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number">
-                      <label for="phone">Phone Number (Optional)</label>
-                    </div>
-                    
-                    <div class="form-floating mb-3">
-                      <textarea class="form-control" id="message" name="message" placeholder="Enter your message here..." required style="height: 12rem"></textarea>
-                      <label for="message">Message</label>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary btn-xl w-100">Submit</button>
+                    <form name="contact" action="https://formsubmit.co/onur.unal492@gmail.com" method="POST">
+                      <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" required>
+                        <label for="name">Full Name</label>
+                      </div>
+                  
+                      <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
+                        <label for="email">Email address</label>
+                      </div>
+                  
+                      <div class="form-floating mb-3">
+                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number">
+                        <label for="phone">Phone Number (Optional)</label>
+                      </div>
+                  
+                      <div class="form-floating mb-3">
+                        <textarea class="form-control" id="message" name="message" placeholder="Enter your message here..." required style="height: 12rem"></textarea>
+                        <label for="message">Message</label>
+                      </div>
+                  
+                      <button type="submit" class="btn btn-primary btn-xl w-100">Submit</button>
                   </form>
+
                 </div>
               </div>
             </div>
@@ -736,7 +716,7 @@
       </div>
     </section>
 
-    <!-- ================================================= FOOTER ================================================= -->
+    <!-- === FOOTER === -->
     <footer class="bg-light py-5 footer">
       <div class="container px-4 px-lg-5">
         <div class="row justify-content-center">
