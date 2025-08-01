@@ -11346,67 +11346,75 @@ html, body {
 #heroCarousel.carousel-fade .carousel-item {
     opacity: 0;
     transition-property: opacity;
-    transition-duration: .8s; /* Controls the speed of the fade */
+    transition-duration: .8s;
 }
-
 #heroCarousel.carousel-fade .carousel-item.active {
     opacity: 1;
-    z-index: 1; /* Ensure active slide is on top */
+    z-index: 1;
 }
-
 #heroCarousel.carousel-fade .carousel-item-next.carousel-item-start,
 #heroCarousel.carousel-fade .carousel-item-prev.carousel-item-end {
-    opacity: 1; /* Keep the outgoing slide visible during the transition */
+    opacity: 1;
     z-index: 0;
 }
-
 #heroCarousel.carousel-fade .active.carousel-item-start,
 #heroCarousel.carousel-fade .active.carousel-item-end {
-    opacity: 0; /* Force the new active slide to fade in */
-    transition: opacity 0s .8s; /* Make the old active slide disappear instantly AFTER the new one fades in */
+    opacity: 0;
+    transition: opacity 0s .8s;
 }
 
 /* --- 2. Navbar Color Corrections --- */
-
-/* a) Set INITIAL colors for the shrunk navbar (when scrolled down) */
 #mainNav.navbar-shrink .navbar-brand,
 #mainNav.navbar-shrink .navbar-nav .nav-link {
-  color: #000000 !important; /* Black */
+  color: #000000 !important;
 }
-
-/* b) Set HOVER and ACTIVE colors for the shrunk navbar */
 #mainNav.navbar-shrink .navbar-brand:hover,
 #mainNav.navbar-shrink .navbar-nav .nav-link:hover,
 #mainNav.navbar-shrink .navbar-nav .nav-link.active {
-  color: #22324c !important; /* Navy Blue */
+  color: #22324c !important;
 }
-
-/* c) Set INITIAL colors for the transparent navbar (at the top of the page) */
 @media (min-width: 992px) {
   #mainNav .navbar-brand,
   #mainNav .navbar-nav .nav-link {
-    color: #ffffff !important; /* White text on transparent navbar */
+    color: #ffffff !important;
   }
-
-  /* d) Set HOVER and ACTIVE colors for the transparent navbar */
   #mainNav .navbar-brand:hover,
   #mainNav .navbar-nav .nav-link:hover,
   #mainNav .navbar-nav .nav-link.active {
-    color: #dddddd !important; /* A lighter color for hover on transparent background */
+    color: #dddddd !important;
   }
 }
 
-/* --- 3. Contact Section Redesign --- */
-#contact .form-control {
-  border-color: #ced4da;
-  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+/* --- 3. Contact Section Redesign & Fixes --- */
+#contact .h5 {
+    color: #22324c; /* Navy blue for "Contact Information" title */
 }
-
+#contact table .bordered-row th,
+#contact table .bordered-row td {
+    border-top: 1px solid #dee2e6; /* Thin line for business hours */
+}
+#contact .form-control {
+  border-width: 1px;
+  border-color: #ced4da;
+  transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
+}
 #contact .form-control:focus {
   border-color: #22324c;
+  border-width: 2px;
   box-shadow: 0 0 0 0.25rem rgba(34, 50, 76, 0.25);
 }
-
 #contact a.text-primary {
-  color: #22324c !important; /* Use your navy blue */
+  color: #22324c !important;
+}
+#contact .form-label {
+    font-size: 0.9rem;
+    color: #495057;
+}
+#contact .form-control[type="file"] {
+    background-color: #f8f9fa;
+}
+
+/* --- 4. Divider Color Fix --- */
+hr.divider {
+  background-color: #22324c; /* Navy blue for all divider lines */
 }
