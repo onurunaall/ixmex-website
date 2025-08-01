@@ -642,16 +642,21 @@
                               <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number">
                               <label for="phone">Phone Number (Optional)</label>
                           </div>
-  
+
                           <div class="mb-3">
-                              <label for="file-upload" class="form-label visually-hidden">Attach an image or PDF</label>
-                              <input class="form-control" type="file" id="file-upload" name="upload" accept="image/*,.pdf" style="display: none;">
-                              <button type="button" id="file-upload-button" class="btn btn-outline-secondary w-100">
-                                  <i class="bi-plus-circle me-2"></i>Attach Image or PDF
-                              </button>
-                               <small id="file-upload-filename" class="form-text text-muted d-block mt-2"></small>
-                          </div>
-  
+                            <label for="file-upload" class="visually-hidden">Attach an image or PDF</label>
+                            <input class="form-control" type="file" id="file-upload" name="upload" accept="image/*,.pdf" style="display: none;">
+                            
+                            <button type="button" id="file-upload-button" class="btn btn-outline-secondary w-100">
+                                <i class="bi-plus-circle me-2"></i>Attach Image or PDF
+                            </button>
+                            
+                            <div id="file-upload-display" class="d-none align-items-center justify-content-between mt-2">
+                                <small id="file-upload-filename" class="form-text text-muted"></small>
+                                <button type="button" id="remove-file-button" class="btn-close" aria-label="Remove file"></button>
+                            </div>
+                        </div>
+    
                           <div class="form-floating mb-3 flex-grow-1">
                               <textarea class="form-control" id="message" name="message" placeholder="Enter your message here..." required style="min-height: 8rem;"></textarea>
                               <label for="message">Message</label>
