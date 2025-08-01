@@ -101,12 +101,12 @@ window.addEventListener('DOMContentLoaded', () => {
       spaceBetween: 30,
       loop: true,
       pagination: {
-        el: '.swiper-pagination',
+        el: '.services-swiper .swiper-pagination',
         clickable: true,
       },
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.services-swiper .swiper-button-next',
+        prevEl: '.services-swiper .swiper-button-prev',
       },
       breakpoints: {
         768: { slidesPerView: 2 },
