@@ -169,7 +169,7 @@
     <header id="heroCarousel"
             class="carousel slide carousel-fade"
             data-bs-ride="carousel"
-            data-bs-interval="5000"
+            data-bs-interval="3000"
             data-bs-pause="false">
 
       <div class="carousel-inner">
@@ -633,7 +633,7 @@
               <div class="col-lg-6 mb-5 mb-lg-0">
                   <div class="bg-white p-4 rounded-3 shadow-sm h-100 d-flex flex-column">
                       <h3 class="h4 mb-3 text-center">Send Us a Message</h3>
-                      <form name="contact" action="https://formspree.io/f/YOUR_UNIQUE_ID" method="POST" class="d-flex flex-column h-100">
+                      <form name="contact" action="https://formspree.io/f/myzppqde" method="POST" enctype="multipart/form-data" class="d-flex flex-column h-100">
                           <div class="form-floating mb-3">
                               <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" required>
                               <label for="name">Full Name</label>
@@ -646,8 +646,14 @@
                               <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number">
                               <label for="phone">Phone Number (Optional)</label>
                           </div>
+                          
+                          <div class="mb-3">
+                              <label for="file-upload" class="form-label">Attach an image (optional)</label>
+                              <input class="form-control" type="file" id="file-upload" name="upload" accept="image/*">
+                          </div>
+                      
                           <div class="form-floating mb-3 flex-grow-1">
-                              <textarea class="form-control" id="message" name="message" placeholder="Enter your message here..." required style="min-height: 10rem;"></textarea>
+                              <textarea class="form-control" id="message" name="message" placeholder="Enter your message here..." required style="min-height: 8rem;"></textarea>
                               <label for="message">Message</label>
                           </div>
                           <button type="submit" class="btn btn-primary btn-xl w-100">Submit</button>
@@ -674,7 +680,7 @@
                               <table class="table table-sm table-borderless mb-0" style="font-size: 0.9rem;">
                                   <tbody>
                                       <tr><th scope="row" class="ps-2">Monday-Friday</th><td class="text-end pe-2">8:00 AM – 6:00 PM</td></tr>
-                                      <tr><th scope="row" class="ps-2">Saturday-Sunday</th><td class="text-end text-muted pe-2">Closed</td></tr>
+                                      <tr class="bordered-row"><th scope="row" class="ps-2">Saturday-Sunday</th><td class="text-end text-muted pe-2">Closed</td></tr>
                                   </tbody>
                               </table>
                           </div>
