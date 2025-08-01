@@ -11339,3 +11339,45 @@ html, body {
 #mainNav .navbar-nav .nav-link.active {
   color: var(--bs-primary) !important;
 }
+
+/* === Custom Fixes for Ixmex Stone Design === */
+
+/* --- 1. Smooth Hero Carousel Cross-Fade Transition --- */
+#heroCarousel.carousel-fade .carousel-item {
+  transition-duration: .8s; /* Slows down the fade for a smoother effect */
+  opacity: 0;
+}
+
+#heroCarousel.carousel-fade .carousel-item.active {
+  opacity: 1;
+}
+
+/* --- 2. Navbar Color Corrections --- */
+
+/* a) Set INITIAL colors for the shrunk navbar (when scrolled down) */
+#mainNav.navbar-shrink .navbar-brand,
+#mainNav.navbar-shrink .navbar-nav .nav-link {
+  color: #000000 !important; /* Black */
+}
+
+/* b) Set HOVER and ACTIVE colors for the shrunk navbar */
+#mainNav.navbar-shrink .navbar-brand:hover,
+#mainNav.navbar-shrink .navbar-nav .nav-link:hover,
+#mainNav.navbar-shrink .navbar-nav .nav-link.active {
+  color: #22324c !important; /* Navy Blue */
+}
+
+/* c) Set INITIAL colors for the transparent navbar (at the top of the page) */
+@media (min-width: 992px) {
+  #mainNav .navbar-brand,
+  #mainNav .navbar-nav .nav-link {
+    color: #ffffff !important; /* White text on transparent navbar */
+  }
+
+  /* d) Set HOVER and ACTIVE colors for the transparent navbar */
+  #mainNav .navbar-brand:hover,
+  #mainNav .navbar-nav .nav-link:hover,
+  #mainNav .navbar-nav .nav-link.active {
+    color: #dddddd !important; /* A lighter color for hover on transparent background */
+  }
+}
