@@ -105,10 +105,14 @@ window.addEventListener('DOMContentLoaded', () => {
         el: '.swiper-pagination',
         clickable: true,
       },
+      navigation: { // Link to the new, external buttons
+        nextEl: '.services-swiper-navigation .swiper-button-next',
+        prevEl: '.services-swiper-navigation .swiper-button-prev',
+      },
       breakpoints: {
-        576: { slidesPerView: 2 },
-        768: { slidesPerView: 3 },
-        1200: { slidesPerView: 4 },
+        576: { slidesPerView: 2, centeredSlides: false },
+        992: { slidesPerView: 2, centeredSlides: false }, // Show 2 on larger screens
+        1200: { slidesPerView: 3, centeredSlides: false }, // Show 3 on extra-large screens
       },
     });
   })();
@@ -121,25 +125,19 @@ window.addEventListener('DOMContentLoaded', () => {
   const removeFileButton = document.getElementById('remove-file-button');
 
   if (fileUploadButton && fileInput && fileUploadDisplay && filenameDisplay && removeFileButton) {
-      
-      // Trigger the hidden file input when the custom button is clicked
       fileUploadButton.addEventListener('click', () => {
           fileInput.click();
       });
-
-      // When a file is selected, show its name and the remove button
       fileInput.addEventListener('change', function() {
           if (this.files && this.files.length > 0) {
               filenameDisplay.textContent = this.files[0].name;
-              fileUploadDisplay.classList.remove('d-none'); // Show the container
+              fileUploadDisplay.classList.remove('d-none');
           }
       });
-
-      // When the remove button is clicked, clear the input and hide the display
       removeFileButton.addEventListener('click', () => {
-          fileInput.value = null; // This is the crucial step to clear the file
+          fileInput.value = null;
           filenameDisplay.textContent = '';
-          fileUploadDisplay.classList.add('d-none'); // Hide the container again
+          fileUploadDisplay.classList.add('d-none');
       });
   }
 });
