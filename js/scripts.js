@@ -155,9 +155,9 @@ document.addEventListener('DOMContentLoaded', () => {
             span.style.display = 'inline'; 
         });
         
-        // **FIX:** Correctly update the navbar toggle text
+        // **FIX:** Correctly update the navbar toggle text to lowercase
         if (activeLangText) {
-            activeLangText.textContent = lang.toUpperCase();
+            activeLangText.textContent = lang.toLowerCase();
         }
 
         // Update the 'active' class on the correct dropdown item
@@ -191,4 +191,5 @@ document.addEventListener('DOMContentLoaded', () => {
         setLanguage('en');
     }
 });
+
 
