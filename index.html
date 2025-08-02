@@ -116,6 +116,31 @@
       }
 
       #contact a[href^="tel"],#contact a[href^="mailto"]{color:inherit}
+
+      /* Fix mobile dropdown z-index */
+      .navbar .dropdown-menu {
+        z-index: 1050 !important;
+      }
+      
+      /* Ensure dropdown is clickable on mobile */
+      .navbar-collapse.show .dropdown-menu {
+        position: static !important;
+        float: none !important;
+        width: auto !important;
+        margin-top: 0 !important;
+        background-color: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+      }
+      
+      /* Mobile dropdown styling */
+      @media (max-width: 991.98px) {
+        .navbar-nav .dropdown-menu {
+          background-color: rgba(255, 255, 255, 0.95) !important;
+          border: 1px solid #ddd !important;
+          margin-top: 5px !important;
+        }
+      }
     </style>
   </head>
   
