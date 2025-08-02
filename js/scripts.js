@@ -31,7 +31,7 @@ window.addEventListener('DOMContentLoaded', () => {
   );
   responsiveNavItems.map(function (responsiveNavItem) {
     responsiveNavItem.addEventListener('click', () => {
-      if (window.getComputedStyle(toggler).display !== 'none') {
+      if (toggler && window.getComputedStyle(toggler).display !== 'none') {
         toggler.click();
       }
     });
