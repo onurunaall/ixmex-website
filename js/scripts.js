@@ -134,3 +134,52 @@ window.addEventListener('DOMContentLoaded', () => {
       });
   }
 });
+
+// --- Custom Script for Language Toggle ---
+document.addEventListener('DOMContentLoaded', () => {
+    const toggles = document.querySelectorAll('.lang-toggle');
+    const allLangSpans = document.querySelectorAll('span[lang]');
+
+    // Function to set the language
+    const setLanguage = (lang) => {
+        // Hide all language spans
+        allLangSpans.forEach(span => {
+            span.style.display = 'none';
+        });
+
+        // Show spans for the selected language
+        document.querySelectorAll(`span[lang="${lang}"]`).forEach(span => {
+            span.style.display = ''; // Use '' to revert to default display (block, inline, etc.)
+        });
+
+        // Update active state on toggles
+        toggles.forEach(toggle => {
+            if (toggle.getAttribute('data-lang') === lang) {
+                toggle.style.fontWeight = 'bold';
+            } else {
+                toggle.style.fontWeight = 'normal';
+            }
+        });
+
+        // Store preference
+        localStorage.setItem('preferredLanguage', lang);
+    };
+
+    // Add click event to all toggles
+    toggles.forEach(toggle => {
+        toggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            const lang = toggle.getAttribute('data-lang');
+            setLanguage(lang);
+        });
+    });
+
+    // Check for a saved language preference on page load
+    const preferredLanguage = localStorage.getItem('preferredLanguage');
+    if (preferredLanguage) {
+        setLanguage(preferredLanguage);
+    } else {
+        // Default to English if no preference is set
+        setLanguage('en');
+    }
+});
