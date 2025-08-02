@@ -11426,16 +11426,13 @@ hr.divider { background-color: #22324c; }
 .portfolio-swiper .swiper-button-prev { left: 10px; }
 .portfolio-swiper .swiper-button-next { right: 10px; }
 
-/* Prevent Horizontal Scrolling */
-html,
+/* 1. Prevent Horizontal Scrolling */
 body {
     overflow-x: hidden;
-    width: 100%;
 }
 
-
-/* Increase Services Section Height */
+/* 2. Increase Services Section Height */
 #services {
-    padding-top: 8rem; /* Increased from py-5 (3rem) */
-    padding-bottom: 8rem; /* Increased from py-5 (3rem) */
+    padding-top: 8rem; 
+    padding-bottom: 8rem;
 }
