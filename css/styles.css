@@ -11426,12 +11426,17 @@ hr.divider { background-color: #22324c; }
 .portfolio-swiper .swiper-button-prev { left: 10px; }
 .portfolio-swiper .swiper-button-next { right: 10px; }
 
-/* 1. Prevent Horizontal Scrolling */
+/* 1. Prevent Horizontal Scrolling without breaking smooth scroll */
 body {
     overflow-x: hidden;
 }
 
-/* 2. Increase Services Section Height */
+/* 2. Adjust Scroll-to-Anchor Position */
+html {
+    scroll-padding-top: 8rem; /* This creates a top margin when you click a nav link */
+}
+
+/* 3. Increase Services Section Height */
 #services {
     padding-top: 8rem; 
     padding-bottom: 8rem;
