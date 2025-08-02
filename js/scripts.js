@@ -6,32 +6,36 @@
 window.addEventListener('DOMContentLoaded', () => {
   // NAVBAR SHRINK
   const navbar = document.querySelector('#mainNav');
-  const shrinkNav = () => {
-    if (!navbar) return;
-    navbar.classList.toggle('navbar-shrink', window.scrollY > 0);
-  };
-  shrinkNav();
-  document.addEventListener('scroll', shrinkNav);
+  if (navbar) {
+    const shrinkNav = () => {
+      navbar.classList.toggle('navbar-shrink', window.scrollY > 0);
+    };
+    shrinkNav();
+    document.addEventListener('scroll', shrinkNav);
+  }
 
   // SCROLLSPY
-  if (navbar) {
+  const mainNav = document.body.querySelector('#mainNav');
+  if (mainNav) {
     new bootstrap.ScrollSpy(document.body, {
       target: '#mainNav',
       rootMargin: '0px 0px -40%',
     });
   }
 
-  // COLLAPSE MOBILE NAV
+  // **FIX FOR MOBILE MENU:** This now includes '.lang-toggle'
+  // It will close the mobile menu when a nav link OR a language is clicked.
   const toggler = document.querySelector('.navbar-toggler');
-  document
-    .querySelectorAll('#navbarResponsive .nav-link')
-    .forEach(link =>
-      link.addEventListener('click', () => {
-        if (toggler && window.getComputedStyle(toggler).display !== 'none') {
-          toggler.click();
-        }
-      })
-    );
+  const responsiveNavItems = [].slice.call(
+    document.querySelectorAll('#navbarResponsive .nav-link, #navbarResponsive .lang-toggle')
+  );
+  responsiveNavItems.map(function (responsiveNavItem) {
+    responsiveNavItem.addEventListener('click', () => {
+      if (window.getComputedStyle(toggler).display !== 'none') {
+        toggler.click();
+      }
+    });
+  });
 
   // SIMPLELIGHTBOX
   try {
@@ -55,9 +59,7 @@ window.addEventListener('DOMContentLoaded', () => {
       return setTimeout(initPortfolioSwiper, 100);
     }
     const container = document.querySelector('.portfolio-swiper');
-    if (!container) {
-      return;
-    }
+    if (!container) return;
     if (container.dataset.swiperInitialized) return;
     container.dataset.swiperInitialized = 'true';
 
@@ -82,15 +84,13 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   })();
 
-  // SERVICES SWIPER (Final Layout)
+  // SERVICES SWIPER
   (function initServicesSwiper() {
     if (typeof Swiper !== 'function') {
       return setTimeout(initServicesSwiper, 100);
     }
     const container = document.querySelector('.services-swiper');
-    if (!container) {
-      return;
-    }
+    if (!container) return;
     if (container.dataset.swiperInitialized) return;
     container.dataset.swiperInitialized = 'true';
 
@@ -109,90 +109,57 @@ window.addEventListener('DOMContentLoaded', () => {
         },
     });
   })();
+  
+  // --- Language Toggle Functionality ---
+  const allLangElements = document.querySelectorAll('[lang]');
+  const activeLangText = document.getElementById('active-lang-text');
+  const langToggles = document.querySelectorAll('.lang-toggle');
 
-  // --- Custom Script for Ixmex Website File Upload with Remove ---
-  const fileInput = document.getElementById('file-upload');
+  const setLanguage = (lang) => {
+      allLangElements.forEach(el => { el.style.display = 'none'; });
+      document.querySelectorAll(`[lang="${lang}"]`).forEach(el => { el.style.display = ''; });
+      if (activeLangText) { activeLangText.textContent = lang.toLowerCase(); }
+      langToggles.forEach(toggle => {
+          toggle.classList.toggle('active', toggle.getAttribute('data-lang') === lang);
+      });
+      localStorage.setItem('preferredLanguage', lang);
+  };
+
+  langToggles.forEach(toggle => {
+      toggle.addEventListener('click', (e) => {
+          e.preventDefault();
+          const lang = e.target.getAttribute('data-lang');
+          setLanguage(lang);
+      });
+  });
+
+  const savedLang = localStorage.getItem('preferredLanguage');
+  setLanguage(savedLang || 'en');
+
+  // --- File Upload Functionality ---
   const fileUploadButton = document.getElementById('file-upload-button');
+  const fileUpload = document.getElementById('file-upload');
   const fileUploadDisplay = document.getElementById('file-upload-display');
-  const filenameDisplay = document.getElementById('file-upload-filename');
+  const fileUploadFilename = document.getElementById('file-upload-filename');
   const removeFileButton = document.getElementById('remove-file-button');
 
-  if (fileUploadButton && fileInput && fileUploadDisplay && filenameDisplay && removeFileButton) {
-      fileUploadButton.addEventListener('click', () => {
-          fileInput.click();
-      });
-      fileInput.addEventListener('change', function() {
-          if (this.files && this.files.length > 0) {
-              filenameDisplay.textContent = this.files[0].name;
+  if (fileUploadButton) {
+      fileUploadButton.addEventListener('click', () => fileUpload.click());
+  }
+  if (fileUpload) {
+      fileUpload.addEventListener('change', function() {
+          if (this.files && this.files[0]) {
+              fileUploadFilename.textContent = this.files[0].name;
               fileUploadDisplay.classList.remove('d-none');
+              fileUploadButton.style.display = 'none';
           }
       });
+  }
+  if (removeFileButton) {
       removeFileButton.addEventListener('click', () => {
-          fileInput.value = null;
-          filenameDisplay.textContent = '';
+          fileUpload.value = '';
           fileUploadDisplay.classList.add('d-none');
+          fileUploadButton.style.display = 'block';
       });
   }
 });
-
-// --- Custom Script for Language Dropdown Toggle ---
-document.addEventListener('DOMContentLoaded', () => {
-    const toggles = document.querySelectorAll('.lang-toggle');
-    const allLangSpans = document.querySelectorAll('span[lang]');
-    const activeLangText = document.getElementById('active-lang-text');
-    const dropdownItems = document.querySelectorAll('.dropdown-menu .lang-toggle');
-    // Initialize Bootstrap dropdowns
-    const dropdownElementList = document.querySelectorAll('.dropdown-toggle');
-    const dropdownList = [...dropdownElementList].map(dropdownToggleEl => new bootstrap.Dropdown(dropdownToggleEl));
-
-    // Function to set the language
-    const setLanguage = (lang) => {
-        // Hide all language-specific text elements
-        allLangSpans.forEach(span => {
-            span.style.display = 'none';
-        });
-
-        // Show text elements for the selected language
-        document.querySelectorAll(`span[lang="${lang}"]`).forEach(span => {
-            // Use 'inline' for spans to ensure they flow correctly with other text
-            span.style.display = 'inline'; 
-        });
-        
-        // **FIX:** Correctly update the navbar toggle text to lowercase
-        if (activeLangText) {
-            activeLangText.textContent = lang.toLowerCase();
-        }
-
-        // Update the 'active' class on the correct dropdown item
-        dropdownItems.forEach(item => {
-            if (item.getAttribute('data-lang') === lang) {
-                item.classList.add('active');
-            } else {
-                item.classList.remove('active');
-            }
-        });
-
-        // Store the user's preference in local storage
-        localStorage.setItem('preferredLanguage', lang);
-    };
-
-    // Add click event listeners to the language toggles
-    toggles.forEach(toggle => {
-        toggle.addEventListener('click', (e) => {
-            e.preventDefault();
-            const lang = toggle.getAttribute('data-lang');
-            setLanguage(lang);
-        });
-    });
-
-    // On page load, check for a saved language preference
-    const preferredLanguage = localStorage.getItem('preferredLanguage');
-    if (preferredLanguage) {
-        setLanguage(preferredLanguage);
-    } else {
-        // Default to English if no preference is found
-        setLanguage('en');
-    }
-});
-
-
