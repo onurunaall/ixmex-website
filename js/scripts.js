@@ -135,41 +135,45 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// --- Custom Script for Language Toggle ---
+// --- Custom Script for Language Dropdown Toggle ---
 document.addEventListener('DOMContentLoaded', () => {
     const toggles = document.querySelectorAll('.lang-toggle');
     const allLangSpans = document.querySelectorAll('span[lang]');
+    const activeLangText = document.getElementById('active-lang-text');
+    const dropdownItems = document.querySelectorAll('.dropdown-menu .lang-toggle');
 
     // Function to set the language
     const setLanguage = (lang) => {
-        // Hide all language spans
+        // Hide all language-specific text elements
         allLangSpans.forEach(span => {
             span.style.display = 'none';
         });
 
-        // Show spans for the selected language
+        // Show text elements for the selected language
         document.querySelectorAll(`span[lang="${lang}"]`).forEach(span => {
-            span.style.display = ''; // Use '' to revert to default display (block, inline, etc.)
+            // Use 'inline' for spans to ensure they flow correctly with other text
+            span.style.display = 'inline'; 
         });
-
+        
+        // **FIX:** Correctly update the navbar toggle text
         if (activeLangText) {
             activeLangText.textContent = lang.toUpperCase();
         }
 
-        // Update active state on toggles
-        toggles.forEach(toggle => {
-            if (toggle.getAttribute('data-lang') === lang) {
-                toggle.style.fontWeight = 'bold';
+        // Update the 'active' class on the correct dropdown item
+        dropdownItems.forEach(item => {
+            if (item.getAttribute('data-lang') === lang) {
+                item.classList.add('active');
             } else {
-                toggle.style.fontWeight = 'normal';
+                item.classList.remove('active');
             }
         });
 
-        // Store preference
+        // Store the user's preference in local storage
         localStorage.setItem('preferredLanguage', lang);
     };
 
-    // Add click event to all toggles
+    // Add click event listeners to the language toggles
     toggles.forEach(toggle => {
         toggle.addEventListener('click', (e) => {
             e.preventDefault();
@@ -178,12 +182,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Check for a saved language preference on page load
+    // On page load, check for a saved language preference
     const preferredLanguage = localStorage.getItem('preferredLanguage');
     if (preferredLanguage) {
         setLanguage(preferredLanguage);
     } else {
-        // Default to English if no preference is set
+        // Default to English if no preference is found
         setLanguage('en');
     }
 });
+
