@@ -129,36 +129,33 @@
         </a>
     
         <!-- mobile toggle -->
-        <button class="navbar-toggler" type="button"
-                data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false"
-                aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
     
         <!-- Nav links -->
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ms-auto my-2 my-lg-0">
-            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-            <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about"><span lang="en">About</span><span lang="es" style="display: none;">Sobre Nosotros</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#services"><span lang="en">Services</span><span lang="es" style="display: none;">Servicios</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#portfolio"><span lang="en">Portfolio</span><span lang="es" style="display: none;">Portafolio</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact"><span lang="en">Contact</span><span lang="es" style="display: none;">Contacto</span></a></li>
+            
+            <!-- Language Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi-globe"></i> <span id="active-lang-text">EN</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                <li><a class="dropdown-item lang-toggle" href="#" data-lang="en">English</a></li>
+                <li><a class="dropdown-item lang-toggle" href="#" data-lang="es">Español</a></li>
+              </ul>
+            </li>
           </ul>
-          <ul class="navbar-nav ms-auto my-2 my-lg-0">
-            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-            <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-          </ul>
-        
-          <div class="navbar-text ms-lg-3">
-              <a href="#" class="lang-toggle" data-lang="en" style="text-decoration: none; font-weight: bold; color: inherit;">EN</a>
-              <span class="mx-1">/</span>
-              <a href="#" class="lang-toggle" data-lang="es" style="text-decoration: none; color: inherit;">ES</a>
-          </div>
         </div>
       </div>
     </nav>
+
 
     <!-- Hero image predecoder (hidden) -->
     <div style="position:absolute; width:0; height:0; overflow:hidden; pointer-events:none; opacity:0;" aria-hidden="true">
