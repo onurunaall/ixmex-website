@@ -152,6 +152,10 @@ document.addEventListener('DOMContentLoaded', () => {
             span.style.display = ''; // Use '' to revert to default display (block, inline, etc.)
         });
 
+        if (activeLangText) {
+            activeLangText.textContent = lang.toUpperCase();
+        }
+
         // Update active state on toggles
         toggles.forEach(toggle => {
             if (toggle.getAttribute('data-lang') === lang) {
