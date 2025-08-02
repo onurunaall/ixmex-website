@@ -141,6 +141,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const allLangSpans = document.querySelectorAll('span[lang]');
     const activeLangText = document.getElementById('active-lang-text');
     const dropdownItems = document.querySelectorAll('.dropdown-menu .lang-toggle');
+    // Initialize Bootstrap dropdowns
+    const dropdownElementList = document.querySelectorAll('.dropdown-toggle');
+    const dropdownList = [...dropdownElementList].map(dropdownToggleEl => new bootstrap.Dropdown(dropdownToggleEl));
 
     // Function to set the language
     const setLanguage = (lang) => {
