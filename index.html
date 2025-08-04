@@ -1,148 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="description"
-          content="Ixmex Stone Design—Houston's experts in granite countertops, gym walls, and custom stone accents. Call +1 (713) 202-6877." />
-    <meta name="author" content="Ixmex Stone Design" />
-    <title>Ixmex Stone Design – Crafting Quality Granite Surfaces in Houston</title>
-    <!-- ─── performance hooks ─── -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-    <link rel="preconnect" href="https://maps.googleapis.com" />
-    <link rel="preconnect" href="https://maps.gstatic.com" crossorigin />
-    
-    <!-- preload first hero frame -->
-    <link rel="preload" as="image" href="assets/img/portfolio/pexels_black_granite_surf_2.webp" type="image/webp" />
 
-    <!-- ─── assets ─── -->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700&display=swap" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" rel="stylesheet" />
-    <link href="css/styles.css" rel="stylesheet" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Ixmex Stone Design—Houston's experts in granite countertops, gym walls, and custom stone accents. Call +1 (713) 202-6877." />
+  <meta name="author" content="Ixmex Stone Design" />
+  <title>Ixmex Stone Design – Crafting Quality Granite Surfaces in Houston</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="preconnect" href="https://maps.googleapis.com" />
+  <link rel="preconnect" href="https://maps.gstatic.com" crossorigin />
 
-    <style>
-      html {scroll-behavior:smooth}
-      :root {
-        --bs-primary:#22324c;
-        --accent:#22324c;
-        --safe-top: env(safe-area-inset-top)
-      }
-      
-      hr.divider,hr.divider-light {
-        border-color: rgba(255,255,255,.2) !important
-      }
-      .btn-primary {
-        background: var(--accent);
-        border-color:var(--accent)
-      }
+  <link rel="preload" as="image" href="assets/img/portfolio/pexels_black_granite_surf_2.webp" type="image/webp" />
+  <link rel="preload" as="image" href="assets/img/portfolio/pexels-white.webp" type="image/webp" />
+  <link rel="preload" as="image" href="assets/img/portfolio/pexels_white_quartz_surf.webp" type="image/webp" />
 
-      .btn-primary {
-        background: var(--accent) !important;
-        border:     1px solid var(--accent) !important;
-      }
-      .btn-primary:hover {
-        background: var(--accent) !important;
-      }
-      .btn-primary: hover {background:#d56c54}
-      .btn-xl {padding: 1rem 2rem; font-size: 1.25rem;font-weight:700}
-      .service-icon{color:var(--accent)}
-      .service-card{background:rgba(224,122,95,.1);border-radius:.5rem;padding:1.5rem}
-      
-      #heroCarousel,
-      #heroCarousel .carousel-inner,
-      #heroCarousel .carousel-item {
-        height: 100vh;
-      }
-      #heroCarousel .carousel-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      :root {
-        --accent-teal: #2a9d8f;
-      }
-      
-      .service-grid .card {
-        border: none;
-        box-shadow: 0 .5rem 1rem rgba(0,0,0,.05);
-      }
-      
-      .service-grid .icon-circle {
-        width: 4rem;
-        height: 4rem;
-        border-radius: 50%;
-        background: var(--accent-teal)1A; /* 10% opacity */
-        color: var(--accent-teal);
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2rem;
-        margin-bottom: 1rem;
-      }
-      .portfolio-box img{
-        width:100%;
-        aspect-ratio:3/2;
-        object-fit:cover;
-        min-height:350px;
-      }
 
-      #portfolio, #contact{padding-block:4rem}
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" rel="stylesheet" />
+  <link href="css/styles.css" rel="stylesheet" />
 
-      .swiper-button-prev,.swiper-button-next{color:var(--accent)}
-      .navbar.fixed-top{padding-top:var(--safe-top)}
+  <style>
+    html {
+      scroll-behavior: smooth
+    }
 
+    :root {
+      --bs-primary: #22324c;
+      --accent: #22324c;
+      --safe-top: env(safe-area-inset-top)
+    }
+
+    hr.divider,
+    hr.divider-light {
+      border-color: rgba(255, 255, 255, .2) !important
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      border-color: var(--accent)
+    }
+
+    .btn-primary {
+      background: var(--accent) !important;
+      border: 1px solid var(--accent) !important;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent) !important;
+    }
+
+    .btn-primary: hover {
+      background: #d56c54
+    }
+
+    .btn-xl {
+      padding: 1rem 2rem;
+      font-size: 1.25rem;
+      font-weight: 700
+    }
+
+    .service-icon {
+      color: var(--accent)
+    }
+
+    .service-card {
+      background: rgba(224, 122, 95, .1);
+      border-radius: .5rem;
+      padding: 1.5rem
+    }
+
+    #heroCarousel,
+    #heroCarousel .carousel-inner,
+    #heroCarousel .carousel-item {
+      height: 100vh;
+    }
+
+    #heroCarousel .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    :root {
+      --accent-teal: #2a9d8f;
+    }
+
+    .service-grid .card {
+      border: none;
+      box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .05);
+    }
+
+    .service-grid .icon-circle {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      background: var(--accent-teal) 1A;
+      /* 10% opacity */
+      color: var(--accent-teal);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .portfolio-box img {
+      width: 100%;
+      aspect-ratio: 3/2;
+      object-fit: cover;
+      min-height: 350px;
+    }
+
+    #portfolio,
+    #contact {
+      padding-block: 4rem
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: var(--accent)
+    }
+
+    .navbar.fixed-top {
+      padding-top: var(--safe-top)
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: #0006;
+      border-radius: 50%;
+      width: 2.5rem;
+      height: 2.5rem;
+      background-size: 2.5rem 2.5rem;
+    }
+
+    @media (max-width:575.98px) {
+      .carousel-caption {
+        padding: 0 1rem 1.25rem
+      }
+      .carousel-caption h1 {
+        font-size: 1.7rem
+      }
+      .carousel-caption p {
+        font-size: .95rem
+      }
       .carousel-control-prev-icon,
-      .carousel-control-next-icon{
-        background-color:#0006;
-        border-radius:50%;
-        width:2.5rem;height:2.5rem;
-        background-size:2.5rem 2.5rem;
+      .carousel-control-next-icon,
+      .swiper-button-prev,
+      .swiper-button-next {
+        width: 2.4rem;
+        height: 2.4rem
       }
+    }
 
-      @media (max-width:575.98px){
-        .carousel-caption{padding:0 1rem 1.25rem}
-        .carousel-caption h1{font-size:1.7rem}
-        .carousel-caption p{font-size:.95rem}
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon,
-        .swiper-button-prev,
-        .swiper-button-next{width:2.4rem;height:2.4rem}
-      }
+    #contact a[href^="tel"],
+    #contact a[href^="mailto"] {
+      color: inherit
+    }
 
-      #contact a[href^="tel"],#contact a[href^="mailto"]{color:inherit}
+    /* Fix mobile dropdown z-index */
+    .navbar .dropdown-menu {
+      z-index: 1050 !important;
+    }
 
-      /* Fix mobile dropdown z-index */
-      .navbar .dropdown-menu {
-        z-index: 1050 !important;
+    /* Ensure dropdown is clickable on mobile */
+    .navbar-collapse.show .dropdown-menu {
+      position: static !important;
+      float: none !important;
+      width: auto !important;
+      margin-top: 0 !important;
+      background-color: transparent !important;
+      border: 0 !important;
+      box-shadow: none !important;
+    }
+
+    /* Mobile dropdown styling */
+    @media (max-width: 991.98px) {
+      .navbar-nav .dropdown-menu {
+        background-color: rgba(255, 255, 255, 0.95) !important;
+        border: 1px solid #ddd !important;
+        margin-top: 5px !important;
       }
-      
-      /* Ensure dropdown is clickable on mobile */
-      .navbar-collapse.show .dropdown-menu {
-        position: static !important;
-        float: none !important;
-        width: auto !important;
-        margin-top: 0 !important;
-        background-color: transparent !important;
-        border: 0 !important;
-        box-shadow: none !important;
-      }
-      
-      /* Mobile dropdown styling */
-      @media (max-width: 991.98px) {
-        .navbar-nav .dropdown-menu {
-          background-color: rgba(255, 255, 255, 0.95) !important;
-          border: 1px solid #ddd !important;
-          margin-top: 5px !important;
-        }
-      }
-    </style>
-  </head>
+    }
+  </style>
+</head>
+
   
   <body id="page-top">
     <!-- === Navbar === -->
