@@ -5,7 +5,6 @@
 
 :root {
   --brand: #22324c;
-  --brand-dark: #1b293a;
   --swiper-theme-color: var(--brand);
 }
 
@@ -344,6 +343,13 @@ hr.divider {
   color: var(--brand);
 }
 
+/* Flex rows: icon + text, unaffected by whitespace in the markup */
+#contact .contact-details p {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
 #contact .contact-details a {
   color: #212529;
   text-decoration: none;
@@ -355,7 +361,9 @@ hr.divider {
 
 #contact .form-control {
   border-color: #ced4da;
-  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  transition:
+    border-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
 }
 
 #contact .form-control:focus {
