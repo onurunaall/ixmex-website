@@ -1,0 +1,424 @@
+:root {
+  --brand: #22324c;
+  --swiper-theme-color: var(--brand);
+}
+
+html {
+  scroll-padding-top: 8rem;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* ---------------------------------------------------------------------------
+ * Buttons
+ * ------------------------------------------------------------------------- */
+.btn-primary {
+  border: 1px solid var(--brand);
+  border-radius: 50px;
+}
+
+.btn-lg {
+  padding: 0.65rem 1.25rem;
+}
+
+.btn-xl {
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+}
+
+hr.divider {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ---------------------------------------------------------------------------
+ * Navbar
+ * ------------------------------------------------------------------------- */
+.navbar-brand img {
+  height: 80px;
+  width: auto;
+  border-radius: 0.375rem;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+  -webkit-tap-highlight-color: rgba(34, 50, 76, 0.3);
+}
+
+#mainNav .navbar-nav .nav-item .nav-link:focus,
+#mainNav .navbar-nav .nav-item .nav-link.active {
+  color: var(--brand);
+}
+
+#mainNav.navbar-shrink .navbar-brand,
+#mainNav.navbar-shrink .navbar-nav .nav-item .nav-link {
+  color: #000;
+}
+
+#mainNav.navbar-shrink .navbar-brand:hover,
+#mainNav.navbar-shrink .navbar-nav .nav-item .nav-link:hover,
+#mainNav.navbar-shrink .navbar-nav .nav-item .nav-link:focus,
+#mainNav.navbar-shrink .navbar-nav .nav-item .nav-link.active {
+  color: var(--brand);
+}
+
+.navbar .dropdown-menu {
+  z-index: 1050;
+}
+
+.navbar-collapse.show .dropdown-menu {
+  position: static;
+  float: none;
+  width: auto;
+  margin-top: 0;
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+@media (min-width: 992px) {
+  /* Transparent navbar over the hero */
+  #mainNav:not(.navbar-shrink) .navbar-brand,
+  #mainNav:not(.navbar-shrink) .navbar-nav .nav-item .nav-link {
+    color: #fff;
+  }
+
+  #mainNav:not(.navbar-shrink) .navbar-brand:hover,
+  #mainNav:not(.navbar-shrink) .navbar-nav .nav-item .nav-link:hover,
+  #mainNav:not(.navbar-shrink) .navbar-nav .nav-item .nav-link:focus,
+  #mainNav:not(.navbar-shrink) .navbar-nav .nav-item .nav-link.active {
+    color: #ddd;
+  }
+}
+
+@media (max-width: 575.98px) {
+  #mainNav .navbar-brand img {
+    height: 32px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Hero carousel (full-screen cross-fade)
+ * ------------------------------------------------------------------------- */
+#heroCarousel {
+  position: relative;
+  z-index: 1;
+  background: #bbb linear-gradient(to bottom, #c8c8c8, #aaa) no-repeat;
+  background-size: cover;
+}
+
+#heroCarousel,
+#heroCarousel .carousel-inner,
+#heroCarousel .carousel-item {
+  height: 100vh;
+}
+
+#heroCarousel .carousel-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+  opacity: 0;
+  background-color: #f2f2f2;
+  transition: opacity 0.6s ease-in-out;
+  will-change: opacity;
+}
+
+#heroCarousel .carousel-item.active {
+  position: relative;
+  z-index: 1;
+  opacity: 1;
+}
+
+#heroCarousel .carousel-item-next.carousel-item-start,
+#heroCarousel .carousel-item-prev.carousel-item-end {
+  z-index: 0;
+  opacity: 1;
+}
+
+#heroCarousel .carousel-item.active.carousel-item-start,
+#heroCarousel .carousel-item.active.carousel-item-end {
+  opacity: 0;
+}
+
+#heroCarousel .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#heroCarousel .carousel-caption {
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
+}
+
+.hero-caption-box {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 0.5rem;
+}
+
+.carousel-control-prev {
+  left: 1rem;
+}
+
+.carousel-control-next {
+  right: 1rem;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  background-position: center;
+  background-size: 2.5rem 2.5rem;
+  border-radius: 50%;
+}
+
+@media (max-width: 575.98px) {
+  .carousel-caption {
+    padding: 0 1rem 1.25rem;
+  }
+
+  .carousel-caption .h1,
+  .carousel-caption h1 {
+    font-size: 1.7rem;
+  }
+
+  .carousel-caption p {
+    font-size: 0.95rem;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Sliders (Swiper) – shared arrow style
+ * ------------------------------------------------------------------------- */
+.swiper-button-prev,
+.swiper-button-next {
+  width: 2.75rem;
+  height: 2.75rem;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+@media (max-width: 575.98px) {
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon,
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Services
+ * ------------------------------------------------------------------------- */
+.services-slider {
+  position: relative;
+  padding: 0 3.25rem;
+}
+
+.services-swiper {
+  padding-bottom: 3rem;
+}
+
+.services-swiper .swiper-slide {
+  height: auto;
+}
+
+.services-slider .swiper-button-prev,
+.services-slider .swiper-button-next {
+  top: calc(50% - 1.5rem);
+}
+
+.services-slider .swiper-button-prev {
+  left: 0.5rem;
+}
+
+.services-slider .swiper-button-next {
+  right: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .services-slider {
+    padding: 0 4.5rem;
+  }
+
+  .services-slider .swiper-button-prev {
+    left: 1rem;
+  }
+
+  .services-slider .swiper-button-next {
+    right: 1rem;
+  }
+}
+
+.service-card {
+  height: 100%;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.service-card i {
+  margin-bottom: 1.25rem;
+  font-size: 2.5rem;
+  color: var(--brand);
+}
+
+/* ---------------------------------------------------------------------------
+ * Portfolio
+ * ------------------------------------------------------------------------- */
+#portfolio,
+#contact {
+  padding-block: 4rem;
+}
+
+.portfolio-swiper .swiper-button-prev {
+  left: 10px;
+}
+
+.portfolio-swiper .swiper-button-next {
+  right: 10px;
+}
+
+.portfolio-box img {
+  width: 100%;
+  min-height: 350px;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.portfolio-caption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  padding: 1em;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.portfolio-box:hover .portfolio-caption {
+  display: block;
+}
+
+/* ---------------------------------------------------------------------------
+ * Contact
+ * ------------------------------------------------------------------------- */
+#contact .h4,
+#contact .h6 {
+  color: var(--brand);
+}
+
+#contact .contact-details p {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+#contact .contact-details a {
+  color: #212529;
+  text-decoration: none;
+}
+
+#contact .contact-details a:hover {
+  text-decoration: underline;
+}
+
+#contact .form-control {
+  border-color: #ced4da;
+  transition:
+    border-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+}
+
+#contact .form-control:focus {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 0.25rem rgba(34, 50, 76, 0.25);
+}
+
+#contact .btn-outline-secondary {
+  border-color: #ced4da;
+  color: #495057;
+}
+
+#contact .btn-outline-secondary:hover {
+  color: var(--brand);
+  background-color: #f1f3f5;
+}
+
+#file-upload-display {
+  display: flex;
+  padding: 0.5rem 0.75rem;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 0.375rem;
+}
+
+#file-upload-filename {
+  padding-right: 1rem;
+  overflow: hidden;
+  font-style: italic;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#contact .hours-table {
+  font-size: 0.9rem;
+}
+
+#contact .hours-table .bordered-row th,
+#contact .hours-table .bordered-row td {
+  border-top: 1px solid #dee2e6;
+}
+
+.map-embed {
+  overflow: hidden;
+  border-radius: 0.375rem;
+}
+
+#about .lead {
+  line-height: 1.6;
+}
+
+#portfolio hr.divider {
+  max-width: 4rem;
+}
+
+#message {
+  min-height: 8rem;
+  height: 100%;
+}
+
+/* ---------------------------------------------------------------------------
+ * Language switch – scripts.js sets <html lang="en|es">
+ * ------------------------------------------------------------------------- */
+html:not([lang="es"]) [lang="es"],
+html[lang="es"] [lang="en"] {
+  display: none;
+}
